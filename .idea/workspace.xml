@@ -1,22 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9de360d-3971-4e79-9b02-f9412904d9a3" name="Default Changelist" comment="" />
+    <list default="true" id="c9de360d-3971-4e79-9b02-f9412904d9a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/InvalidUserFormatException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/logIn.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/mainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/TestKlasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/sample.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1Zr7hEQ4UdTQIjWY7Gp7tvPoZHd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="NySemesteroppgave" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -28,18 +73,79 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585585475531</updated>
+      <workItem from="1585585477852" duration="1157000" />
+      <workItem from="1585645982141" duration="7787000" />
     </task>
+    <task id="LOCAL−00001" summary="En test">
+      <created>1585585521585</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1585585521585</updated>
+    </task>
+    <task id="LOCAL−00002" summary="En test">
+      <created>1585585622575</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1585585622575</updated>
+    </task>
+    <task id="LOCAL−00003" summary="En test">
+      <created>1585585734989</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1585585734989</updated>
+    </task>
+    <task id="LOCAL−00004" summary="En test">
+      <created>1585585788688</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1585585788688</updated>
+    </task>
+    <task id="LOCAL−00005" summary="En test">
+      <created>1585586014382</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1585586014382</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="En test" />
+    <option name="LAST_COMMIT_MESSAGE" value="En test" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="365" y="7" key="CommitChangelistDialog2" timestamp="1585585692935">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1585683140283">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="365" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585585692935" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1585585635369">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585683140283" />
+    <state x="365" y="7" key="CommitChangelistDialog2" timestamp="1585586013832">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585585635369" />
+    <state x="365" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585586013832" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1585684620915">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585684620915" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1585684620914">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585684620914" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1585684620914">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585684620914" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1585684620914">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585684620914" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1585586033212">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585586033212" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585585586321">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
