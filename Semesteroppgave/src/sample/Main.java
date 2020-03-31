@@ -18,7 +18,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        String Test;
+        String enTest;
         launch(args);
     }
 }
