@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9de360d-3971-4e79-9b02-f9412904d9a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/calculator/priceList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/computer/Computer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/computer/Desktop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/computer/Laptop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/calculator/priceList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/calculator/priceList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +116,13 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1585685701466</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="En test">
+      <created>1585738635672</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1585738635672</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,10 +138,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585683140283" />
-    <state x="365" y="7" key="CommitChangelistDialog2" timestamp="1585685700812">
+    <state x="365" y="7" key="CommitChangelistDialog2" timestamp="1585738634933">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="365" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585685700812" />
+    <state x="365" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585738634933" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1585684620915">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -156,10 +158,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585684620914" />
-    <state x="329" y="115" key="Vcs.Push.Dialog.v2" timestamp="1585685724506">
+    <state x="329" y="115" key="Vcs.Push.Dialog.v2" timestamp="1585738640046">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="329" y="115" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585685724506" />
+    <state x="329" y="115" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585738640046" />
     <state x="627" y="317" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585730347493">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
