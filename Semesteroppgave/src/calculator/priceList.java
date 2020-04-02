@@ -65,6 +65,7 @@ public class priceList {
     public static final double harddiskD4 =4_486;
 
 
+
     //ekstern hard drive
 
     //Seagate_Expansion_Portable_1TB
