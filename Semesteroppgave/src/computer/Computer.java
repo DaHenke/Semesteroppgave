@@ -3,26 +3,26 @@ package computer;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Computer {
-    public SimpleStringProperty prosessor, skjermkort, minne, harddisk;
+    public SimpleStringProperty CPU, GPU, RAM, hardDrive;
 
-    public Computer(SimpleStringProperty prosessor, SimpleStringProperty skjermkort, SimpleStringProperty minne,
-                    SimpleStringProperty harddisk){
-        this.prosessor = prosessor;
-        this.skjermkort = skjermkort;
-        this.minne = minne;
-        this.harddisk = harddisk;
+    public Computer(SimpleStringProperty CPU, SimpleStringProperty GPU, SimpleStringProperty RAM,
+                    SimpleStringProperty hardDrive){
+        this.CPU = CPU;
+        this.GPU = GPU;
+        this.RAM = RAM;
+        this.hardDrive = hardDrive;
     }
-    public String getProsessor() {
-        return prosessor.get();
+    public String getCPU() {
+        return CPU.get();
     }
-    public SimpleStringProperty prosessorProperty(){ return this.prosessor; }
+    public SimpleStringProperty CPUProperty(){ return this.CPU; }
 
-    public String getSkjermkort() { return skjermkort.get(); }
-    public SimpleStringProperty skjermkortProperty(){ return this.skjermkort; }
+    public String getGPU() { return GPU.get(); }
+    public SimpleStringProperty GPUtProperty(){ return this.GPU; }
 
-    public String getMinne() { return minne.get(); }
-    public SimpleStringProperty minneProperty(){ return this.skjermkort; }
+    public String getRAN() { return RAM.get(); }
+    public SimpleStringProperty RANProperty(){ return this.RAM; }
 
-    public String getHarddisk() { return harddisk.get(); }
-    public SimpleStringProperty harddiskProperty(){ return this.harddisk; }
+    public String getHardDrive() { return hardDrive.get(); }
+    public SimpleStringProperty hardDriveProperty(){ return this.hardDrive; }
 }

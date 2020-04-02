@@ -6,55 +6,107 @@ public class priceList {
 
     //Priser hentet ut fra komplett.no
 
-    //prosessor
-    public static final SimpleDoubleProperty ADM_Athlon_3000G = new SimpleDoubleProperty(599);
-    public static final SimpleDoubleProperty Intel_Pentium_Gold_G5600 = new SimpleDoubleProperty(979);
-    public static final SimpleDoubleProperty AMD_Ryzen_3_3200G = new SimpleDoubleProperty(1_349);
-    public static final SimpleDoubleProperty Intel_Core_i5_9600 = new SimpleDoubleProperty(2_599);
 
-    //skjermkort
-    public static final SimpleDoubleProperty ASUS_GeForce_GT710_1GB = new SimpleDoubleProperty(533);
-    public static final SimpleDoubleProperty Gigabyte_GeForce_GT_1030_2GB_Low_Profile = new SimpleDoubleProperty(1099);
-    public static final SimpleDoubleProperty PNY_Quadro_P400_2GB_DVI = new SimpleDoubleProperty(1_889);
-    public static final SimpleDoubleProperty Gainward_GeForce_GTX_1650_SUPER_Pegasus_OC = new SimpleDoubleProperty(2_399);
+    //CPU
 
-    //minne
-    public static final SimpleDoubleProperty HyperX_Fury_DDR3_1600MHz_4GB = new SimpleDoubleProperty(333);
-    public static final SimpleDoubleProperty Crucial_DDR4_2400MHz_8GB = new SimpleDoubleProperty(564);
-    public static final SimpleDoubleProperty Kingston_Value_DDR4_3400MHz_16GB = new SimpleDoubleProperty(929);
-    public static final SimpleDoubleProperty HyperX_Fury_DDR4_2666MHZ_32GB = new SimpleDoubleProperty(1_949);
+    //ADM_Athlon_3000G
+    public static final double CPU1 =599;
+    //Intel_Pentium_Gold_G5600
+    public static final double CPU2 = 979;
+    //AMD_Ryzen_3_3200G
+    public static final double CPU3 = 1_349;
+    //Intel_Core_i5_9600
+    public static final double CPU4 =2_599;
 
-    //harddisk laptop 2.5"
-    public static final SimpleDoubleProperty WD_Mobile_Black_1TB_Harddisk = new SimpleDoubleProperty(807);
-    public static final SimpleDoubleProperty Seagate_Firecuda_2TB = new SimpleDoubleProperty(1_289);
-    public static final SimpleDoubleProperty Seagate_Barracuda_4TB = new SimpleDoubleProperty(2_174);
 
-    //harddisk desktop 3.5"
-    public static final SimpleDoubleProperty Seagate_Barracuda_1TB = new SimpleDoubleProperty(530);
-    public static final SimpleDoubleProperty Seagate_Barracuda_3TB = new SimpleDoubleProperty(1_022);
-    public static final SimpleDoubleProperty Seagate_SkyHawk_6TB = new SimpleDoubleProperty(2_310);
-    public static final SimpleDoubleProperty Seagate_IronWolf_10TB = new SimpleDoubleProperty(4_486);
+    //GPU
 
-    //ekstern harddisk
-    public static final SimpleDoubleProperty Seagate_Expansion_Portable_1TB = new SimpleDoubleProperty(689);
-    public static final SimpleDoubleProperty ASUS_FX_External_Hard_Drive_3TB = new SimpleDoubleProperty(1_317);
-    public static final SimpleDoubleProperty WD_My_Book_8TB = new SimpleDoubleProperty(2_245);
+    //ASUS_GeForce_GT710_1GB
+    public static final double GPU1 =533;
+    //Gigabyte_GeForce_GT_1030_2GB_Low_Profile
+    public static final double GPU2 =1_099;
+    //PNY_Quadro_P400_2GB_DVI
+    public static final double GPU3 =1_889;
+    //Gainward_GeForce_GTX_1650_SUPER_Pegasus_OC
+    public static final double GPU4 = 2_399;
 
-    //mus
-    public static final SimpleDoubleProperty Logitech_M90_Mus = new SimpleDoubleProperty(109);
-    public static final SimpleDoubleProperty Microsoft_Mobile_Mouse_3600 = new SimpleDoubleProperty(349);
-    public static final SimpleDoubleProperty Surface_ARC_mus = new SimpleDoubleProperty(829);
-    public static final SimpleDoubleProperty Logitech_MX_Master3_Adv_trådløs = new SimpleDoubleProperty(1_299);
 
-    //tastatur
-    public static final SimpleDoubleProperty Microsoft_Wired_Keyboard_600 = new SimpleDoubleProperty(199);
-    public static final SimpleDoubleProperty Logitech_K400_Plus_Trådløs_Tastatur = new SimpleDoubleProperty(549);
-    public static final SimpleDoubleProperty Kanex_MultiSync_Premium_Slim_Keyboard = new SimpleDoubleProperty(949);
-    public static final SimpleDoubleProperty Logitech_ERGO_K860_Trådløs_Tastatur = new SimpleDoubleProperty(1_399);
+    //RAM
+
+    //HyperX_Fury_DDR3_1600MHz_4GB
+    public static final double RAM1 =333;
+    //Crucial_DDR4_2400MHz_8GB
+    public static final double RAM2 =564;
+    //Kingston_Value_DDR4_3400MHz_16GB
+    public static final double RAM3 =929;
+    //HyperX_Fury_DDR4_2666MHZ_32GB
+    public static final double RAM4 =1_949;
+
+
+    //hard drive laptop 2.5"
+
+    //WD_Mobile_Black_1TB_Harddisk
+    public static final double harddiskL1 =807;
+    //Seagate_Firecuda_2TB
+    public static final double harddiskL2 =1_289;
+    //Seagate_Barracuda_4TB
+    public static final double harddiskL3 =2_174;
+
+
+    //hard drive desktop 3.5"
+
+    //Seagate_Barracuda_1TB
+    public static final double harddiskD1 =530;
+    //Seagate_Barracuda_3TB
+    public static final double harddiskD2 =1_022;
+    //Seagate_SkyHawk_6TB
+    public static final double harddiskD3 =2_310;
+    //Seagate_IronWolf_10TB
+    public static final double harddiskD4 =4_486;
+
+
+    //ekstern hard drive
+
+    //Seagate_Expansion_Portable_1TB
+    public static final double harddiskE1 =689;
+    //ASUS_FX_External_Hard_Drive_3TB
+    public static final double harddiskE2 =1_317;
+    //WD_My_Book_8TB
+    public static final double harddiskE3 =2_245;
+
+
+    //mouse
+
+    //Logitech_M90_Mus
+    public static final double mouse1 = 109;
+    //Microsoft_Mobile_Mouse_3600
+    public static final double mouse2 =349;
+    //Surface_ARC_mus
+    public static final double mouse3 =829;
+    //Logitech_MX_Master3_Adv_trådløs
+    public static final double mouse4 =1_299;
+
+
+    //keyboard
+
+    //Microsoft_Wired_Keyboard_600
+    public static final double keyboard1 =199;
+    //Logitech_K400_Plus_Trådløs_Tastatur
+    public static final double keyboard2 =549;
+    //Kanex_MultiSync_Premium_Slim_Keyboard
+    public static final double keyboard3 =949;
+    //Logitech_ERGO_K860_Trådløs_Tastatur
+    public static final double keyboard4 = 1_399;
+
 
     //monitor
-    public static final SimpleDoubleProperty Acer_24_skjerm_KA242Y = new SimpleDoubleProperty(1_395);
-    public static final SimpleDoubleProperty Samsung_24_skjerm_S24E450F = new SimpleDoubleProperty(1_695);
-    public static final SimpleDoubleProperty Acer_27_skjerm_KA272 = new SimpleDoubleProperty(2_195);
-    public static final SimpleDoubleProperty Samsung_28_4K_LED_FreeSync_U28E570D = new SimpleDoubleProperty(3_290);
+
+    //Acer_24_skjerm_KA242Y
+    public static final double monitor1 =1_395;
+    //Samsung_24_skjerm_S24E450F
+    public static final double monitor2 = 1_695;
+    //Acer_27_skjerm_KA272
+    public static final double monitor3 =2_195;
+    //Samsung_28_4K_LED_FreeSync_U28E570D
+    public static final double monitor4 = 3_290;
 }
