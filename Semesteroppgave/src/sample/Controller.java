@@ -79,10 +79,18 @@ public class Controller implements Initializable {
     @FXML
     void register(ActionEvent event) {
 
-        double sum = Calculator.calculateDesktop(comboCPU.getValue(),comboGPU.getValue(),comboRAM.getValue(),comboHDDSSDPC.getValue()
-                ,comboMouse.getValue(),comboKeyboard.getValue(),comboMonitor.getValue());
+        if(!comboCPU.getValue().equals(null) || !comboGPU.getValue().equals(null) || !comboRAM.getValue().equals(null) || !comboHDDSSDPC.getValue().equals(null)) {
+            double sum = Calculator.calculateDesktop(comboCPU.getValue(), comboGPU.getValue(), comboRAM.getValue(), comboHDDSSDPC.getValue()
+                    , comboMouse.getValue(), comboKeyboard.getValue(), comboMonitor.getValue());
 
-        lblSum.setText(String.valueOf(sum));
+            lblSum.setText(String.valueOf(sum));
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Feil!");
+            alert.setContentText("Du må velge en for alle hovedkomponentene");
+            alert.showAndWait();
+            throw new IllegalArgumentException("Tomme tekstfelter...");
+        }
 
     }
 
