@@ -1,6 +1,7 @@
 package calculator;
 
 import javafx.beans.property.SimpleDoubleProperty;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 public class priceList {
 
@@ -18,6 +19,20 @@ public class priceList {
     //Intel_Core_i5_9600
     public static final double CPU4 =2_599;
 
+    public static SimpleDoubleProperty getCPUprice(String CPUin){
+        if(CPUin.equals("AMD Athlon 3000G")){
+            return new SimpleDoubleProperty(CPU1);
+        }else if(CPUin.equals("Intel Pentium Gold G5600")){
+            return new SimpleDoubleProperty(CPU2);
+        }else if(CPUin.equals("AMD Ryzen 3 3200G")){
+            return new SimpleDoubleProperty(CPU3);
+        }else if(CPUin.equals("Intel Core i5-9600")){
+            return new SimpleDoubleProperty(CPU4);
+        }else {
+            return new SimpleDoubleProperty(0.0);
+        }
+    }
+
 
     //GPU
 
@@ -31,6 +46,21 @@ public class priceList {
     public static final double GPU4 = 2_399;
 
 
+    public static SimpleDoubleProperty getGPUprice(String GPUin){
+        if(GPUin.equals("ASUS GeForce GT710 1GB")){
+            return new SimpleDoubleProperty(GPU1);
+        }else if(GPUin.equals("Gigabyte GeForce GT 1030 2GB Low Profile")){
+            return new SimpleDoubleProperty(GPU2);
+        }else if(GPUin.equals("PNY Quadro P400 2GB DVI")){
+            return new SimpleDoubleProperty(GPU3);
+        }else if(GPUin.equals("Gainward GeForce GTX 1650 SUPER Pegasus OC")){
+            return new SimpleDoubleProperty(GPU4);
+        }else{
+            return new SimpleDoubleProperty(0.0);
+        }
+    }
+
+
     //RAM
 
     //HyperX_Fury_DDR3_1600MHz_4GB
@@ -41,6 +71,21 @@ public class priceList {
     public static final double RAM3 =929;
     //HyperX_Fury_DDR4_2666MHZ_32GB
     public static final double RAM4 =1_949;
+
+
+    public static SimpleDoubleProperty getRAMprice(String RAMin){
+        if(RAMin.equals("HyperX Fury DDR3 1600MHz 4GB")){
+            return new SimpleDoubleProperty(RAM1);
+        }else if(RAMin.equals("Crucial DDR4 2400MHz 8GB")){
+            return new SimpleDoubleProperty(RAM2);
+        }else if(RAMin.equals("Kingston Value DDR4 3400MHz 16GB")){
+            return new SimpleDoubleProperty(RAM3);
+        }else if(RAMin.equals("HyperX Fury DDR4 2666MHZ 32GB")){
+            return new SimpleDoubleProperty(RAM4);
+        }else{
+            return new SimpleDoubleProperty(0.0);
+        }
+    }
 
 
     //hard drive laptop 2.5"
@@ -65,6 +110,19 @@ public class priceList {
     public static final double harddiskD4 =4_486;
 
 
+    public static SimpleDoubleProperty getHDDSSDprice(String HDDSSDin){
+        if(HDDSSDin.equals("Seagate Barracuda 1TB")){
+            return new SimpleDoubleProperty(harddiskD1);
+        }else if(HDDSSDin.equals("Seagate Barracuda 3TB")){
+            return new SimpleDoubleProperty(harddiskD2);
+        }else if(HDDSSDin.equals("Seagate SkyHawk 6TB")){
+            return new SimpleDoubleProperty(harddiskD3);
+        }else if(HDDSSDin.equals("Seagate IronWolf 10TB")){
+            return new SimpleDoubleProperty(harddiskD4);
+        }else{
+            return new SimpleDoubleProperty(0.0);
+        }
+    }
 
     //ekstern hard drive
 
@@ -88,6 +146,20 @@ public class priceList {
     public static final double mouse4 =1_299;
 
 
+    public static SimpleDoubleProperty getMousePrice(String mouseIn){
+        if(mouseIn.equals("Logitech M90 Mus")){
+            return new SimpleDoubleProperty(mouse1);
+        }else if(mouseIn.equals("Microsoft Mobile Mouse 3600")){
+            return new SimpleDoubleProperty(mouse2);
+        }else if (mouseIn.equals("Surface ARC mus")){
+            return new SimpleDoubleProperty(mouse3);
+        }else if (mouseIn.equals("Logitech MX Master3 Adv trådløs")){
+            return new SimpleDoubleProperty(mouse4);
+        }else {
+            return new SimpleDoubleProperty(0.0);
+        }
+    }
+
     //keyboard
 
     //Microsoft_Wired_Keyboard_600
@@ -100,6 +172,20 @@ public class priceList {
     public static final double keyboard4 = 1_399;
 
 
+    public static SimpleDoubleProperty getKeyboardPrice(String keyboardIn){
+        if(keyboardIn.equals("Microsoft Wired Keyboard 600")){
+            return new SimpleDoubleProperty(keyboard1);
+        }else if(keyboardIn.equals("Logitech K400 Plus Trådløs Tastatur")){
+            return new SimpleDoubleProperty(keyboard2);
+        }else if (keyboardIn.equals("Kanex MultiSync Premium Slim Keyboard")){
+            return new SimpleDoubleProperty(keyboard3);
+        }else if (keyboardIn.equals("Logitech ERGO K860 Trådløs Tastatur")){
+            return new SimpleDoubleProperty(keyboard4);
+        }else{
+            return new SimpleDoubleProperty(0.0);
+        }
+    }
+
     //monitor
 
     //Acer_24_skjerm_KA242Y
@@ -110,4 +196,19 @@ public class priceList {
     public static final double monitor3 =2_195;
     //Samsung_28_4K_LED_FreeSync_U28E570D
     public static final double monitor4 = 3_290;
+
+
+    public static SimpleDoubleProperty getMonitorPrice(String monitorIn){
+        if(monitorIn.equals("Acer 24 skjerm KA242Y")){
+            return new SimpleDoubleProperty(monitor1);
+        }else if(monitorIn.equals("Samsung 24 skjerm S24E450F")){
+            return new SimpleDoubleProperty(monitor2);
+        }else if (monitorIn.equals("Acer 27 skjerm KA272")){
+            return new SimpleDoubleProperty(monitor3);
+        }else if (monitorIn.equals("Samsung 28 4K LED FreeSync U28E570D")){
+            return new SimpleDoubleProperty(monitor4);
+        }else {
+            return new SimpleDoubleProperty(0.0);
+        }
+    }
 }
