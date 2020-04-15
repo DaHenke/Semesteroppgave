@@ -1,5 +1,6 @@
 package sample;
 
+import calculator.Calculator;
 import computer.Desktop;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,11 +29,6 @@ public class Controller implements Initializable {
 
 
     //mainPage.fxml
-    @FXML
-    private CheckBox chbLaptop;
-
-    @FXML
-    private CheckBox chbPC;
 
     @FXML
     private ComboBox<String> comboCPU;
@@ -57,6 +53,10 @@ public class Controller implements Initializable {
 
     @FXML
     private ComboBox<String> comboMouse;
+
+
+    @FXML
+    private Label lblSum;
     //end
 
     @FXML
@@ -79,33 +79,19 @@ public class Controller implements Initializable {
     @FXML
     void register(ActionEvent event) {
 
-    }
+        double sum = Calculator.calculateDesktop(comboCPU.getValue(),comboGPU.getValue(),comboRAM.getValue(),comboHDDSSDPC.getValue()
+                ,comboMouse.getValue(),comboKeyboard.getValue(),comboMonitor.getValue());
 
-    @FXML
-    void chooseLaptop(ActionEvent event) {
-        if(chbLaptop.isSelected()){
-            chbPC.setSelected(false);
-            comboHDDSSDLaptop.setVisible(true);
-            comboHDDSSDPC.setVisible(false);
-        }
+        lblSum.setText(String.valueOf(sum));
 
     }
 
-    @FXML
-    void choosePC(ActionEvent event) {
-        if(chbPC.isSelected()){
-            chbLaptop.setSelected(false);
-            comboHDDSSDLaptop.setVisible(false);
-            comboHDDSSDPC.setVisible(true);
-        }
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         comboCPU.getItems().addAll("AMD Athlon 3000G",
                                     "Intel Pentium Gold G5600",
-                                    " AMD Ryzen 3 3200G",
+                                    "AMD Ryzen 3 3200G",
                                     "Intel Core i5-9600");
 
         comboGPU.getItems().addAll("ASUS GeForce GT710 1GB",

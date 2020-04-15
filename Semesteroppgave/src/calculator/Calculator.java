@@ -47,7 +47,7 @@ public class Calculator {
     }
 
     public static double calculateDesktop(String  CPUin, String GPUin, String RAMin, String hardDriveIn,String mouseIn, String keyboardIn, String monitorIn){
-        if(CPUin=="ADM Athlon 3000G"){
+        if(CPUin=="AMD Athlon 3000G"){
             CPU=CPU1;
         }else if(CPUin=="Gigabyte GeForce GT 1030 2GB Low Profile"){
             CPU=CPU2;
@@ -84,11 +84,11 @@ public class Calculator {
         }
 
         if(hardDriveIn=="WD Mobile Black 1TB Harddisk"){
-            hardDrive=harddiskL1;
+            hardDrive=harddiskD1;
         }else if(hardDriveIn=="Seagate Firecuda 2TB"){
-            hardDrive=harddiskL2;
+            hardDrive=harddiskD2;
         }else if(hardDriveIn=="Seagate Barracuda 4TB"){
-            hardDrive=harddiskL3;
+            hardDrive=harddiskD3;
         }else{
             hardDrive=0.0;
         }
