@@ -37,12 +37,17 @@
       </Label>
       <TableView fx:id="tblPCdel" layoutX="762.0" layoutY="187.0" prefHeight="260.0" prefWidth="698.0">
         <columns>
-          <TableColumn fx:id="tblDel" prefWidth="376.79998779296875" text="Part">
-           <cellValueFactory>
-              <PropertyValueFactory property="DelNavn" />
-           </cellValueFactory>
-           </TableColumn>
-            <TableColumn fx:id="tblPris" prefWidth="331.199951171875" text="Price">
+          <TableColumn fx:id="tblType" prefWidth="232.79998779296875" text="Type">
+             <cellValueFactory>
+                <PropertyValueFactory property="Type" />
+             </cellValueFactory>
+          </TableColumn>
+            <TableColumn fx:id="tblDel" prefWidth="207.199951171875" text="Part">
+               <cellValueFactory>
+                  <PropertyValueFactory property="DelNavn" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="tblPris" prefWidth="257.599951171875" text="Price">
                <cellValueFactory>
                   <PropertyValueFactory property="DelPris" />
                </cellValueFactory>

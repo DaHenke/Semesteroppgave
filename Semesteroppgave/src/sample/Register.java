@@ -15,8 +15,8 @@ public class Register {
             return this.array;
         }
 
-        public void registrerPCDel(String delNavn, double delPris){
-            PC enDel = new PC(delNavn,delPris);
+        public void registrerPCDel(String type, String delNavn, double delPris){
+            PC enDel = new PC(type,delNavn,delPris);
             array.add(enDel);
         }
 

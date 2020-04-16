@@ -35,6 +35,9 @@ public class Controller implements Initializable {
     private TableView<PC> tblPCdel;
 
     @FXML
+    private TableColumn<PC, Double> tblType;
+
+    @FXML
     private TableColumn<PC, String> tblDel;
 
     @FXML
@@ -123,92 +126,106 @@ public class Controller implements Initializable {
 
     @FXML
     void regCPU(ActionEvent event) {
+        String type = "CPU";
         String CPUnavn = comboCPU.getValue();
         double CPUpris = Calculator.calculateCPU(CPUnavn);
 
-        PC nyPC = new PC(CPUnavn,CPUpris);
+        PC nyPC = new PC(type,CPUnavn,CPUpris);
+        nyPC.setType(type);
         nyPC.setDelNavn(CPUnavn);
         nyPC.setDelPris(CPUpris);
 
-        newRegister.registrerPCDel(CPUnavn,CPUpris);
+        newRegister.registrerPCDel(type,CPUnavn,CPUpris);
         tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
     void regGPU(ActionEvent event) {
+        String type = "GPU";
         String GPUnavn = comboGPU.getValue();
         double GPUpris = Calculator.calculateGPU(GPUnavn);
 
-        PC nyPC = new PC(GPUnavn,GPUpris);
+        PC nyPC = new PC(type,GPUnavn,GPUpris);
+        nyPC.setType(type);
         nyPC.setDelNavn(GPUnavn);
         nyPC.setDelPris(GPUpris);
 
-        newRegister.registrerPCDel(GPUnavn,GPUpris);
+        newRegister.registrerPCDel(type,GPUnavn,GPUpris);
         tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
     void regRAM(ActionEvent event) {
+        String type = "Memory";
         String RAMnavn = comboRAM.getValue();
         double RAMpris = Calculator.calculateRAM(RAMnavn);
 
-        PC nyPC = new PC(RAMnavn,RAMpris);
+        PC nyPC = new PC(type,RAMnavn,RAMpris);
+        nyPC.setType(type);
         nyPC.setDelNavn(RAMnavn);
         nyPC.setDelPris(RAMpris);
 
-        newRegister.registrerPCDel(RAMnavn,RAMpris);
+        newRegister.registrerPCDel(type,RAMnavn,RAMpris);
         tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
     void regHDD(ActionEvent event) {
+        String type = "HDD";
         String HDDnavn = comboHDDSSDPC.getValue();
         double HDDpris = Calculator.calculateHDD(HDDnavn);
 
-        PC nyPC = new PC(HDDnavn,HDDpris);
+        PC nyPC = new PC(type,HDDnavn,HDDpris);
+        nyPC.setType(type);
         nyPC.setDelNavn(HDDnavn);
         nyPC.setDelPris(HDDpris);
 
-        newRegister.registrerPCDel(HDDnavn,HDDpris);
+        newRegister.registrerPCDel(type,HDDnavn,HDDpris);
         tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
     void regKeyboard(ActionEvent event) {
+        String type = "Keyboard";
         String keyboardNavn = comboKeyboard.getValue();
         double keyboardPris = Calculator.calculateKeyboard(keyboardNavn);
 
-        PC nyPC = new PC(keyboardNavn,keyboardPris);
+        PC nyPC = new PC(type,keyboardNavn,keyboardPris);
+        nyPC.setType(type);
         nyPC.setDelNavn(keyboardNavn);
         nyPC.setDelPris(keyboardPris);
 
-        newRegister.registrerPCDel(keyboardNavn,keyboardPris);
+        newRegister.registrerPCDel(type,keyboardNavn,keyboardPris);
         tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
     void regMonitor(ActionEvent event) {
+        String type = "Monitor";
         String monitorNavn = comboMonitor.getValue();
         double monitorPris = Calculator.calculateMonitor(monitorNavn);
 
-        PC nyPC = new PC(monitorNavn,monitorPris);
+        PC nyPC = new PC(type,monitorNavn,monitorPris);
+        nyPC.setType(type);
         nyPC.setDelNavn(monitorNavn);
         nyPC.setDelPris(monitorPris);
 
-        newRegister.registrerPCDel(monitorNavn,monitorPris);
+        newRegister.registrerPCDel(type,monitorNavn,monitorPris);
         tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
     void regMouse(ActionEvent event) {
+        String type = "Mouse";
         String mouseNavn = comboMouse.getValue();
         double mousePris = Calculator.calculateMouse(mouseNavn);
 
-        PC nyPC = new PC(mouseNavn,mousePris);
+        PC nyPC = new PC(type,mouseNavn,mousePris);
+        nyPC.setType(type);
         nyPC.setDelNavn(mouseNavn);
         nyPC.setDelPris(mousePris);
 
-        newRegister.registrerPCDel(mouseNavn,mousePris);
+        newRegister.registrerPCDel(type,mouseNavn,mousePris);
         tblPCdel.setItems(newRegister.getArray());
     }
 

@@ -5,12 +5,25 @@ import javafx.beans.property.SimpleStringProperty;
 
 
 public class PC {
-    public SimpleStringProperty DelNavn;
+    public SimpleStringProperty Type,DelNavn;
     public SimpleDoubleProperty DelPris;
 
-    public PC(String DelNavn, double DelPris){
+    public PC(String Type, String DelNavn, double DelPris){
+        this.Type = new SimpleStringProperty(Type);
         this.DelNavn = new SimpleStringProperty(DelNavn);
         this.DelPris = new SimpleDoubleProperty(DelPris);
+    }
+
+    public String getType() {
+        return Type.get();
+    }
+
+    public SimpleStringProperty typeProperty() {
+        return Type;
+    }
+
+    public void setType(String type) {
+        this.Type.set(type);
     }
 
     public String getDelNavn() {
