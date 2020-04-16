@@ -209,4 +209,47 @@ public class Calculator {
         }
         return hardDrive;
     }
+    public static double calculateMonitor(String  monitorIn) {
+        if(monitorIn.equals("Acer 24 skjerm KA242Y")){
+            monitor=monitor1;
+        }else if(monitorIn.equals("Samsung 24 skjerm S24E450F")){
+            monitor=monitor2;
+        }else if(monitorIn.equals("Acer 27 skjerm KA272")){
+            monitor=monitor3;
+        }else if(monitorIn.equals("Samsung 28 4K LED FreeSync U28E570D")){
+            monitor=monitor4;
+        }else{
+            monitor=0.0;
+        }
+
+        return monitor;
+    }
+    public static double calculateMouse(String  mouseIn) {
+        if(mouseIn.equals("Logitech M90 Mus")){
+            mouse=mouse1;
+        }else if(mouseIn.equals("Microsoft Mobile Mouse 3600")){
+            mouse=mouse2;
+        }else if(mouseIn.equals("Surface ARC mus")){
+            mouse=mouse3;
+        }else if(mouseIn.equals("Logitech MX Master3 Adv trådløs")){
+            mouse=mouse4;
+        }else{
+            mouse=0.0;
+        }
+        return mouse;
+    }
+    public static double calculateKeyboard(String  keyboardIn) {
+        if(keyboardIn.equals("Microsoft Wired Keyboard 600")){
+            keyboard=keyboard1;
+        }else if(keyboardIn.equals("Logitech K400 Plus Trådløs Tastatur")){
+            keyboard=keyboard2;
+        }else if(keyboardIn.equals("Kanex MultiSync Premium Slim Keyboard")){
+            keyboard=keyboard3;
+        }else if(keyboardIn.equals("Logitech ERGO K860 Trådløs Tastatur")){
+            keyboard=keyboard4;
+        }else{
+            keyboard=0.0;
+        }
+        return keyboard;
+    }
 }

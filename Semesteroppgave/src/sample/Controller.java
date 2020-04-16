@@ -174,6 +174,45 @@ public class Controller implements Initializable {
     }
 
     @FXML
+    void regKeyboard(ActionEvent event) {
+        String keyboardNavn = comboKeyboard.getValue();
+        double keyboardPris = Calculator.calculateKeyboard(keyboardNavn);
+
+        PC nyPC = new PC(keyboardNavn,keyboardPris);
+        nyPC.setDelNavn(keyboardNavn);
+        nyPC.setDelPris(keyboardPris);
+
+        newRegister.registrerPCDel(keyboardNavn,keyboardPris);
+        tblPCdel.setItems(newRegister.getArray());
+    }
+
+    @FXML
+    void regMonitor(ActionEvent event) {
+        String monitorNavn = comboMonitor.getValue();
+        double monitorPris = Calculator.calculateMonitor(monitorNavn);
+
+        PC nyPC = new PC(monitorNavn,monitorPris);
+        nyPC.setDelNavn(monitorNavn);
+        nyPC.setDelPris(monitorPris);
+
+        newRegister.registrerPCDel(monitorNavn,monitorPris);
+        tblPCdel.setItems(newRegister.getArray());
+    }
+
+    @FXML
+    void regMouse(ActionEvent event) {
+        String mouseNavn = comboMouse.getValue();
+        double mousePris = Calculator.calculateMouse(mouseNavn);
+
+        PC nyPC = new PC(mouseNavn,mousePris);
+        nyPC.setDelNavn(mouseNavn);
+        nyPC.setDelPris(mousePris);
+
+        newRegister.registrerPCDel(mouseNavn,mousePris);
+        tblPCdel.setItems(newRegister.getArray());
+    }
+
+    @FXML
     void visCPU(MouseEvent event) {
         /*lblPrisCPU.setText(String.valueOf(Calculator.calculateCPU(comboCPU.getValue())));*/
     }
