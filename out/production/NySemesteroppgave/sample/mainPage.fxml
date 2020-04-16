@@ -35,19 +35,19 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="tblPCdel" layoutX="762.0" layoutY="187.0" prefHeight="260.0" prefWidth="698.0">
+      <TableView fx:id="tblPCdel" layoutX="762.0" layoutY="187.0" prefHeight="310.0" prefWidth="706.0">
         <columns>
-          <TableColumn fx:id="tblType" prefWidth="232.79998779296875" text="Type">
+          <TableColumn fx:id="tblType" prefWidth="108.79998779296875" text="Type">
              <cellValueFactory>
                 <PropertyValueFactory property="Type" />
              </cellValueFactory>
           </TableColumn>
-            <TableColumn fx:id="tblDel" prefWidth="207.199951171875" text="Part">
+            <TableColumn fx:id="tblDel" prefWidth="448.800048828125" text="Part">
                <cellValueFactory>
                   <PropertyValueFactory property="DelNavn" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="tblPris" prefWidth="257.599951171875" text="Price">
+            <TableColumn fx:id="tblPris" prefWidth="146.40004882812502" text="Price">
                <cellValueFactory>
                   <PropertyValueFactory property="DelPris" />
                </cellValueFactory>
@@ -66,7 +66,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblSum" layoutX="806.0" layoutY="538.0" text="Sum...">
+      <Label fx:id="lblSum" layoutX="792.0" layoutY="648.0" text="Sum...">
          <font>
             <Font size="17.0" />
          </font>

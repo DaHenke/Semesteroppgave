@@ -19,13 +19,15 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     Register newRegister = new Register();
-    int no_CPU = 0;
-    int no_GPU = 0;
-    int no_RAM = 0;
-    int no_HDD = 0;
-    int no_Monitor = 0;
-    int no_Mouse = 0;
-    int no_Keyboards = 0;
+    int counter_CPU = 0;
+    int counter_GPU = 0;
+    int counter_RAM = 0;
+    int counter_HDD = 0;
+    int counter_KB = 0;
+    int counter_Mon = 0;
+    int counter_Mou = 0;
+
+
 
     @FXML
     private TextField txtUsername;
@@ -137,23 +139,16 @@ public class Controller implements Initializable {
         String CPUnavn = comboCPU.getValue();
         double CPUpris = Calculator.calculateCPU(CPUnavn);
 
-        if(no_CPU == 0) {
-            PC nyPC = new PC(type, CPUnavn, CPUpris);
-            nyPC.setType(type);
-            nyPC.setDelNavn(CPUnavn);
-            nyPC.setDelPris(CPUpris);
+        PC nyPC = new PC(type, CPUnavn, CPUpris);
+        nyPC.setType(type);
+        nyPC.setDelNavn(CPUnavn);
+        nyPC.setDelPris(CPUpris);
 
-            no_CPU++;
-            newRegister.registrerPCDel(type, CPUnavn, CPUpris);
-            tblPCdel.setItems(newRegister.getArray());
-        }else if(no_CPU == 1){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Feil!");
-            alert.setContentText("Du kan bare velge en CPU");
-            alert.showAndWait();
-            throw new IllegalArgumentException("Max number of CPUs");
-        }
+        checkConfiguration.checkCPU(counter_CPU);
+        counter_CPU++;
 
+        newRegister.registrerPCDel(type, CPUnavn, CPUpris);
+        tblPCdel.setItems(newRegister.getArray());
         }
 
     @FXML
@@ -162,23 +157,15 @@ public class Controller implements Initializable {
         String GPUnavn = comboGPU.getValue();
         double GPUpris = Calculator.calculateGPU(GPUnavn);
 
-        if(no_GPU == 0 || no_GPU == 1) {
-            PC nyPC = new PC(type, GPUnavn, GPUpris);
-            nyPC.setType(type);
-            nyPC.setDelNavn(GPUnavn);
-            nyPC.setDelPris(GPUpris);
+        PC nyPC = new PC(type, GPUnavn, GPUpris);
+        nyPC.setType(type);
+        nyPC.setDelNavn(GPUnavn);
+        nyPC.setDelPris(GPUpris);
 
-            no_GPU++;
-            newRegister.registrerPCDel(type, GPUnavn, GPUpris);
-            tblPCdel.setItems(newRegister.getArray());
-        }
-        else if(no_GPU == 2){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Feil!");
-            alert.setContentText("Du kan kun ha opp til to GPUer");
-            alert.showAndWait();
-            throw new IllegalArgumentException("Max number of GPUs");
-        }
+        checkConfiguration.checkGPU(counter_GPU);
+        counter_GPU++;
+        newRegister.registrerPCDel(type, GPUnavn, GPUpris);
+        tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
@@ -187,22 +174,15 @@ public class Controller implements Initializable {
         String RAMnavn = comboRAM.getValue();
         double RAMpris = Calculator.calculateRAM(RAMnavn);
 
-        if(no_RAM == 0) {
-            PC nyPC = new PC(type, RAMnavn, RAMpris);
-            nyPC.setType(type);
-            nyPC.setDelNavn(RAMnavn);
-            nyPC.setDelPris(RAMpris);
+        PC nyPC = new PC(type, RAMnavn, RAMpris);
+        nyPC.setType(type);
+        nyPC.setDelNavn(RAMnavn);
+        nyPC.setDelPris(RAMpris);
 
-            no_RAM++;
-            newRegister.registrerPCDel(type, RAMnavn, RAMpris);
-            tblPCdel.setItems(newRegister.getArray());
-        }else if(no_RAM == 1){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Feil!");
-            alert.setContentText("Du kan kun velge en RAM");
-            alert.showAndWait();
-            throw new IllegalArgumentException("Max number of RAM");
-        }
+        checkConfiguration.checkRAM(counter_RAM);
+        counter_RAM++;
+        newRegister.registrerPCDel(type, RAMnavn, RAMpris);
+        tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
@@ -211,22 +191,17 @@ public class Controller implements Initializable {
         String HDDnavn = comboHDDSSDPC.getValue();
         double HDDpris = Calculator.calculateHDD(HDDnavn);
 
-        if(no_HDD == 0 || no_HDD == 1) {
-            PC nyPC = new PC(type, HDDnavn, HDDpris);
-            nyPC.setType(type);
-            nyPC.setDelNavn(HDDnavn);
-            nyPC.setDelPris(HDDpris);
 
-            no_HDD++;
-            newRegister.registrerPCDel(type, HDDnavn, HDDpris);
-            tblPCdel.setItems(newRegister.getArray());
-        }else if(no_HDD == 2){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Feil!");
-            alert.setContentText("Du kan kun ha opp til to HDDer");
-            alert.showAndWait();
-            throw new IllegalArgumentException("Max number of HDDs");
-        }
+        PC nyPC = new PC(type, HDDnavn, HDDpris);
+        nyPC.setType(type);
+        nyPC.setDelNavn(HDDnavn);
+        nyPC.setDelPris(HDDpris);
+
+        checkConfiguration.checkHDD(counter_HDD);
+        counter_HDD++;
+        newRegister.registrerPCDel(type, HDDnavn, HDDpris);
+        tblPCdel.setItems(newRegister.getArray());
+
     }
 
     @FXML
@@ -235,22 +210,15 @@ public class Controller implements Initializable {
         String keyboardNavn = comboKeyboard.getValue();
         double keyboardPris = Calculator.calculateKeyboard(keyboardNavn);
 
-        if(no_Keyboards == 0) {
-            PC nyPC = new PC(type, keyboardNavn, keyboardPris);
-            nyPC.setType(type);
-            nyPC.setDelNavn(keyboardNavn);
-            nyPC.setDelPris(keyboardPris);
+        PC nyPC = new PC(type, keyboardNavn, keyboardPris);
+        nyPC.setType(type);
+        nyPC.setDelNavn(keyboardNavn);
+        nyPC.setDelPris(keyboardPris);
 
-            no_Keyboards++;
-            newRegister.registrerPCDel(type, keyboardNavn, keyboardPris);
-            tblPCdel.setItems(newRegister.getArray());
-        }else if(no_Keyboards == 1){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Feil!");
-            alert.setContentText("Du kan kun ha ett keyboard");
-            alert.showAndWait();
-            throw new IllegalArgumentException("Max number of keyboards");
-        }
+        checkConfiguration.checkKeyboard(counter_KB);
+        counter_KB++;
+        newRegister.registrerPCDel(type, keyboardNavn, keyboardPris);
+        tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
@@ -259,22 +227,15 @@ public class Controller implements Initializable {
         String monitorNavn = comboMonitor.getValue();
         double monitorPris = Calculator.calculateMonitor(monitorNavn);
 
-        if(no_Monitor == 0) {
-            PC nyPC = new PC(type, monitorNavn, monitorPris);
-            nyPC.setType(type);
-            nyPC.setDelNavn(monitorNavn);
-            nyPC.setDelPris(monitorPris);
+        PC nyPC = new PC(type, monitorNavn, monitorPris);
+        nyPC.setType(type);
+        nyPC.setDelNavn(monitorNavn);
+        nyPC.setDelPris(monitorPris);
 
-            no_Monitor++;
-            newRegister.registrerPCDel(type, monitorNavn, monitorPris);
-            tblPCdel.setItems(newRegister.getArray());
-        }else if(no_Monitor == 1){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Feil!");
-            alert.setContentText("Du kan kun ha en skjerm");
-            alert.showAndWait();
-            throw new IllegalArgumentException("Max number of monitors");
-        }
+        checkConfiguration.checkMonitor(counter_Mon);
+        counter_Mon++;
+        newRegister.registrerPCDel(type, monitorNavn, monitorPris);
+        tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
@@ -283,22 +244,15 @@ public class Controller implements Initializable {
         String mouseNavn = comboMouse.getValue();
         double mousePris = Calculator.calculateMouse(mouseNavn);
 
-        if(no_Mouse == 0) {
-            PC nyPC = new PC(type, mouseNavn, mousePris);
-            nyPC.setType(type);
-            nyPC.setDelNavn(mouseNavn);
-            nyPC.setDelPris(mousePris);
+        PC nyPC = new PC(type, mouseNavn, mousePris);
+        nyPC.setType(type);
+        nyPC.setDelNavn(mouseNavn);
+        nyPC.setDelPris(mousePris);
 
-            no_Mouse++;
-            newRegister.registrerPCDel(type, mouseNavn, mousePris);
-            tblPCdel.setItems(newRegister.getArray());
-        }else if(no_Mouse == 1){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Feil!");
-            alert.setContentText("Du kan kun ha en PC-mus");
-            alert.showAndWait();
-            throw new IllegalArgumentException("Max number of mice");
-        }
+        checkConfiguration.checkMouse(counter_Mou);
+        counter_Mou++;
+        newRegister.registrerPCDel(type, mouseNavn, mousePris);
+        tblPCdel.setItems(newRegister.getArray());
     }
 
     @FXML
@@ -318,7 +272,6 @@ public class Controller implements Initializable {
         tblDel.setCellFactory(TextFieldTableCell.forTableColumn());
         tblPris.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         tblPCdel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-
 
         comboCPU.getItems().addAll("AMD Athlon 3000G",
                                     "Intel Pentium Gold G5600",
@@ -355,6 +308,8 @@ public class Controller implements Initializable {
                                     "Logitech K400 Plus Trådløs Tastatur",
                                     "Kanex MultiSync Premium Slim Keyboard",
                                     "Logitech ERGO K860 Trådløs Tastatur");
+
+
 
     }
 
