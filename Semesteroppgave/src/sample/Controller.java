@@ -1,7 +1,6 @@
 package sample;
 
 import calculator.Calculator;
-import computer.Desktop;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,13 +9,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.util.converter.IntegerStringConverter;
+import javafx.util.converter.DoubleStringConverter;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+
+    Register newRegister = new Register();
 
     @FXML
     private TextField txtUsername;
@@ -27,8 +29,16 @@ public class Controller implements Initializable {
     @FXML
     private Label lblStatus;
 
-
     //mainPage.fxml
+
+    @FXML
+    private TableView<PC> tblPCdel;
+
+    @FXML
+    private TableColumn<PC, String> tblDel;
+
+    @FXML
+    private TableColumn<PC, Double> tblPris;
 
     @FXML
     private ComboBox<String> comboCPU;
@@ -43,9 +53,6 @@ public class Controller implements Initializable {
     private ComboBox<String> comboHDDSSDPC;
 
     @FXML
-    private ComboBox<String> comboHDDSSDLaptop;
-
-    @FXML
     private ComboBox<String> comboMonitor;
 
     @FXML
@@ -54,6 +61,26 @@ public class Controller implements Initializable {
     @FXML
     private ComboBox<String> comboMouse;
 
+    @FXML
+    private Label lblPrisCPU;
+
+    @FXML
+    private Label lblPrisGPU;
+
+    @FXML
+    private Label lblPrisRAM;
+
+    @FXML
+    private Label lblPrisHDD;
+
+    @FXML
+    private Label lblPrisMonitor;
+
+    @FXML
+    private Label lblPrisMouse;
+
+    @FXML
+    private Label lblPrisKeyboard;
 
     @FXML
     private Label lblSum;
@@ -79,12 +106,12 @@ public class Controller implements Initializable {
     @FXML
     void register(ActionEvent event) {
 
-        if(!comboCPU.getValue().equals(null) || !comboGPU.getValue().equals(null) || !comboRAM.getValue().equals(null) || !comboHDDSSDPC.getValue().equals(null)) {
+        if(!comboCPU.getValue().equals("CPU...") || !comboGPU.getValue().equals("GPU...") || !comboRAM.getValue().equals("RAM...") || !comboHDDSSDPC.getValue().equals("HDD/SSD...")) {
             double sum = Calculator.calculateDesktop(comboCPU.getValue(), comboGPU.getValue(), comboRAM.getValue(), comboHDDSSDPC.getValue()
                     , comboMouse.getValue(), comboKeyboard.getValue(), comboMonitor.getValue());
 
             lblSum.setText(String.valueOf(sum));
-        }else{
+        }else if (comboCPU.getValue().equals("CPU...") || comboGPU.getValue().equals("GPU...") || comboRAM.getValue().equals("RAM...") || comboHDDSSDPC.getValue().equals("HDD/SSD...")){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Feil!");
             alert.setContentText("Du må velge en for alle hovedkomponentene");
@@ -94,9 +121,77 @@ public class Controller implements Initializable {
 
     }
 
+    @FXML
+    void regCPU(ActionEvent event) {
+        String CPUnavn = comboCPU.getValue();
+        double CPUpris = Calculator.calculateCPU(CPUnavn);
+
+        PC nyPC = new PC(CPUnavn,CPUpris);
+        nyPC.setDelNavn(CPUnavn);
+        nyPC.setDelPris(CPUpris);
+
+        newRegister.registrerPCDel(CPUnavn,CPUpris);
+        tblPCdel.setItems(newRegister.getArray());
+    }
+
+    @FXML
+    void regGPU(ActionEvent event) {
+        String GPUnavn = comboGPU.getValue();
+        double GPUpris = Calculator.calculateGPU(GPUnavn);
+
+        PC nyPC = new PC(GPUnavn,GPUpris);
+        nyPC.setDelNavn(GPUnavn);
+        nyPC.setDelPris(GPUpris);
+
+        newRegister.registrerPCDel(GPUnavn,GPUpris);
+        tblPCdel.setItems(newRegister.getArray());
+    }
+
+    @FXML
+    void regRAM(ActionEvent event) {
+        String RAMnavn = comboRAM.getValue();
+        double RAMpris = Calculator.calculateRAM(RAMnavn);
+
+        PC nyPC = new PC(RAMnavn,RAMpris);
+        nyPC.setDelNavn(RAMnavn);
+        nyPC.setDelPris(RAMpris);
+
+        newRegister.registrerPCDel(RAMnavn,RAMpris);
+        tblPCdel.setItems(newRegister.getArray());
+    }
+
+    @FXML
+    void regHDD(ActionEvent event) {
+        String HDDnavn = comboHDDSSDPC.getValue();
+        double HDDpris = Calculator.calculateHDD(HDDnavn);
+
+        PC nyPC = new PC(HDDnavn,HDDpris);
+        nyPC.setDelNavn(HDDnavn);
+        nyPC.setDelPris(HDDpris);
+
+        newRegister.registrerPCDel(HDDnavn,HDDpris);
+        tblPCdel.setItems(newRegister.getArray());
+    }
+
+    @FXML
+    void visCPU(MouseEvent event) {
+        /*lblPrisCPU.setText(String.valueOf(Calculator.calculateCPU(comboCPU.getValue())));*/
+    }
+
+    @FXML
+    void visGPU(MouseEvent event) {
+        /*lblPrisGPU.setText(String.valueOf(Calculator.calculateGPU(comboGPU.getValue())));*/
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+        newRegister.attachTableView(tblPCdel);
+        tblDel.setCellFactory(TextFieldTableCell.forTableColumn());
+        tblPris.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+        tblPCdel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+
         comboCPU.getItems().addAll("AMD Athlon 3000G",
                                     "Intel Pentium Gold G5600",
                                     "AMD Ryzen 3 3200G",
@@ -112,9 +207,6 @@ public class Controller implements Initializable {
                                     "Kingston Value DDR4 3400MHz 16GB",
                                     "HyperX Fury DDR4 2666MHZ 32GB");
 
-        comboHDDSSDLaptop.getItems().addAll("WD Mobile Black 1TB Harddisk",
-                                    "Seagate Firecuda 2TB",
-                                    "Seagate Barracuda 4TB");
 
         comboHDDSSDPC.getItems().addAll("Seagate Barracuda 1TB",
                                     "Seagate Barracuda 3TB",

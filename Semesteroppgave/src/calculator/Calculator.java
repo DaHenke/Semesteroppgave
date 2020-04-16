@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import static calculator.priceList.*;
 
 public class Calculator {
-    private static Double CPU, GPU, RAM, hardDrive, mouse, keyboard, monitor;
+    public static Double CPU, GPU, RAM, hardDrive, mouse, keyboard, monitor;
 
     public static double calculateExtraEquipment(String mouseIn, String keyboardIn, String monitorIn){
         if(mouseIn.equals("Logitech M90 Mus")){
@@ -45,6 +45,8 @@ public class Calculator {
 
         return mouse+keyboard+monitor;
     }
+
+
 
     public static double calculateDesktop(String  CPUin, String GPUin, String RAMin, String hardDriveIn,String mouseIn, String keyboardIn, String monitorIn){
         if(CPUin.equals("AMD Athlon 3000G")){
@@ -148,4 +150,63 @@ public class Calculator {
         return CPU+GPU+RAM+hardDrive+calculateExtraEquipment(mouseIn,keyboardIn,monitorIn);
     }
 
+    public static double calculateCPU(String  CPUin) {
+        if (CPUin.equals("AMD Athlon 3000G")) {
+            CPU = CPU1;
+        } else if (CPUin.equals("Intel Pentium Gold G5600")) {
+            CPU = CPU2;
+        } else if (CPUin.equals("AMD Ryzen 3 3200G")) {
+            CPU = CPU3;
+        } else if (CPUin.equals("Intel Core i5-9600")) {
+            CPU = CPU4;
+        } else {
+            CPU = 0.0;
+        }
+        return CPU;
+    }
+
+    public static double calculateGPU(String  GPUin) {
+        if (GPUin.equals("ASUS GeForce GT710 1GB")) {
+            GPU = GPU1;
+        } else if (GPUin.equals("Gigabyte GeForce GT 1030 2GB Low Profile")) {
+            GPU = GPU2;
+        } else if (GPUin.equals("PNY Quadro P400 2GB DVI")) {
+            GPU = GPU3;
+        } else if (GPUin.equals("Gainward GeForce GTX 1650 SUPER Pegasus OC")) {
+            GPU = GPU4;
+        } else {
+            GPU = 0.0;
+        }
+        return GPU;
+    }
+
+    public static double calculateRAM(String  RAMin) {
+        if(RAMin.equals("HyperX Fury DDR3 1600MHz 4GB")){
+            RAM=RAM1;
+        }else if(RAMin.equals("Crucial DDR4 2400MHz 8GB")){
+            RAM=RAM2;
+        }else if(RAMin.equals("Kingston Value DDR4 3400MHz 16GB")){
+            RAM=RAM3;
+        }else if(RAMin.equals("HyperX Fury DDR4 2666MHZ 32GB")){
+            RAM=RAM3;
+        }else{
+            RAM=0.0;
+        }
+        return RAM;
+    }
+
+    public static double calculateHDD(String  hardDriveIn) {
+        if(hardDriveIn.equals("Seagate Barracuda 1TB")){
+            hardDrive=harddiskD1;
+        }else if(hardDriveIn.equals("Seagate Barracuda 3TB")){
+            hardDrive=harddiskD2;
+        }else if(hardDriveIn.equals("Seagate SkyHawk 6TB")){
+            hardDrive=harddiskD3;
+        }else if(hardDriveIn.equals("Seagate IronWolf 10TB")){
+            hardDrive=harddiskD4;
+        }else{
+            hardDrive=0.0;
+        }
+        return hardDrive;
+    }
 }
