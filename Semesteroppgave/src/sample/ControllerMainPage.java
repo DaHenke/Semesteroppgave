@@ -38,7 +38,7 @@ public class ControllerMainPage implements Initializable {
     private TableView<PC> tblPCdel;
 
     @FXML
-    private TableColumn<PC, Double> tblType;
+    private TableColumn<PC, String> tblType;
 
     @FXML
     private TableColumn<PC, String> tblDel;
@@ -47,25 +47,25 @@ public class ControllerMainPage implements Initializable {
     private TableColumn<PC, Double> tblPris;
 
     @FXML
-    public static ComboBox<String> comboCPU;
+    private ComboBox<String> comboCPU;
 
     @FXML
-    public static ComboBox<String> comboGPU;
+    private ComboBox<String> comboGPU;
 
     @FXML
-    public static ComboBox<String> comboRAM;
+    private ComboBox<String> comboRAM;
 
     @FXML
-    public static ComboBox<String> comboHDDSSDPC;
+    private ComboBox<String> comboHDDSSDPC;
 
     @FXML
-    public static ComboBox<String> comboMonitor;
+    private ComboBox<String> comboMonitor;
 
     @FXML
-    public static ComboBox<String> comboKeyboard;
+    private ComboBox<String> comboKeyboard;
 
     @FXML
-    public static ComboBox<String> comboMouse;
+    private ComboBox<String> comboMouse;
 
     @FXML
     private Label lblSum;
@@ -276,9 +276,11 @@ public class ControllerMainPage implements Initializable {
         ObservableList<PC> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
-        if(String.valueOf(tblType.getText())=="CPU") {
-            removeSelected.removeCPU(counter_CPU);
-        }
+
+        String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
+
+        System.out.println(type);
+        removeSelected.removeCPU(type,counter_CPU);
 
         counter_CPU--;
         allParts.removeAll(chosenPart);
@@ -296,9 +298,11 @@ public class ControllerMainPage implements Initializable {
         ObservableList<PC> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
-        if(String.valueOf(tblType.getText())=="GPU") {
-            removeSelected.removeGPU(counter_GPU);
-        }
+
+        String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
+
+        System.out.println(type);
+        removeSelected.removeGPU(type,counter_GPU);
         counter_GPU--;
         allParts.removeAll(chosenPart);
 
@@ -315,9 +319,11 @@ public class ControllerMainPage implements Initializable {
         ObservableList<PC> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
-        if(String.valueOf(tblType.getText())=="HDD") {
-            removeSelected.removeHDD(counter_HDD);
-        }
+        String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
+
+        System.out.println(type);
+        removeSelected.removeHDD(type,counter_HDD);
+
         counter_HDD--;
         allParts.removeAll(chosenPart);
 
@@ -334,9 +340,11 @@ public class ControllerMainPage implements Initializable {
         ObservableList<PC> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
-        if(String.valueOf(tblType.getText())=="Keyboard") {
-            removeSelected.removeKB(counter_KB);
-        }
+        String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
+
+        System.out.println(type);
+        removeSelected.removeKB(type,counter_KB);
+
         counter_KB--;
         allParts.removeAll(chosenPart);
 
@@ -354,9 +362,11 @@ public class ControllerMainPage implements Initializable {
         ObservableList<PC> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
-        if(String.valueOf(tblType.getText())=="Monitor") {
-            removeSelected.removeMon(counter_Mon);
-        }
+        String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
+
+        System.out.println(type);
+        removeSelected.removeMon(type,counter_Mon);
+
         counter_Mon--;
         allParts.removeAll(chosenPart);
 
@@ -373,9 +383,11 @@ public class ControllerMainPage implements Initializable {
         ObservableList<PC> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
-        if(String.valueOf(tblType.getText())=="Mouse") {
-            removeSelected.removeMou(counter_Mou);
-        }
+        String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
+
+        System.out.println(type);
+        removeSelected.removeMou(type,counter_Mou);
+
         counter_Mou--;
         allParts.removeAll(chosenPart);
 
@@ -392,9 +404,11 @@ public class ControllerMainPage implements Initializable {
         ObservableList<PC> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
-        if(String.valueOf(tblType.getText())=="RAM") {
-            removeSelected.removeRAM(counter_RAM);
-        }
+        String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
+
+        System.out.println(type);
+        removeSelected.removeRAM(type,counter_RAM);
+
         counter_RAM--;
         allParts.removeAll(chosenPart);
 
@@ -419,6 +433,7 @@ public class ControllerMainPage implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         newRegister.attachTableView(tblPCdel);
+        tblType.setCellFactory(TextFieldTableCell.forTableColumn());
         tblDel.setCellFactory(TextFieldTableCell.forTableColumn());
         tblPris.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
 
@@ -436,7 +451,6 @@ public class ControllerMainPage implements Initializable {
                                     "Crucial DDR4 2400MHz 8GB",
                                     "Kingston Value DDR4 3400MHz 16GB",
                                     "HyperX Fury DDR4 2666MHZ 32GB");
-
 
         comboHDDSSDPC.getItems().addAll("Seagate Barracuda 1TB",
                                     "Seagate Barracuda 3TB",
