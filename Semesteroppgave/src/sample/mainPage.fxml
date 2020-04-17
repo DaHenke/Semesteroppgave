@@ -10,27 +10,27 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="786.0" prefWidth="1542.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="786.0" prefWidth="1542.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMainPage">
    <children>
       <Label layoutX="33.0" layoutY="26.0" prefHeight="30.0" prefWidth="95.0" text="Welcome! ">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="487.0" layoutX="27.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="705.0" />
-      <Label layoutX="33.0" layoutY="196.0" prefHeight="30.0" prefWidth="413.0" text="Choose the parts you want...">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="618.0" layoutX="27.0" layoutY="57.0" stroke="BLACK" strokeType="INSIDE" width="705.0" />
+      <Label layoutX="36.0" layoutY="75.0" prefHeight="30.0" prefWidth="413.0" text="Choose the parts you want...">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comboCPU" layoutX="48.0" layoutY="230.0" onMouseExited="#visCPU" prefHeight="26.0" prefWidth="198.0" promptText="CPU..." />
-      <ComboBox fx:id="comboGPU" layoutX="48.0" layoutY="339.0" onMouseClicked="#visGPU" onMouseExited="#visGPU" prefHeight="26.0" prefWidth="198.0" promptText="GPU..." />
-      <ComboBox fx:id="comboRAM" layoutX="44.0" layoutY="440.0" prefHeight="26.0" prefWidth="198.0" promptText="RAM..." />
-      <ComboBox fx:id="comboHDDSSDPC" layoutX="45.0" layoutY="551.0" prefHeight="26.0" prefWidth="198.0" promptText="HDD/SSD..." />
-      <ComboBox fx:id="comboMonitor" layoutX="327.0" layoutY="230.0" prefHeight="26.0" prefWidth="198.0" promptText="Monitor" />
-      <ComboBox fx:id="comboKeyboard" layoutX="327.0" layoutY="440.0" prefHeight="26.0" prefWidth="198.0" promptText="Keyboard" />
-      <ComboBox fx:id="comboMouse" layoutX="327.0" layoutY="339.0" prefHeight="26.0" prefWidth="198.0" promptText="Mouse" />
-      <Label layoutX="327.0" layoutY="196.0" prefHeight="30.0" prefWidth="184.0" text="Optional parts...">
+      <ComboBox fx:id="comboCPU" layoutX="51.0" layoutY="109.0" onMouseExited="#visCPU" prefHeight="26.0" prefWidth="198.0" promptText="CPU..." />
+      <ComboBox fx:id="comboGPU" layoutX="51.0" layoutY="243.0" onMouseClicked="#visGPU" onMouseExited="#visGPU" prefHeight="26.0" prefWidth="198.0" promptText="GPU..." />
+      <ComboBox fx:id="comboRAM" layoutX="51.0" layoutY="380.0" prefHeight="26.0" prefWidth="198.0" promptText="RAM..." />
+      <ComboBox fx:id="comboHDDSSDPC" layoutX="51.0" layoutY="517.0" prefHeight="26.0" prefWidth="198.0" promptText="HDD/SSD..." />
+      <ComboBox fx:id="comboMonitor" layoutX="330.0" layoutY="109.0" prefHeight="26.0" prefWidth="198.0" promptText="Monitor" />
+      <ComboBox fx:id="comboKeyboard" layoutX="327.0" layoutY="380.0" prefHeight="26.0" prefWidth="198.0" promptText="Keyboard" />
+      <ComboBox fx:id="comboMouse" layoutX="327.0" layoutY="243.0" prefHeight="26.0" prefWidth="198.0" promptText="Mouse" />
+      <Label layoutX="330.0" layoutY="75.0" prefHeight="30.0" prefWidth="184.0" text="Optional parts...">
          <font>
             <Font size="14.0" />
          </font>
@@ -59,31 +59,37 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="598.0" layoutY="248.0" mnemonicParsing="false" text="Click here" />
-      <Button layoutX="603.0" layoutY="538.0" mnemonicParsing="false" onAction="#register" prefHeight="26.0" prefWidth="105.0" text="Add to cart" />
+      <Button layoutX="598.0" layoutY="248.0" mnemonicParsing="false" onAction="#openAdmin" text="Click here" />
+      <Button layoutX="603.0" layoutY="538.0" mnemonicParsing="false" onAction="#addtocart" prefHeight="26.0" prefWidth="105.0" text="Add to cart" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" layoutX="1240.0" layoutY="502.0" stroke="BLACK" strokeType="INSIDE" width="228.0" />
       <Label layoutX="555.0" layoutY="536.0" prefHeight="30.0" prefWidth="46.0" text="Done?">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblSum" layoutX="792.0" layoutY="648.0" text="Sum...">
+      <Label fx:id="lblSum" layoutX="1317.0" layoutY="504.0" prefHeight="26.0" prefWidth="147.0" text="0.0">
          <font>
-            <Font size="17.0" />
+            <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblPrisCPU" layoutX="57.0" layoutY="277.0" prefHeight="18.0" prefWidth="57.0" text="Pris" />
-      <Label fx:id="lblPrisGPU" layoutX="56.0" layoutY="384.0" prefHeight="18.0" prefWidth="57.0" text="Pris" />
-      <Label fx:id="lblPrisRAM" layoutX="54.0" layoutY="484.0" prefHeight="18.0" prefWidth="57.0" text="Pris" />
-      <Label fx:id="lblPrisHDD" layoutX="54.0" layoutY="598.0" prefHeight="18.0" prefWidth="57.0" text="Pris" />
-      <Label fx:id="lblPrisMonitor" layoutX="335.0" layoutY="277.0" prefHeight="18.0" prefWidth="57.0" text="Pris" />
-      <Label fx:id="lblPrisMouse" layoutX="335.0" layoutY="384.0" prefHeight="18.0" prefWidth="57.0" text="Pris" />
-      <Label fx:id="lblPrisKeyboard" layoutX="336.0" layoutY="484.0" prefHeight="18.0" prefWidth="57.0" text="Pris" />
-      <Button layoutX="150.0" layoutY="274.0" mnemonicParsing="false" onAction="#regCPU" prefHeight="26.0" prefWidth="95.0" text="Legg til" />
-      <Button layoutX="149.0" layoutY="380.0" mnemonicParsing="false" onAction="#regGPU" prefHeight="26.0" prefWidth="95.0" text="Legg til" />
-      <Button layoutX="147.0" layoutY="481.0" mnemonicParsing="false" onAction="#regRAM" prefHeight="26.0" prefWidth="95.0" text="Legg til" />
-      <Button layoutX="147.0" layoutY="595.0" mnemonicParsing="false" onAction="#regHDD" prefHeight="26.0" prefWidth="95.0" text="Legg til" />
-      <Button layoutX="428.0" layoutY="274.0" mnemonicParsing="false" onAction="#regMonitor" prefHeight="26.0" prefWidth="95.0" text="Legg til" />
-      <Button layoutX="428.0" layoutY="380.0" mnemonicParsing="false" onAction="#regMouse" prefHeight="26.0" prefWidth="95.0" text="Legg til" />
-      <Button layoutX="429.0" layoutY="481.0" mnemonicParsing="false" onAction="#regKeyboard" prefHeight="26.0" prefWidth="95.0" text="Legg til" />
+      <Button layoutX="128.0" layoutY="153.0" mnemonicParsing="false" onAction="#regCPU" prefHeight="26.0" prefWidth="120.0" text="Add to cart" />
+      <Button layoutX="128.0" layoutY="287.0" mnemonicParsing="false" onAction="#regGPU" prefHeight="26.0" prefWidth="120.0" text="Add to cart" />
+      <Button layoutX="128.0" layoutY="427.0" mnemonicParsing="false" onAction="#regRAM" prefHeight="26.0" prefWidth="120.0" text="Add to cart" />
+      <Button layoutX="128.0" layoutY="564.0" mnemonicParsing="false" onAction="#regHDD" prefHeight="26.0" prefWidth="120.0" text="Add to cart" />
+      <Button layoutX="407.0" layoutY="153.0" mnemonicParsing="false" onAction="#regMonitor" prefHeight="26.0" prefWidth="120.0" text="Legg til" />
+      <Button layoutX="404.0" layoutY="287.0" mnemonicParsing="false" onAction="#regMouse" prefHeight="26.0" prefWidth="120.0" text="Add to cart" />
+      <Button layoutX="404.0" layoutY="427.0" mnemonicParsing="false" onAction="#regKeyboard" prefHeight="26.0" prefWidth="120.0" text="Add to cart" />
+      <Label layoutX="1244.0" layoutY="504.0" prefHeight="26.0" prefWidth="68.0" text="To Pay:" underline="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="128.0" layoutY="198.0" mnemonicParsing="false" onAction="#btnRemoveCPU" prefHeight="26.0" prefWidth="120.0" text="Remove from cart" />
+      <Button layoutX="128.0" layoutY="329.0" mnemonicParsing="false" onAction="#btnRemoveGPU" prefHeight="26.0" prefWidth="120.0" text="Remove from cart" />
+      <Button layoutX="128.0" layoutY="467.0" mnemonicParsing="false" onAction="#btnRemoveRAM" prefHeight="26.0" prefWidth="120.0" text="Remove from cart" />
+      <Button layoutX="128.0" layoutY="604.0" mnemonicParsing="false" onAction="#btnRemoveHDD" prefHeight="26.0" prefWidth="120.0" text="Remove from cart" />
+      <Button layoutX="407.0" layoutY="198.0" mnemonicParsing="false" onAction="#btnRemoveMon" prefHeight="26.0" prefWidth="120.0" text="Remove from cart" />
+      <Button layoutX="404.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnRemoveMou" prefHeight="26.0" prefWidth="120.0" text="Remove from cart" />
+      <Button layoutX="404.0" layoutY="467.0" mnemonicParsing="false" onAction="#btnRemoveKB" prefHeight="26.0" prefWidth="120.0" text="Remove from cart" />
    </children>
 </AnchorPane>
