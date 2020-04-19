@@ -98,8 +98,6 @@ public class ControllerMainPage implements Initializable {
         alert.showAndWait();
     }
 
-
-
     @FXML
     void regCPU(ActionEvent event) throws InterruptedException {
         sum = 0;

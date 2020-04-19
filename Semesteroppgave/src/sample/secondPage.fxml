@@ -5,23 +5,38 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane prefHeight="676.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerSecondPage">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdfdfd" height="562.0" layoutX="33.0" layoutY="57.0" stroke="BLACK" strokeType="INSIDE" width="478.0" />
-      <Button layoutX="213.0" layoutY="422.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" text="Legg til del" />
-      <ComboBox fx:id="comboType" layoutX="196.0" layoutY="147.0" prefWidth="150.0" promptText="Type" />
-      <TextField layoutX="198.0" layoutY="237.0" promptText="Delnavn" />
-      <TextField layoutX="198.0" layoutY="326.0" promptText="Pris" />
-      <TableView layoutX="534.0" layoutY="57.0" prefHeight="458.0" prefWidth="401.0">
+      <Button layoutX="213.0" layoutY="422.0" mnemonicParsing="false" onAction="#leggTilDel" prefHeight="26.0" prefWidth="115.0" text="Legg til del" />
+      <ComboBox fx:id="comboType" layoutX="196.0" layoutY="147.0" prefHeight="26.0" prefWidth="149.0" promptText="Type" />
+      <TextField fx:id="txtNyDelnavn" layoutX="198.0" layoutY="237.0" promptText="Delnavn" />
+      <TextField fx:id="txtNyPris" layoutX="198.0" layoutY="326.0" promptText="Pris" />
+      <TableView fx:id="tblNyDel" layoutX="534.0" layoutY="57.0" prefHeight="458.0" prefWidth="401.0">
         <columns>
-          <TableColumn prefWidth="100.79998779296875" text="Type" />
-          <TableColumn prefWidth="183.20001220703125" text="Delnavn" />
-            <TableColumn prefWidth="117.5999755859375" text="Pris" />
+          <TableColumn fx:id="tblNyType" prefWidth="100.79998779296875" text="Type">
+            <cellValueFactory>
+                <PropertyValueFactory property="Type" />
+            </cellValueFactory>
+        </TableColumn>
+          <TableColumn fx:id="tblNyDelnavn" prefWidth="183.20001220703125" text="Delnavn">
+            <cellValueFactory>
+                <PropertyValueFactory property="DelNavn" />
+            </cellValueFactory>
+        </TableColumn>
+            <TableColumn fx:id="tblNyPris" prefWidth="117.5999755859375" text="Pris">
+                <cellValueFactory>
+                    <PropertyValueFactory property="DelPris" />
+                </cellValueFactory>
+            </TableColumn>
         </columns>
       </TableView>
       <Button layoutX="214.0" layoutY="478.0" mnemonicParsing="false" onAction="#backToMainPage" prefHeight="26.0" prefWidth="115.0" text="Go back" />
+      <Button layoutX="534.0" layoutY="530.0" mnemonicParsing="false" onAction="#removeNewPart" prefHeight="26.0" prefWidth="100.0" text="Fjern del" />
+      <Button layoutX="835.0" layoutY="530.0" mnemonicParsing="false" onAction="#saveFile" prefHeight="26.0" prefWidth="100.0" text="Lagre fil" />
    </children>
 </AnchorPane>
