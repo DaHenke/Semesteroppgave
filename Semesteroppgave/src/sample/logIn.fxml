@@ -17,7 +17,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="522.0" prefWidth="715.0">
+      <Pane prefHeight="522.0" prefWidth="604.0">
          <children>
             <Button layoutX="255.0" layoutY="428.0" mnemonicParsing="false" onAction="#register" text="Register" />
             <Button layoutX="244.0" layoutY="242.0" mnemonicParsing="false" onAction="#logIn" prefHeight="25.0" prefWidth="82.0" text="Log in" />
@@ -33,6 +33,7 @@
             <Label layoutX="207.0" layoutY="383.0" text="Do you not have an account?" />
             <Label layoutX="248.0" layoutY="400.0" text="Register here!" />
             <Label fx:id="lblStatus" layoutX="210.0" layoutY="303.0" prefHeight="17.0" prefWidth="149.0" />
+            <Button layoutX="243.0" layoutY="320.0" mnemonicParsing="false" onAction="#backToMainPage" prefHeight="25.0" prefWidth="82.0" text="Go back" />
          </children>
       </Pane>
    </children>

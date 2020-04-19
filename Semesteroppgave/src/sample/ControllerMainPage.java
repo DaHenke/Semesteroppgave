@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -73,29 +74,28 @@ public class ControllerMainPage implements Initializable {
 
     @FXML
     void openAdmin(ActionEvent event) throws IOException {
-        Stage loginPage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("logIn.fxml"));
-        loginPage.setTitle("Welcome");
-        loginPage.setScene(new Scene(root, 722, 519));
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            Parent loginPageParent = loader.load(getClass().getResource("logIn.fxml"));
+            Scene loginPageScene = new Scene(loginPageParent);
 
-        loginPage.show();
+            Stage loginWindow = (Stage)((Node) event.getSource()).getScene().getWindow();
+
+            loginWindow.setTitle("Log in as Admin");
+            loginWindow.setScene(loginPageScene);
+            loginWindow.show();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    void addtocart(ActionEvent event) {
-
-        if(!comboCPU.getValue().equals("CPU...") || !comboGPU.getValue().equals("GPU...") || !comboRAM.getValue().equals("RAM...") || !comboHDDSSDPC.getValue().equals("HDD/SSD...")) {
-            double sum = Calculator.calculateDesktop(comboCPU.getValue(), comboGPU.getValue(), comboRAM.getValue(), comboHDDSSDPC.getValue()
-                    , comboMouse.getValue(), comboKeyboard.getValue(), comboMonitor.getValue());
-
-            lblSum.setText(String.valueOf(sum));
-        }else if (comboCPU.getValue().equals("CPU...") || comboGPU.getValue().equals("GPU...") || comboRAM.getValue().equals("RAM...") || comboHDDSSDPC.getValue().equals("HDD/SSD...")){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Feil!");
-            alert.setContentText("Du må velge en for alle hovedkomponentene");
-            alert.showAndWait();
-            throw new IllegalArgumentException("Tomme tekstfelter...");
-        }
+    void buyPC(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Kjøpt");
+        alert.setHeaderText("Takk for handelen!");
+        alert.setContentText("Produktet er kjøpt.");
+        alert.showAndWait();
     }
 
 

@@ -22,5 +22,6 @@
             <TableColumn prefWidth="117.5999755859375" text="Pris" />
         </columns>
       </TableView>
+      <Button layoutX="214.0" layoutY="478.0" mnemonicParsing="false" onAction="#backToMainPage" prefHeight="26.0" prefWidth="115.0" text="Go back" />
    </children>
 </AnchorPane>
