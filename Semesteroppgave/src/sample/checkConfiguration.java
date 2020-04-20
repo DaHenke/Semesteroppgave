@@ -1,8 +1,10 @@
 package sample;
 
+import exceptions.InvalidPCConfigurationException;
+
 public class checkConfiguration {
 
-    public static int checkCPU(int no_CPU)throws InvalidPCConfigurationException{
+    public static int checkCPU(int no_CPU)throws InvalidPCConfigurationException {
         if(no_CPU == 0){
             no_CPU++;
         }else{

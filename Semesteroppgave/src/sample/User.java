@@ -1,5 +1,6 @@
 package sample;
 
+import exceptions.InvalidUserFormatException;
 import javafx.beans.property.SimpleStringProperty;
 
 public class User {

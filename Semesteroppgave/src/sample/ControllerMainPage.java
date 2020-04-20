@@ -1,8 +1,7 @@
 package sample;
 
 import calculator.Calculator;
-import javafx.beans.property.StringProperty;
-import javafx.beans.value.ObservableValue;
+import exceptions.InvalidSelectedRemoval;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,9 +12,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.converter.DoubleStringConverter;
+import pcSaver.FileSaverPC;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,19 +23,19 @@ import java.util.ResourceBundle;
 public class ControllerMainPage implements Initializable {
 
     Register newRegister = new Register();
-    int counter_CPU = 0;
-    int counter_GPU = 0;
-    int counter_RAM = 0;
-    int counter_HDD = 0;
-    int counter_KB = 0;
-    int counter_Mon = 0;
-    int counter_Mou = 0;
+    static int counter_CPU = 0;
+    static int counter_GPU = 0;
+    static int counter_RAM = 0;
+    static int counter_HDD = 0;
+    static int counter_KB = 0;
+    static int counter_Mon = 0;
+    static int counter_Mou = 0;
     double sum = 0;
 
     //mainPage.fxml
 
     @FXML
-    private TableView<PC> tblPCdel;
+    public TableView<PC> tblPCdel;
 
     @FXML
     private TableColumn<PC, String> tblType;
@@ -91,6 +90,8 @@ public class ControllerMainPage implements Initializable {
 
     @FXML
     void buyPC(ActionEvent event) {
+        FileSaverPC.save();
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Kjøpt");
         alert.setHeaderText("Takk for handelen!");
@@ -418,13 +419,17 @@ public class ControllerMainPage implements Initializable {
     }
 
     @FXML
-    void visCPU(MouseEvent event) {
-        /*lblPrisCPU.setText(String.valueOf(Calculator.calculateCPU(comboCPU.getValue())));*/
-    }
+    void loadFile(ActionEvent event) throws IOException {
+        sum = 0;
 
-    @FXML
-    void visGPU(MouseEvent event) {
-        /*lblPrisGPU.setText(String.valueOf(Calculator.calculateGPU(comboGPU.getValue())));*/
+        newRegister = FileOpener.read();
+        newRegister.attachTableView(tblPCdel);
+
+        for(PC price : tblPCdel.getItems()){
+            double pris = tblPris.getCellObservableValue(price).getValue();
+            sum+=pris;
+        }
+        lblSum.setText(String.valueOf(sum));
     }
 
 

@@ -1,4 +1,4 @@
-package sample;
+package exceptions;
 
 import javafx.scene.control.Alert;
 

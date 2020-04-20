@@ -23,8 +23,8 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comboCPU" layoutX="51.0" layoutY="109.0" onMouseExited="#visCPU" prefHeight="26.0" prefWidth="198.0" promptText="CPU..." />
-      <ComboBox fx:id="comboGPU" layoutX="51.0" layoutY="243.0" onMouseClicked="#visGPU" onMouseExited="#visGPU" prefHeight="26.0" prefWidth="198.0" promptText="GPU..." />
+      <ComboBox fx:id="comboCPU" layoutX="51.0" layoutY="109.0" prefHeight="26.0" prefWidth="198.0" promptText="CPU..." />
+      <ComboBox fx:id="comboGPU" layoutX="51.0" layoutY="243.0" prefHeight="26.0" prefWidth="198.0" promptText="GPU..." />
       <ComboBox fx:id="comboRAM" layoutX="51.0" layoutY="380.0" prefHeight="26.0" prefWidth="198.0" promptText="RAM..." />
       <ComboBox fx:id="comboHDDSSDPC" layoutX="51.0" layoutY="517.0" prefHeight="26.0" prefWidth="198.0" promptText="HDD/SSD..." />
       <ComboBox fx:id="comboMonitor" layoutX="330.0" layoutY="109.0" prefHeight="26.0" prefWidth="198.0" promptText="Monitor" />
@@ -91,5 +91,6 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Button layoutX="762.0" layoutY="504.0" mnemonicParsing="false" onAction="#loadFile" prefHeight="26.0" prefWidth="120.0" text="Last opp fil" />
    </children>
 </AnchorPane>

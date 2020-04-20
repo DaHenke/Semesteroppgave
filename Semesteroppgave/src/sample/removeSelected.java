@@ -1,7 +1,9 @@
 package sample;
 
+import exceptions.InvalidSelectedRemoval;
+
 public class removeSelected {
-    public static int removeCPU(String type, int counter_CPU) throws InvalidSelectedRemoval{
+    public static int removeCPU(String type, int counter_CPU) throws InvalidSelectedRemoval {
         if(type == "CPU" && counter_CPU == 1){
             counter_CPU--;
         }else{

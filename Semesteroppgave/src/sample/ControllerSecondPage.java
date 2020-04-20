@@ -1,6 +1,5 @@
 package sample;
 
-import calculator.Calculator;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +12,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import javafx.util.converter.DoubleStringConverter;
-import sun.java2d.cmm.PCMM;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,7 +32,7 @@ public class ControllerSecondPage implements Initializable {
     private TextField txtNyPris;
 
     @FXML
-    private TableView<PC> tblNyDel;
+    public TableView<PC> tblNyDel;
 
     @FXML
     private TableColumn<PC, String> tblNyType;
@@ -62,7 +60,6 @@ public class ControllerSecondPage implements Initializable {
         }
     }
 
-
     @FXML
     void leggTilDel(ActionEvent event) {
         String type = comboType.getValue();
@@ -89,7 +86,7 @@ public class ControllerSecondPage implements Initializable {
 
     @FXML
     void saveFile(ActionEvent event) {
-
+        FileSaver.save();
     }
 
     @Override
