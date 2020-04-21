@@ -71,7 +71,6 @@ public class ControllerSecondPage implements Initializable {
         nyPart.setType(type);
         nyPart.setDelNavn(CPUnavn);
         nyPart.setDelPris(CPUpris);
-        System.out.println(type+" "+CPUnavn+" "+CPUpris);
 
         newPart.registrerPCDel(type, CPUnavn, CPUpris);
         tblNyDel.setItems(newPart.getArray());
