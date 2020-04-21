@@ -13,7 +13,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import javafx.util.converter.DoubleStringConverter;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -68,15 +67,29 @@ public class ControllerSecondPage implements Initializable {
         double CPUpris = Double.parseDouble(txtNyPris.getText());
 
         Part nyPart = new Part(type, CPUnavn, CPUpris);
-        nyPart.setType(type);
-        nyPart.setDelNavn(CPUnavn);
-        nyPart.setDelPris(CPUpris);
 
-        newPart.registrerPCDel(type, CPUnavn, CPUpris);
-        tblNyDel.setItems(newPart.getArray());
-        comboType.setValue("Type");
-        txtNyDelnavn.setText("");
-        txtNyPris.setText("");
+        if(!txtNyDelnavn.getText().isEmpty() && !txtNyPris.getText().isEmpty()) {
+            try {
+                nyPart.setType(type);
+                nyPart.setDelNavn(CPUnavn);
+                nyPart.setDelPris(CPUpris);
+
+                newPart.registrerPCDel(type, CPUnavn, CPUpris);
+                tblNyDel.setItems(newPart.getArray());
+                comboType.setValue("Type");
+                txtNyDelnavn.setText("");
+                txtNyPris.setText("");
+            }catch(InvalidPartTypeException e){
+                System.out.println(e.getMessage());
+            }
+        }else if(txtNyDelnavn.getText() == "" || txtNyDelnavn.getText().isEmpty() ||
+                txtNyPris.getText() == null || txtNyPris.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Feil!");
+            alert.setContentText("Du har tomme tekstfelt(er)...");
+            alert.showAndWait();
+            throw new IllegalArgumentException("Empty input fields");
+        }
     }
 
     @FXML
