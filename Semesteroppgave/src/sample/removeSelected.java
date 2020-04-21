@@ -6,10 +6,10 @@ public class removeSelected {
     public static int removeCPU(String type) throws InvalidSelectedRemoval {
         if(type.matches("CPU")){
             ControllerMainPage.counter_CPU--;
+            return ControllerMainPage.counter_CPU;
         }else{
             throw new InvalidSelectedRemoval("Du må velge en del av typen CPU");
         }
-        return ControllerMainPage.counter_CPU;
     }
 
     public static int removeGPU(String type,int counter_GPU) throws InvalidSelectedRemoval{
