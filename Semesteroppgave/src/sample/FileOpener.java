@@ -3,7 +3,6 @@ package sample;
 import exceptions.InvalidFileEndException;
 import exceptions.InvalidPCConfigurationException;
 import javafx.stage.FileChooser;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -36,18 +35,18 @@ public class FileOpener {
         for (String s : lines) {
             String[] part = s.split(";");
 
-            PC nyPC = new PC(null, null, 0);
+            Part nyPart = new Part(null, null, 0);
             String type = part[0];
             String delNavn = part[1];
             double delPris = Double.parseDouble(part[2]);
 
             CheckPartType.checkType(type);
-            nyPC.setType(type);
-            nyPC.setDelNavn(delNavn);
-            nyPC.setDelPris(delPris);
+
+            nyPart.setType(type);
+            nyPart.setDelNavn(delNavn);
+            nyPart.setDelPris(delPris);
 
             newRegister.registrerPCDel(type, delNavn, delPris);
-
         }
         return newRegister;
     }

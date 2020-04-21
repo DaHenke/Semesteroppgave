@@ -7,7 +7,7 @@ public class fileEnding {
         String end = "";
         String[] split = filePath.split("\\.");
         for(int i = 1 ; !split[i].equals("") ; i++){
-            if(split[i].equals("txt") || split[i].equals("jobj")){
+            if(split[i].equals("txt") || split[i].equals("jobj") || split[i].equals("xls")){
                 end = split[i];
                 break;
             }else{

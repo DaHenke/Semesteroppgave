@@ -3,6 +3,8 @@ package sample;
 import calculator.Calculator;
 import exceptions.InvalidSelectedRemoval;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,10 +14,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.util.converter.DoubleStringConverter;
 import pcSaver.FileSaverPC;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -35,16 +37,16 @@ public class ControllerMainPage implements Initializable {
     //mainPage.fxml
 
     @FXML
-    public TableView<PC> tblPCdel;
+    public TableView<Part> tblPCdel;
 
     @FXML
-    private TableColumn<PC, String> tblType;
+    private TableColumn<Part, String> tblType;
 
     @FXML
-    private TableColumn<PC, String> tblDel;
+    private TableColumn<Part, String> tblDel;
 
     @FXML
-    private TableColumn<PC, Double> tblPris;
+    private TableColumn<Part, Double> tblPris;
 
     @FXML
     private ComboBox<String> comboCPU;
@@ -69,6 +71,12 @@ public class ControllerMainPage implements Initializable {
 
     @FXML
     private Label lblSum;
+
+    @FXML
+    private ComboBox<String> comboSearchColumn;
+
+    @FXML
+    private TextField txtSearchField;
     //end
 
     @FXML
@@ -90,6 +98,15 @@ public class ControllerMainPage implements Initializable {
 
     @FXML
     void buyPC(ActionEvent event) {
+        checkConfiguration.checkPurchase();
+        checkConfiguration.checkComponents();
+        checkConfiguration.checkAmountCPU();
+        checkConfiguration.checkAmountGPU();
+        checkConfiguration.checkAmountRAM();
+        checkConfiguration.checkAmountHDD();
+        checkConfiguration.checkAmountMon();
+        checkConfiguration.checkAmountMou();
+        checkConfiguration.checkAmountKB();
         FileSaverPC.save();
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -106,18 +123,19 @@ public class ControllerMainPage implements Initializable {
         String CPUnavn = comboCPU.getValue();
         double CPUpris = Calculator.calculateCPU(CPUnavn);
 
-        PC nyPC = new PC(type, CPUnavn, CPUpris);
-        nyPC.setType(type);
-        nyPC.setDelNavn(CPUnavn);
-        nyPC.setDelPris(CPUpris);
+        Part nyPart = new Part(type, CPUnavn, CPUpris);
+        nyPart.setType(type);
+        nyPart.setDelNavn(CPUnavn);
+        nyPart.setDelPris(CPUpris);
 
         checkConfiguration.checkCPU(counter_CPU);
         counter_CPU++;
+        checkConfiguration.MAX_NO_OF_COMPONENTS++;
 
         newRegister.registrerPCDel(type, CPUnavn, CPUpris);
         tblPCdel.setItems(newRegister.getArray());
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -131,17 +149,18 @@ public class ControllerMainPage implements Initializable {
         String GPUnavn = comboGPU.getValue();
         double GPUpris = Calculator.calculateGPU(GPUnavn);
 
-        PC nyPC = new PC(type, GPUnavn, GPUpris);
-        nyPC.setType(type);
-        nyPC.setDelNavn(GPUnavn);
-        nyPC.setDelPris(GPUpris);
+        Part nyPart = new Part(type, GPUnavn, GPUpris);
+        nyPart.setType(type);
+        nyPart.setDelNavn(GPUnavn);
+        nyPart.setDelPris(GPUpris);
 
         checkConfiguration.checkGPU(counter_GPU);
         counter_GPU++;
+        checkConfiguration.MAX_NO_OF_COMPONENTS++;
         newRegister.registrerPCDel(type, GPUnavn, GPUpris);
         tblPCdel.setItems(newRegister.getArray());
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -155,17 +174,18 @@ public class ControllerMainPage implements Initializable {
         String RAMnavn = comboRAM.getValue();
         double RAMpris = Calculator.calculateRAM(RAMnavn);
 
-        PC nyPC = new PC(type, RAMnavn, RAMpris);
-        nyPC.setType(type);
-        nyPC.setDelNavn(RAMnavn);
-        nyPC.setDelPris(RAMpris);
+        Part nyPart = new Part(type, RAMnavn, RAMpris);
+        nyPart.setType(type);
+        nyPart.setDelNavn(RAMnavn);
+        nyPart.setDelPris(RAMpris);
 
         checkConfiguration.checkRAM(counter_RAM);
         counter_RAM++;
+        checkConfiguration.MAX_NO_OF_COMPONENTS++;
         newRegister.registrerPCDel(type, RAMnavn, RAMpris);
         tblPCdel.setItems(newRegister.getArray());
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -179,17 +199,18 @@ public class ControllerMainPage implements Initializable {
         String HDDnavn = comboHDDSSDPC.getValue();
         double HDDpris = Calculator.calculateHDD(HDDnavn);
 
-        PC nyPC = new PC(type, HDDnavn, HDDpris);
-        nyPC.setType(type);
-        nyPC.setDelNavn(HDDnavn);
-        nyPC.setDelPris(HDDpris);
+        Part nyPart = new Part(type, HDDnavn, HDDpris);
+        nyPart.setType(type);
+        nyPart.setDelNavn(HDDnavn);
+        nyPart.setDelPris(HDDpris);
 
         checkConfiguration.checkHDD(counter_HDD);
         counter_HDD++;
+        checkConfiguration.MAX_NO_OF_COMPONENTS++;
         newRegister.registrerPCDel(type, HDDnavn, HDDpris);
         tblPCdel.setItems(newRegister.getArray());
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -204,17 +225,18 @@ public class ControllerMainPage implements Initializable {
         String keyboardNavn = comboKeyboard.getValue();
         double keyboardPris = Calculator.calculateKeyboard(keyboardNavn);
 
-        PC nyPC = new PC(type, keyboardNavn, keyboardPris);
-        nyPC.setType(type);
-        nyPC.setDelNavn(keyboardNavn);
-        nyPC.setDelPris(keyboardPris);
+        Part nyPart = new Part(type, keyboardNavn, keyboardPris);
+        nyPart.setType(type);
+        nyPart.setDelNavn(keyboardNavn);
+        nyPart.setDelPris(keyboardPris);
 
         checkConfiguration.checkKeyboard(counter_KB);
         counter_KB++;
+        checkConfiguration.MAX_NO_OF_COMPONENTS++;
         newRegister.registrerPCDel(type, keyboardNavn, keyboardPris);
         tblPCdel.setItems(newRegister.getArray());
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -228,17 +250,18 @@ public class ControllerMainPage implements Initializable {
         String monitorNavn = comboMonitor.getValue();
         double monitorPris = Calculator.calculateMonitor(monitorNavn);
 
-        PC nyPC = new PC(type, monitorNavn, monitorPris);
-        nyPC.setType(type);
-        nyPC.setDelNavn(monitorNavn);
-        nyPC.setDelPris(monitorPris);
+        Part nyPart = new Part(type, monitorNavn, monitorPris);
+        nyPart.setType(type);
+        nyPart.setDelNavn(monitorNavn);
+        nyPart.setDelPris(monitorPris);
 
         checkConfiguration.checkMonitor(counter_Mon);
         counter_Mon++;
+        checkConfiguration.MAX_NO_OF_COMPONENTS++;
         newRegister.registrerPCDel(type, monitorNavn, monitorPris);
         tblPCdel.setItems(newRegister.getArray());
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -252,17 +275,18 @@ public class ControllerMainPage implements Initializable {
         String mouseNavn = comboMouse.getValue();
         double mousePris = Calculator.calculateMouse(mouseNavn);
 
-        PC nyPC = new PC(type, mouseNavn, mousePris);
-        nyPC.setType(type);
-        nyPC.setDelNavn(mouseNavn);
-        nyPC.setDelPris(mousePris);
+        Part nyPart = new Part(type, mouseNavn, mousePris);
+        nyPart.setType(type);
+        nyPart.setDelNavn(mouseNavn);
+        nyPart.setDelPris(mousePris);
 
         checkConfiguration.checkMouse(counter_Mou);
         counter_Mou++;
+        checkConfiguration.MAX_NO_OF_COMPONENTS++;
         newRegister.registrerPCDel(type, mouseNavn, mousePris);
         tblPCdel.setItems(newRegister.getArray());
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -272,7 +296,7 @@ public class ControllerMainPage implements Initializable {
     @FXML
     void btnRemoveCPU(ActionEvent event) throws InvalidSelectedRemoval {
         sum=0;
-        ObservableList<PC> chosenPart, allParts;
+        ObservableList<Part> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
 
@@ -284,7 +308,7 @@ public class ControllerMainPage implements Initializable {
         counter_CPU--;
         allParts.removeAll(chosenPart);
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -294,7 +318,7 @@ public class ControllerMainPage implements Initializable {
     @FXML
     void btnRemoveGPU(ActionEvent event) throws InvalidSelectedRemoval {
         sum=0;
-        ObservableList<PC> chosenPart, allParts;
+        ObservableList<Part> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
 
@@ -305,7 +329,7 @@ public class ControllerMainPage implements Initializable {
         counter_GPU--;
         allParts.removeAll(chosenPart);
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -315,7 +339,7 @@ public class ControllerMainPage implements Initializable {
     @FXML
     void btnRemoveHDD(ActionEvent event) throws InvalidSelectedRemoval {
         sum=0;
-        ObservableList<PC> chosenPart, allParts;
+        ObservableList<Part> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
         String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
@@ -326,7 +350,7 @@ public class ControllerMainPage implements Initializable {
         counter_HDD--;
         allParts.removeAll(chosenPart);
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -336,7 +360,7 @@ public class ControllerMainPage implements Initializable {
     @FXML
     void btnRemoveKB(ActionEvent event) throws InvalidSelectedRemoval {
         sum=0;
-        ObservableList<PC> chosenPart, allParts;
+        ObservableList<Part> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
         String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
@@ -347,7 +371,7 @@ public class ControllerMainPage implements Initializable {
         counter_KB--;
         allParts.removeAll(chosenPart);
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -358,7 +382,7 @@ public class ControllerMainPage implements Initializable {
     @FXML
     void btnRemoveMon(ActionEvent event) throws InvalidSelectedRemoval {
         sum=0;
-        ObservableList<PC> chosenPart, allParts;
+        ObservableList<Part> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
         String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
@@ -369,7 +393,7 @@ public class ControllerMainPage implements Initializable {
         counter_Mon--;
         allParts.removeAll(chosenPart);
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -379,7 +403,7 @@ public class ControllerMainPage implements Initializable {
     @FXML
     void btnRemoveMou(ActionEvent event) throws InvalidSelectedRemoval {
         sum=0;
-        ObservableList<PC> chosenPart, allParts;
+        ObservableList<Part> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
         String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
@@ -390,7 +414,7 @@ public class ControllerMainPage implements Initializable {
         counter_Mou--;
         allParts.removeAll(chosenPart);
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -400,7 +424,7 @@ public class ControllerMainPage implements Initializable {
     @FXML
     void btnRemoveRAM(ActionEvent event) throws InvalidSelectedRemoval {
         sum=0;
-        ObservableList<PC> chosenPart, allParts;
+        ObservableList<Part> chosenPart, allParts;
         allParts = tblPCdel.getItems();
         chosenPart = tblPCdel.getSelectionModel().getSelectedItems();
         String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
@@ -411,7 +435,7 @@ public class ControllerMainPage implements Initializable {
         counter_RAM--;
         allParts.removeAll(chosenPart);
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
@@ -425,13 +449,55 @@ public class ControllerMainPage implements Initializable {
         newRegister = FileOpener.read();
         newRegister.attachTableView(tblPCdel);
 
-        for(PC price : tblPCdel.getItems()){
+        for(Part price : tblPCdel.getItems()){
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
         lblSum.setText(String.valueOf(sum));
     }
 
+    @FXML
+    void refreshPrice(ActionEvent event) {
+        sum = 0;
+
+        for(Part price : tblPCdel.getItems()){
+            double pris = tblPris.getCellObservableValue(price).getValue();
+            sum+=pris;
+        }
+        lblSum.setText(String.valueOf(sum));
+    }
+
+    @FXML
+    public void searchEvent(KeyEvent event) {
+        FilteredList<Part> filteredParts = new FilteredList<>(newRegister.array, b -> true);
+
+        txtSearchField.textProperty().addListener((observable,oldValue,newValue) -> {
+            filteredParts.setPredicate(part -> {
+                if(newValue == null || newValue.isEmpty()){
+                    return true;
+                }
+                String smallLetter = newValue.toLowerCase();
+
+                if(comboSearchColumn.getValue().equals("Type")){
+                    if(part.getType().toLowerCase().contains(smallLetter)){
+                        return true;
+                    }
+                }else if(comboSearchColumn.getValue().equals("Part")){
+                    if(part.getDelNavn().toLowerCase().contains(smallLetter)){
+                        return true;
+                    }
+                }else if(comboSearchColumn.getValue().equals("Price")){
+                    if(Double.toString(part.getDelPris()).toLowerCase().contains(smallLetter)){
+                        return true;
+                    }
+                }
+                return false;
+            });
+            SortedList<Part> sortedParts = new SortedList<>(filteredParts);
+            sortedParts.comparatorProperty().bind(tblPCdel.comparatorProperty());
+            tblPCdel.setItems(sortedParts);
+        });
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -474,6 +540,7 @@ public class ControllerMainPage implements Initializable {
                                     "Logitech K400 Plus Trådløs Tastatur",
                                     "Kanex MultiSync Premium Slim Keyboard",
                                     "Logitech ERGO K860 Trådløs Tastatur");
-    }
 
+        comboSearchColumn.getItems().addAll("Type","Part","Price");
+    }
 }

@@ -1,5 +1,6 @@
 package sample;
 
+import exceptions.InvalidPartTypeException;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,16 +33,16 @@ public class ControllerSecondPage implements Initializable {
     private TextField txtNyPris;
 
     @FXML
-    public TableView<PC> tblNyDel;
+    public TableView<Part> tblNyDel;
 
     @FXML
-    private TableColumn<PC, String> tblNyType;
+    private TableColumn<Part, String> tblNyType;
 
     @FXML
-    private TableColumn<PC, String> tblNyDelnavn;
+    private TableColumn<Part, String> tblNyDelnavn;
 
     @FXML
-    private TableColumn<PC, Double> tblNyPris;
+    private TableColumn<Part, Double> tblNyPris;
 
     @FXML
     void backToMainPage(ActionEvent event) {
@@ -66,19 +67,22 @@ public class ControllerSecondPage implements Initializable {
         String CPUnavn = txtNyDelnavn.getText();
         double CPUpris = Double.parseDouble(txtNyPris.getText());
 
-        PC nyPC = new PC(type, CPUnavn, CPUpris);
-        nyPC.setType(type);
-        nyPC.setDelNavn(CPUnavn);
-        nyPC.setDelPris(CPUpris);
+        Part nyPart = new Part(type, CPUnavn, CPUpris);
+        nyPart.setType(type);
+        nyPart.setDelNavn(CPUnavn);
+        nyPart.setDelPris(CPUpris);
         System.out.println(type+" "+CPUnavn+" "+CPUpris);
 
         newPart.registrerPCDel(type, CPUnavn, CPUpris);
         tblNyDel.setItems(newPart.getArray());
+        comboType.setValue("Type");
+        txtNyDelnavn.setText("");
+        txtNyPris.setText("");
     }
 
     @FXML
     void removeNewPart(ActionEvent event) {
-        ObservableList<PC> newPartChosen, allNewPartsChosen;
+        ObservableList<Part> newPartChosen, allNewPartsChosen;
         allNewPartsChosen = tblNyDel.getItems();
         newPartChosen =tblNyDel.getSelectionModel().getSelectedItems();
         allNewPartsChosen.removeAll(newPartChosen);
@@ -87,6 +91,39 @@ public class ControllerSecondPage implements Initializable {
     @FXML
     void saveFile(ActionEvent event) {
         FileSaver.save();
+    }
+
+    @FXML
+    void txtDataEditedDelPris(TableColumn.CellEditEvent<Part, Double> event) {
+        Part part = tblNyDel.getSelectionModel().getSelectedItem();
+        try{
+            part.setDelPris(event.getNewValue());
+        }catch (InvalidPartTypeException e){
+            System.out.println("Not a valid price");
+        }
+        tblNyDel.refresh();
+    }
+
+    @FXML
+    void txtDataEditedDelType(TableColumn.CellEditEvent<Part, String> event) {
+        Part part = tblNyDel.getSelectionModel().getSelectedItem();
+        try{
+            part.setType(event.getNewValue());
+        }catch (InvalidPartTypeException e){
+            System.out.println("Not a valid part type");
+        }
+        tblNyDel.refresh();
+    }
+
+    @FXML
+    void txtDataEditedDelnavn(TableColumn.CellEditEvent<Part, String> event) {
+        Part part = tblNyDel.getSelectionModel().getSelectedItem();
+        try{
+            part.setDelNavn(event.getNewValue());
+        }catch (InvalidPartTypeException e){
+            System.out.println("Not a valid part name");
+        }
+        tblNyDel.refresh();
     }
 
     @Override

@@ -1,8 +1,10 @@
 package sample;
 
 import exceptions.InvalidPCConfigurationException;
+import exceptions.InvalidPartTypeException;
 
 public class checkConfiguration {
+    static int MAX_NO_OF_COMPONENTS = 0;
 
     public static int checkCPU(int no_CPU)throws InvalidPCConfigurationException {
         if(no_CPU == 0){
@@ -64,4 +66,70 @@ public class checkConfiguration {
         return no_Mouse;
     }
 
+    public static void checkPurchase()throws  InvalidPCConfigurationException{
+        if(ControllerMainPage.counter_CPU == 0 || ControllerMainPage.counter_GPU == 0 || ControllerMainPage.counter_RAM == 0 ||
+                ControllerMainPage.counter_HDD == 0){
+            throw new InvalidPCConfigurationException("Missing necessary parts");
+        }
+    }
+
+    public static int checkAmountCPU()throws InvalidPCConfigurationException{
+            if(ControllerMainPage.counter_CPU < 2){
+                return ControllerMainPage.counter_CPU;
+            }else{
+                throw new InvalidPCConfigurationException("Du kan bare ha en CPU");
+            }
+
+
+    }
+    public static int checkAmountGPU()throws InvalidPCConfigurationException {
+        if(ControllerMainPage.counter_GPU < 3) {
+            return ControllerMainPage.counter_GPU;
+        }else{
+            throw new InvalidPCConfigurationException("Du kan bare ha opp til to GPUer");
+        }
+    }
+    public static int checkAmountRAM()throws InvalidPCConfigurationException {
+        if(ControllerMainPage.counter_RAM < 2) {
+            return ControllerMainPage.counter_RAM;
+        }else{
+            throw new InvalidPCConfigurationException("Du kan bare ha en RAM-komponent");
+        }
+    }
+    public static int checkAmountHDD()throws InvalidPCConfigurationException {
+        if(ControllerMainPage.counter_HDD < 3) {
+            return ControllerMainPage.counter_HDD;
+        }else{
+            throw new InvalidPCConfigurationException("Du kan bare ha opp til to HDDer");
+        }
+    }
+    public static int checkAmountMon()throws InvalidPCConfigurationException {
+        if(ControllerMainPage.counter_Mon < 2) {
+            return ControllerMainPage.counter_Mon;
+        }else{
+            throw new InvalidPCConfigurationException("Du kan bare ha en skjerm");
+        }
+    }
+    public static int checkAmountMou()throws InvalidPCConfigurationException {
+        if(ControllerMainPage.counter_Mou < 2) {
+            return ControllerMainPage.counter_GPU;
+        }else{
+            throw new InvalidPCConfigurationException("Du kan bare ha en mus");
+        }
+    }
+    public static int checkAmountKB()throws InvalidPCConfigurationException {
+        if(ControllerMainPage.counter_KB < 2) {
+            return ControllerMainPage.counter_KB;
+        }else{
+            throw new InvalidPCConfigurationException("Du kan bare ha ett tastatur");
+        }
+    }
+
+    public static int checkComponents()throws InvalidPCConfigurationException{
+        if(MAX_NO_OF_COMPONENTS < 10){
+            return MAX_NO_OF_COMPONENTS;
+        }else{
+            throw new InvalidPCConfigurationException("Too many parts");
+        }
+    }
 }

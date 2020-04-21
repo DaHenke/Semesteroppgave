@@ -16,19 +16,19 @@
       <ComboBox fx:id="comboType" layoutX="196.0" layoutY="147.0" prefHeight="26.0" prefWidth="149.0" promptText="Type" />
       <TextField fx:id="txtNyDelnavn" layoutX="198.0" layoutY="237.0" promptText="Delnavn" />
       <TextField fx:id="txtNyPris" layoutX="198.0" layoutY="326.0" promptText="Pris" />
-      <TableView fx:id="tblNyDel" layoutX="534.0" layoutY="57.0" prefHeight="458.0" prefWidth="401.0">
+      <TableView fx:id="tblNyDel" editable="true" layoutX="534.0" layoutY="57.0" prefHeight="458.0" prefWidth="401.0">
         <columns>
-          <TableColumn fx:id="tblNyType" prefWidth="100.79998779296875" text="Type">
+          <TableColumn fx:id="tblNyType" onEditCommit="#txtDataEditedDelType" prefWidth="100.79998779296875" text="Type">
             <cellValueFactory>
                 <PropertyValueFactory property="Type" />
             </cellValueFactory>
         </TableColumn>
-          <TableColumn fx:id="tblNyDelnavn" prefWidth="183.20001220703125" text="Delnavn">
+          <TableColumn fx:id="tblNyDelnavn" onEditCommit="#txtDataEditedDelnavn" prefWidth="183.20001220703125" text="Delnavn">
             <cellValueFactory>
                 <PropertyValueFactory property="DelNavn" />
             </cellValueFactory>
         </TableColumn>
-            <TableColumn fx:id="tblNyPris" prefWidth="117.5999755859375" text="Pris">
+            <TableColumn fx:id="tblNyPris" onEditCommit="#txtDataEditedDelPris" prefWidth="117.5999755859375" text="Pris">
                 <cellValueFactory>
                     <PropertyValueFactory property="DelPris" />
                 </cellValueFactory>

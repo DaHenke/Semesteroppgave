@@ -2,6 +2,8 @@ package sample;
 
 import exceptions.InvalidPartTypeException;
 
+import javax.swing.table.TableColumn;
+
 public class CheckPartType {
     public static String checkType(String part){
         if(part.matches("CPU")){
