@@ -303,9 +303,8 @@ public class ControllerMainPage implements Initializable {
         String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
 
         System.out.println(type);
-        removeSelected.removeCPU(type,counter_CPU);
+        removeSelected.removeCPU(type);
 
-        counter_CPU--;
         allParts.removeAll(chosenPart);
 
         for(Part price : tblPCdel.getItems()){

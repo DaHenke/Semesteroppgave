@@ -24,7 +24,6 @@ public class ControllerSecondPage implements Initializable {
     @FXML
     private ComboBox<String> comboType;
 
-
     @FXML
     private TextField txtNyDelnavn;
 
