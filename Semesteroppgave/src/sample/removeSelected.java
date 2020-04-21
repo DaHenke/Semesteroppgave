@@ -62,4 +62,26 @@ public class removeSelected {
         }
         return counter_KB;
     }
+
+    public static void remove(String type, int counterCPU, int counterGPU, int counterRAM, int counterHDD, int counterMon, int counterMou,
+    int counterKB) throws InvalidSelectedRemoval{
+        if(type.matches("CPU")){
+            removeCPU(type);
+        }else if(type.matches("GPU")){
+            removeGPU(type,counterGPU);
+        }else if(type.matches("Memory")){
+            removeRAM(type,counterRAM);
+        }else if(type.matches("HDD")){
+            removeHDD(type,counterHDD);
+        }else if(type.matches("Monitor")){
+            removeMon(type,counterMon);
+        }else if(type.matches("Mouse")){
+            removeMou(type,counterMou);
+        }else if(type.matches("Keyboard")){
+            removeKB(type,counterKB);
+        }
+        else{
+            throw new InvalidSelectedRemoval("Du må velge en del");
+        }
+    }
 }

@@ -324,8 +324,19 @@ public class ControllerMainPage implements Initializable {
         String type = String.valueOf((tblPCdel.getSelectionModel().getSelectedItem().getType()));
 
         System.out.println(type);
-        removeSelected.removeGPU(type,counter_GPU);
+        /*removeSelected.removeGPU(type,counter_GPU);
         counter_GPU--;
+         */
+        removeSelected.remove(type,counter_CPU,counter_GPU,counter_RAM,counter_HDD,counter_Mon,counter_Mou,counter_KB);
+        counter_GPU--;
+        counter_CPU--;
+        counter_RAM--;
+        counter_HDD--;
+        counter_Mon--;
+        counter_Mou--;
+        counter_KB--;
+
+
         allParts.removeAll(chosenPart);
 
         for(Part price : tblPCdel.getItems()){
