@@ -3,11 +3,11 @@ package sample;
 import javafx.beans.property.SimpleStringProperty;
 
 public class PC {
-    public SimpleStringProperty CPU,GPU1,GPU2,RAM,HDD1,HDD2,MONITOR,MOUSE,KEYBOARD;
+    public SimpleStringProperty CPU,GPU1,GPU2,RAM,HDD1,HDD2,MONITOR,MOUSE,KEYBOARD,CABINET;
 
     public PC(String CPU, String GPU1, String GPU2, String RAM,
               String HDD1, String HDD2, String MONITOR, String
-                      MOUSE, String KEYBOARD) {
+                      MOUSE, String KEYBOARD, String CABINET) {
         this.CPU = new SimpleStringProperty(CPU);
         this.GPU1 = new SimpleStringProperty(GPU1);
         this.GPU2 = new SimpleStringProperty(GPU2);
@@ -17,6 +17,7 @@ public class PC {
         this.MONITOR = new SimpleStringProperty(MONITOR);
         this.MOUSE = new SimpleStringProperty(MOUSE);
         this.KEYBOARD = new SimpleStringProperty(KEYBOARD);
+        this.CABINET = new SimpleStringProperty(CABINET);
     }
 
     public String getCPU() {
@@ -125,5 +126,22 @@ public class PC {
 
     public void setKEYBOARD(String KEYBOARD) {
         this.KEYBOARD.set(KEYBOARD);
+    }
+
+    public String getCABINET() {
+        return CABINET.get();
+    }
+
+    public SimpleStringProperty CABINETProperty() {
+        return CABINET;
+    }
+
+    public void setCABINET(String CABINET) {
+        this.CABINET.set(CABINET);
+    }
+
+    @Override
+    public String toString() {
+        return CABINET.get();
     }
 }

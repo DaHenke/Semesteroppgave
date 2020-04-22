@@ -65,10 +65,18 @@ public class checkConfiguration {
         }
         return no_Mouse;
     }
+    public static int checkCabinet(int no_Cabinet)throws InvalidPCConfigurationException{
+        if(no_Cabinet == 0){
+            no_Cabinet++;
+        }else{
+            throw new InvalidPCConfigurationException("Du kan bare velge ett kabinett");
+        }
+        return no_Cabinet;
+    }
 
     public static void checkPurchase()throws  InvalidPCConfigurationException{
         if(ControllerMainPage.counter_CPU == 0 || ControllerMainPage.counter_GPU == 0 || ControllerMainPage.counter_RAM == 0 ||
-                ControllerMainPage.counter_HDD == 0){
+                ControllerMainPage.counter_HDD == 0 || ControllerMainPage.counter_Cab == 0){
             throw new InvalidPCConfigurationException("Missing necessary parts");
         }
     }
@@ -124,12 +132,32 @@ public class checkConfiguration {
             throw new InvalidPCConfigurationException("Du kan bare ha ett tastatur");
         }
     }
+    public static int checkAmountCab()throws InvalidPCConfigurationException {
+        if(ControllerMainPage.counter_Cab < 2) {
+            return ControllerMainPage.counter_Cab;
+        }else{
+            throw new InvalidPCConfigurationException("Du kan bare ha ett kabinett");
+        }
+    }
 
-    public static int checkComponents()throws InvalidPCConfigurationException{
-        if(MAX_NO_OF_COMPONENTS < 10){
+    /*public static int checkComponents()throws InvalidPCConfigurationException{
+        if(MAX_NO_OF_COMPONENTS < 11){
             return MAX_NO_OF_COMPONENTS;
         }else{
             throw new InvalidPCConfigurationException("Too many parts");
         }
+    }*/
+
+    public static void checkAll() throws InvalidPCConfigurationException{
+        checkPurchase();
+        //checkComponents();
+        checkAmountCPU();
+        checkAmountGPU();
+        checkAmountRAM();
+        checkAmountHDD();
+        checkAmountMon();
+        checkAmountMou();
+        checkAmountKB();
+        checkAmountCab();
     }
 }

@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import static calculator.priceList.*;
 
 public class Calculator {
-    public static Double CPU, GPU, RAM, hardDrive, mouse, keyboard, monitor;
+    public static Double CPU, GPU, RAM, hardDrive, mouse, keyboard, monitor, cabinet;
 
     public static double calculateExtraEquipment(String mouseIn, String keyboardIn, String monitorIn){
         if(mouseIn.equals("Logitech M90 Mus")){
@@ -251,6 +251,19 @@ public class Calculator {
             keyboard=0.0;
         }
         return keyboard;
+    }
+
+    public static double calculateCabinet(String  cabinetIn) {
+        if(cabinetIn.equals("Phanteks Eclipse P400A RGB Black")){
+            cabinet=cabinet1;
+        }else if(cabinetIn.equals("Fractal Design Focus G Sort Mid Tower")){
+            cabinet=cabinet2;
+        }else if(cabinetIn.equals("Chieftec Scorpion II Gaming")) {
+            cabinet = cabinet3;
+        }else{
+            cabinet=0.0;
+        }
+        return cabinet;
     }
 
 

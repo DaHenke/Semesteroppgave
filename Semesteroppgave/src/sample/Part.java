@@ -38,6 +38,8 @@ public class Part {
             this.Type.set(type);
         } else if(type.matches("Keyboard")){
             this.Type.set(type);
+        }else if(type.matches("Cabinet")){
+            this.Type.set(type);
         }else {
             throw new InvalidPartTypeException("Not a valid part type");
         }

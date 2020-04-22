@@ -211,4 +211,12 @@ public class priceList {
             return new SimpleDoubleProperty(0.0);
         }
     }
+
+    //Phanteks Eclipse P400A RGB Black
+    public static final double cabinet1 =1_099;
+    //Fractal Design Focus G Sort Mid Tower
+    public static final double cabinet2 = 599;
+    //Chieftec Scorpion II Gaming
+    public static final double cabinet3 =999;
+
 }

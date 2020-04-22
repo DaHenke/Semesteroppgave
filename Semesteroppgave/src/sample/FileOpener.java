@@ -29,9 +29,9 @@ public class FileOpener {
         return lines;
     }
 
-    public static Register read() throws InvalidFileEndException, IOException, InvalidPCConfigurationException {
+    public static PartRegister read() throws InvalidFileEndException, IOException, InvalidPCConfigurationException {
         ArrayList<String> lines = load();
-        Register newRegister = new Register();
+        PartRegister newPartRegister = new PartRegister();
         for (String s : lines) {
             String[] part = s.split(";");
 
@@ -46,8 +46,8 @@ public class FileOpener {
             nyPart.setDelNavn(delNavn);
             nyPart.setDelPris(delPris);
 
-            newRegister.registrerPCDel(type, delNavn, delPris);
+            newPartRegister.registrerPCDel(type, delNavn, delPris);
         }
-        return newRegister;
+        return newPartRegister;
     }
 }

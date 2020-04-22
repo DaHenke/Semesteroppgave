@@ -27,6 +27,9 @@ public class CheckPartType {
         } else if(part.matches("Keyboard")){
             ControllerMainPage.counter_KB++;
             return part;
+        } else if(part.matches("Cabinet")){
+            ControllerMainPage.counter_Cab++;
+            return part;
         }else {
             throw new InvalidPartTypeException("Not a valid part");
         }
