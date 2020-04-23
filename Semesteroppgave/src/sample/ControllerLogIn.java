@@ -49,11 +49,16 @@ public class ControllerLogIn {
             lblStatus.setText("Login successful");
             FXMLLoader loader = new FXMLLoader();
             Parent loginPageParent = loader.load(getClass().getResource("secondPage.fxml"));
+/*
+            task = new Threads(7);
+            task.setOnSucceeded(this::threadDone);
+            task.setOnFailed(this::threadFailed);
+            Thread th = new Thread(task);
+            th.setDaemon(true);
+            logIn.setDisable(true);
+            th.start();
 
-//            task = new Threads(7);
-  //          task.setOnSucceeded(this::threadDone);
-    //        trådLogin();
-      //      logIn.setDisable(true);
+ */
 
             Scene loginPageScene = new Scene(loginPageParent);
 
@@ -84,7 +89,7 @@ public class ControllerLogIn {
 
     @FXML
     void backToMainPage(ActionEvent event) {
-        try {
+        try{
             FXMLLoader loader = new FXMLLoader();
             Parent loginPageParent = loader.load(getClass().getResource("mainPage.fxml"));
             Scene loginPageScene = new Scene(loginPageParent);
