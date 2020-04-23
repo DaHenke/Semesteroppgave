@@ -20,13 +20,12 @@ public class FileSaverPC {
 
         PartRegister fromFile = read();
         String formatted = PCFormatter.formatParts(PartRegister.array);
-        String total = fromFile+formatted;
-        System.out.println(fromFile);
+        //System.out.println(fromFile);
         try{
             Path PartPath = Paths.get("Semesteroppgave\\src\\sample\\Package.txt");
             //Path filePath = Paths.get(saveFile.getAbsolutePath());
             fileEnding.file(PartPath.toString());
-            FileStringWriter.writeString(PartPath,total);
+            FileStringWriter.writeString(PartPath,formatted);
         } catch (InvalidFileEndException | IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Feil!");

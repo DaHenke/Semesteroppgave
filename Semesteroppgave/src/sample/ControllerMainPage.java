@@ -1,6 +1,8 @@
 package sample;
 
 import calculator.Calculator;
+import convert.fromSimpleString;
+import convert.fromString;
 import exceptions.InvalidSelectedRemoval;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -542,15 +544,44 @@ public class ControllerMainPage implements Initializable {
     }
 
     @FXML
-    void showDetails(ActionEvent event) {
+    void showDetails(ActionEvent event) throws IOException {
         ObservableList<Package> nylist = tblPackage.getSelectionModel().getSelectedItems();
 
         PC nyPc = new PC(null,null,null,null,null,null,null,null,null,null);
 
         for (Package pack: nylist) {
             nyPc=pack.getPackageName();
-            DetailsRegister.array.add(nyPc);
         }
+
+        ObservableList<Part> deetsparts = FXCollections.observableArrayList();
+
+        DetailsRegister.array.add(new Part(null,nyPc.getCABINET(),0.0));
+        DetailsRegister.array.add(new Part(null,nyPc.getCPU(),0.0));
+        DetailsRegister.array.add(new Part(null,nyPc.getGPU1(),0.0));
+        DetailsRegister.array.add(new Part(null,nyPc.getGPU2(),0.0));
+        DetailsRegister.array.add(new Part(null,nyPc.getRAM(),0.0));
+        DetailsRegister.array.add(new Part(null,nyPc.getHDD1(),0.0));
+        DetailsRegister.array.add(new Part(null,nyPc.getHDD2(),0.0));
+        DetailsRegister.array.add(new Part(null,nyPc.getMONITOR(),0.0));
+        DetailsRegister.array.add(new Part(null,nyPc.getMOUSE(),0.0));
+        DetailsRegister.array.add(new Part(null,nyPc.getKEYBOARD(),0.0));
+        for(Part part : DetailsRegister.array){
+            System.out.println(part.getDelNavn());
+        }
+
+
+        DetailsRegister.save();
+        DetailsScene();
+    }
+
+    private void DetailsScene() throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("showDetails.fxml"));
+
+        Scene detailScene = new Scene(parent);
+        Stage detailsStage = new Stage();
+        detailsStage.setTitle("Details");
+        detailsStage.setScene(detailScene);
+        detailsStage.show();
     }
 
     @FXML

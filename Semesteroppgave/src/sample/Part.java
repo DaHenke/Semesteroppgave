@@ -4,10 +4,12 @@ import exceptions.InvalidPartTypeException;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 
+import java.io.Serializable;
 
-public class Part {
-    public SimpleStringProperty Type,DelNavn;
-    public SimpleDoubleProperty DelPris;
+
+public class Part implements Serializable {
+    transient public SimpleStringProperty Type,DelNavn;
+    transient public SimpleDoubleProperty DelPris;
 
     public Part(String Type, String DelNavn, double DelPris){
         this.Type = new SimpleStringProperty(Type);

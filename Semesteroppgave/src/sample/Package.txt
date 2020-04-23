@@ -2,9 +2,279 @@ CPU;Intel Pentium Gold G5600;979.0
 GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
 GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
 Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate Barracuda 3TB;1022.0
+HDD;Seagate Barracuda 3TB;1022.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Logitech M90 Mus;109.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+GPU;ASUS GeForce GT710 1GB;533.0
+GPU;ASUS GeForce GT710 1GB;533.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
 HDD;Seagate SkyHawk 6TB;2310.0
 HDD;Seagate SkyHawk 6TB;2310.0
 Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Kanex MultiSync Premium Slim Keyboard;949.0
+Cabinet;Fractal Design Focus G Sort Mid Tower;599.0
+CPU;Intel Pentium Gold G5600;979.0
+CPU;AMD Ryzen 3 3200G;1349.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;Kingston Value DDR4 3400MHz 16GB;929.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Logitech MX Master3 Adv trådløs;1299.0
+Keyboard;Kanex MultiSync Premium Slim Keyboard;949.0
+Cabinet;Fractal Design Focus G Sort Mid Tower;599.0
+CPU;AMD Ryzen 3 3200G;1349.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;Kingston Value DDR4 3400MHz 16GB;929.0
+HDD;Seagate Barracuda 3TB;1022.0
+HDD;Seagate Barracuda 3TB;1022.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Microsoft Mobile Mouse 3600;349.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;Kingston Value DDR4 3400MHz 16GB;929.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate Barracuda 3TB;1022.0
+HDD;Seagate Barracuda 3TB;1022.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Fractal Design Focus G Sort Mid Tower;599.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;HyperX Fury DDR3 1600MHz 4GB;333.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Microsoft Mobile Mouse 3600;349.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;Kingston Value DDR4 3400MHz 16GB;929.0
+HDD;Seagate Barracuda 3TB;1022.0
+HDD;Seagate Barracuda 3TB;1022.0
+Monitor;Samsung 28 4K LED FreeSync U28E570D;3290.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;AMD Ryzen 3 3200G;1349.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Logitech MX Master3 Adv trådløs;1299.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;HyperX Fury DDR4 2666MHZ 32GB;929.0
+HDD;Seagate Barracuda 3TB;1022.0
+HDD;Seagate Barracuda 3TB;1022.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Kanex MultiSync Premium Slim Keyboard;949.0
+Cabinet;Chieftec Scorpion II Gaming;999.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Microsoft Mobile Mouse 3600;349.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;AMD Ryzen 3 3200G;1349.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Microsoft Mobile Mouse 3600;349.0
+Keyboard;Kanex MultiSync Premium Slim Keyboard;949.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;AMD Ryzen 3 3200G;1349.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Microsoft Mobile Mouse 3600;349.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Core i5-9600;2599.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;Kingston Value DDR4 3400MHz 16GB;929.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Core i5-9600;2599.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate Barracuda 3TB;1022.0
+HDD;Seagate Barracuda 3TB;1022.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Kingston Value DDR4 3400MHz 16GB;929.0
+HDD;Seagate Barracuda 1TB;530.0
+HDD;Seagate Barracuda 1TB;530.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Kanex MultiSync Premium Slim Keyboard;949.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;AMD Ryzen 3 3200G;1349.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;HyperX Fury DDR3 1600MHz 4GB;333.0
+HDD;Seagate Barracuda 3TB;1022.0
+HDD;Seagate Barracuda 3TB;1022.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Microsoft Mobile Mouse 3600;349.0
+Keyboard;Kanex MultiSync Premium Slim Keyboard;949.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Logitech MX Master3 Adv trådløs;1299.0
+Keyboard;Kanex MultiSync Premium Slim Keyboard;949.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;AMD Ryzen 3 3200G;1349.0
+GPU;Gainward GeForce GTX 1650 SUPER Pegasus OC;2399.0
+GPU;Gainward GeForce GTX 1650 SUPER Pegasus OC;2399.0
+Memory;Kingston Value DDR4 3400MHz 16GB;929.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;AMD Ryzen 3 3200G;1349.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Acer 24 skjerm KA242Y;1395.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate Barracuda 3TB;1022.0
+HDD;Seagate Barracuda 3TB;1022.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Logitech MX Master3 Adv trådløs;1299.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate Barracuda 3TB;1022.0
+HDD;Seagate Barracuda 3TB;1022.0
+Monitor;Acer 27 skjerm KA272;2195.0
+Mouse;Microsoft Mobile Mouse 3600;349.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;AMD Ryzen 3 3200G;1349.0
+GPU;Gainward GeForce GTX 1650 SUPER Pegasus OC;2399.0
+GPU;Gainward GeForce GTX 1650 SUPER Pegasus OC;2399.0
+Memory;HyperX Fury DDR3 1600MHz 4GB;333.0
+HDD;Seagate IronWolf 10TB;4486.0
+HDD;Seagate IronWolf 10TB;4486.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Microsoft Mobile Mouse 3600;349.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;ASUS GeForce GT710 1GB;533.0
+GPU;ASUS GeForce GT710 1GB;533.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Microsoft Mobile Mouse 3600;349.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Fractal Design Focus G Sort Mid Tower;599.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;HyperX Fury DDR4 2666MHZ 32GB;929.0
+HDD;Seagate Barracuda 3TB;1022.0
+HDD;Seagate Barracuda 3TB;1022.0
+Monitor;Acer 24 skjerm KA242Y;1395.0
+Mouse;Surface ARC mus;829.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;Kingston Value DDR4 3400MHz 16GB;929.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Acer 27 skjerm KA272;2195.0
 Mouse;Surface ARC mus;829.0
 Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
 Cabinet;Phanteks Eclipse P400A RGB Black;1099.0

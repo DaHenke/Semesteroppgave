@@ -1,25 +1,42 @@
 package sample;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.TextFieldTableCell;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControllerShowDetails implements Initializable {
 
-    DetailsRegister newDetails = new DetailsRegister();
+    static DetailsRegister newDetails = new DetailsRegister();
 
     @FXML
-    private TableView<Package> tblParts;
+    public static TableView<Part> tblParts;
 
     @FXML
-    private TableColumn<?, ?> tblDetails;
+    private TableColumn<Part, String> tblDetails;
 
     public void initialize(URL url, ResourceBundle resourceBundle){
-        newDetails.attachTableView(tblParts);
-    }
 
+        System.out.println(newDetails.array);
+
+        tblDetails.setCellFactory(TextFieldTableCell.forTableColumn());
+        try {
+            ObservableList<Part> details = DetailsRegister.loadData();
+            System.out.println(details.toString());
+            newDetails.array = details;
+            //tblParts.setItems(newDetails.getArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        newDetails.attachTableView(tblParts);
+
+    }
 }

@@ -26,7 +26,7 @@ public class removeSelected {
         }
     }
 
-    public static void remove(String type, int counterCPU, int counterGPU, int counterRAM, int counterHDD, int counterMon, int counterMou,
+    /*public static void remove(String type, int counterCPU, int counterGPU, int counterRAM, int counterHDD, int counterMon, int counterMou,
     int counterKB) throws InvalidSelectedRemoval{
         if(type.matches("CPU")){
             removeCPU(type);
@@ -46,5 +46,5 @@ public class removeSelected {
         else{
             throw new InvalidSelectedRemoval("Du må velge en del");
         }
-    }
+    }*/
 }
