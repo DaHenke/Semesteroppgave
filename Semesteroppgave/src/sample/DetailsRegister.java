@@ -22,18 +22,15 @@ public class DetailsRegister {
         return this.array;
     }
 
-    public void registrerPCDel(String type, String delNavn, double delPris){
-        Part enDel = new Part(type,delNavn,delPris);
-        array.add(enDel);
-    }
-
     public static void save() throws IOException {
             OutputStream fis = Files.newOutputStream(PartPath);
             ObjectOutputStream oos = new ObjectOutputStream(fis);
 
             ArrayList<Part> newarray = new ArrayList<>(array);
+            //test test = new test("HEI");
             oos.writeObject(newarray);
-        }
+            //oos.writeObject(test);
+    }
 
         public static ObservableList<Part> loadData() throws IOException, ClassNotFoundException {
             FileInputStream fis = new FileInputStream(String.valueOf(PartPath));
@@ -41,6 +38,11 @@ public class DetailsRegister {
 
             ArrayList<Part> d = (ArrayList<Part>) ois.readObject();
             ObservableList<Part> o = FXCollections.observableArrayList(d);
+            for (Part part: o) {
+                System.out.println("test"+part.getDelNavn());
+            }
+            //test test = (sample.test) ois.readObject();
+            //System.out.println("test"+test.getDelNavn());
             return o;
         }
 }

@@ -24,8 +24,15 @@ public class ControllerShowDetails implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle){
 
         System.out.println(newDetails.array);
-
-        tblDetails.setCellFactory(TextFieldTableCell.forTableColumn());
+        try {
+            newDetails.array = DetailsRegister.loadData();
+            System.out.println(newDetails.array);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        /*tblDetails.setCellFactory(TextFieldTableCell.forTableColumn());
         try {
             ObservableList<Part> details = DetailsRegister.loadData();
             System.out.println(details.toString());
@@ -35,7 +42,7 @@ public class ControllerShowDetails implements Initializable {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
         newDetails.attachTableView(tblParts);
 
     }
