@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import sample.ControllerMainPage;
 
 public class DetailsRegister {
     public static ObservableList<Part> array = FXCollections.observableArrayList();
@@ -23,12 +24,15 @@ public class DetailsRegister {
     }
 
     public static void save() throws IOException {
-            OutputStream fis = Files.newOutputStream(PartPath);
-            ObjectOutputStream oos = new ObjectOutputStream(fis);
+        Path path = Paths.get("filnavn.jobj");
+        try (OutputStream fis = Files.newOutputStream(PartPath);
 
-            ArrayList<Part> newarray = new ArrayList<>(array);
+            ObjectOutputStream oos = new ObjectOutputStream(fis)) {
+            oos.writeObject(array);
+        }
+            //ArrayList<Part> newarray = new ArrayList<>(array);
             //test test = new test("HEI");
-            oos.writeObject(newarray);
+            //oos.writeObject(newarray);
             //oos.writeObject(test);
     }
 

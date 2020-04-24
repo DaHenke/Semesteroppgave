@@ -570,7 +570,7 @@ public class ControllerMainPage implements Initializable {
         }
 
 
-        DetailsRegister.save();
+        //DetailsRegister.save();
         DetailsScene();
     }
 
