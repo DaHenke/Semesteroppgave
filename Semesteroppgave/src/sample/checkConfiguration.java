@@ -1,7 +1,7 @@
 package sample;
 
 import exceptions.InvalidPCConfigurationException;
-import exceptions.InvalidPartTypeException;
+        import exceptions.InvalidPartTypeException;
 
 public class checkConfiguration {
     static int MAX_NO_OF_COMPONENTS = 0;
@@ -82,11 +82,11 @@ public class checkConfiguration {
     }
 
     public static int checkAmountCPU()throws InvalidPCConfigurationException{
-            if(ControllerMainPage.counter_CPU < 2){
-                return ControllerMainPage.counter_CPU;
-            }else{
-                throw new InvalidPCConfigurationException("Du kan bare ha en CPU");
-            }
+        if(ControllerMainPage.counter_CPU < 2){
+            return ControllerMainPage.counter_CPU;
+        }else{
+            throw new InvalidPCConfigurationException("Du kan bare ha en CPU");
+        }
 
 
     }

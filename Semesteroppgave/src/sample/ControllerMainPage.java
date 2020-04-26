@@ -29,17 +29,18 @@ import java.util.ResourceBundle;
 
 public class ControllerMainPage implements Initializable {
 
+
     PartRegister newPartRegister = new PartRegister();
     PackageRegister newPackageRegister = new PackageRegister();
-    static int counter_CPU = 0;
-    static int counter_GPU = 0;
-    static int counter_RAM = 0;
-    static int counter_HDD = 0;
-    static int counter_KB = 0;
-    static int counter_Mon = 0;
-    static int counter_Mou = 0;
-    static int counter_Cab = 0;
-    double sum = 0;
+    public static int counter_CPU = 0;
+    public static int counter_GPU = 0;
+    public static int counter_RAM = 0;
+    public static int counter_HDD = 0;
+    public static int counter_KB = 0;
+    public static int counter_Mon = 0;
+    public static int counter_Mou = 0;
+    public static int counter_Cab = 0;
+    public double sum = 0;
 
     //mainPage.fxml
 

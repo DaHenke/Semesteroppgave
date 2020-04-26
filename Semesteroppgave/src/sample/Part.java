@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 
 public class Part implements Serializable {
-    public SimpleStringProperty Type,DelNavn;
+    private transient SimpleStringProperty Type,DelNavn;
     public SimpleDoubleProperty DelPris;
 
     public Part(String Type, String DelNavn, double DelPris){
@@ -18,7 +18,7 @@ public class Part implements Serializable {
     }
 
     public String getType() {
-        return Type.get();
+        return Type.getValue();
     }
 
     public SimpleStringProperty typeProperty() {
@@ -48,9 +48,7 @@ public class Part implements Serializable {
 
     }
 
-    public String getDelNavn() {
-        return DelNavn.get();
-    }
+    public String getDelNavn() { return DelNavn.getValue(); }
 
     public SimpleStringProperty delNavnProperty() {
         return DelNavn;
