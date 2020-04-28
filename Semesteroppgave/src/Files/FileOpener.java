@@ -43,7 +43,7 @@ public class FileOpener {
             String delNavn = part[1];
             double delPris = Double.parseDouble(part[2]);
 
-            CheckPartType.checkType(type);
+            //CheckPartType.checkType(type);
 
             nyPart.setType(type);
             nyPart.setNavn(delNavn);

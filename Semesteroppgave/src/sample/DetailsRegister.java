@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class DetailsRegister<T> {
     public ObservableList<Part> array = FXCollections.observableArrayList();
-    static Path path = Paths.get("C:\\Users\\henke\\IdeaProjects\\Semesteroppgave\\Semesteroppgave\\src\\sample\\Details");
+    static Path path = Paths.get("Semesteroppgave\\src\\sample\\Details");
 
     public void addToPackage(Part part){
         array.add(part);
@@ -32,7 +32,7 @@ public class DetailsRegister<T> {
 
         public ObservableList<T> loadData(Path path) throws IOException, ClassNotFoundException {
         try {
-            FileInputStream fis = new FileInputStream(String.valueOf(DetailsRegister.path));
+            FileInputStream fis = new FileInputStream(String.valueOf(path));
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             ArrayList<T> d = (ArrayList<T>) ois.readObject();
@@ -55,4 +55,6 @@ public class DetailsRegister<T> {
                 e.printStackTrace();
             }
         }
+
+
 }

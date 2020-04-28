@@ -1,5 +1,5 @@
 package Files;
-
+/*
 import exceptions.InvalidPartTypeException;
 import sample.ControllerMainPage;
 
@@ -36,3 +36,8 @@ public class CheckPartType {
         }
     }
 }
+
+
+
+
+ */

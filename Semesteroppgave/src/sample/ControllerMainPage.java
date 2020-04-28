@@ -67,28 +67,28 @@ public class ControllerMainPage implements Initializable {
     private TableColumn<Package, Double> tblPricePackage;
 
     @FXML
-    private ComboBox<String> comboCPU;
+    public ComboBox<String> comboCPU;
 
     @FXML
-    private ComboBox<String> comboGPU;
+    public ComboBox<String> comboGPU;
 
     @FXML
-    private ComboBox<String> comboRAM;
+    public ComboBox<String> comboRAM;
 
     @FXML
-    private ComboBox<String> comboHDDSSDPC;
+    public ComboBox<String> comboHDDSSDPC;
 
     @FXML
-    private ComboBox<String> comboMonitor;
+    public ComboBox<String> comboMonitor;
 
     @FXML
-    private ComboBox<String> comboKeyboard;
+    public ComboBox<String> comboKeyboard;
 
     @FXML
-    private ComboBox<String> comboMouse;
+    public ComboBox<String> comboMouse;
 
     @FXML
-    private ComboBox<String> comboCabinett;
+    public ComboBox<String> comboCabinett;
 
     @FXML
     private Label lblSum;
@@ -153,6 +153,25 @@ public class ControllerMainPage implements Initializable {
         alert.setHeaderText("Takk for handelen!");
         alert.setContentText("Produktet er kjøpt.");
         alert.showAndWait();
+
+        saveDetails();
+
+        clear();
+    }
+
+    public void clear(){
+        comboCPU.getSelectionModel().clearSelection();
+        comboGPU.getSelectionModel().clearSelection();
+        comboHDDSSDPC.getSelectionModel().clearSelection();
+        comboRAM.getSelectionModel().clearSelection();
+        comboMonitor.getSelectionModel().clearSelection();
+        comboMouse.getSelectionModel().clearSelection();
+        comboKeyboard.getSelectionModel().clearSelection();
+        comboCabinett.getSelectionModel().clearSelection();
+
+        tblPCdel.getItems().clear();
+        lblSum.setText("");
+
     }
 
     @FXML
@@ -529,8 +548,7 @@ public class ControllerMainPage implements Initializable {
         lblSum.setText(String.valueOf(sum));
     }
 
-    @FXML
-    void showDetails(ActionEvent event) throws IOException {
+    public void saveDetails() throws IOException{
         ObservableList<Package> nylist = tblPackage.getSelectionModel().getSelectedItems();
 
         PC nyPc = new PC(null,null,null,null,null,null,null,null,null,null);
@@ -538,6 +556,7 @@ public class ControllerMainPage implements Initializable {
         for (Package pack: nylist) {
             nyPc=pack.getPackageName();
         }
+
 
         newNewDetails.addToPackage(new Part("CPU",nyPc.getCPU(),0.0));
         newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU1(),0.0));
@@ -551,6 +570,33 @@ public class ControllerMainPage implements Initializable {
         newNewDetails.addToPackage(new Part("Cabinet",nyPc.getCABINET(),0.0));
 
         newNewDetails.save(newNewDetails.array,DetailsRegister.path);
+    }
+
+    @FXML
+    void showDetails(ActionEvent event) throws IOException {
+        /*ObservableList<Package> nylist = tblPackage.getSelectionModel().getSelectedItems();
+
+        PC nyPc = new PC(null,null,null,null,null,null,null,null,null,null);
+
+        for (Package pack: nylist) {
+            nyPc=pack.getPackageName();
+        }
+
+
+        newNewDetails.addToPackage(new Part("CPU",nyPc.getCPU(),0.0));
+        newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU1(),0.0));
+        newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU2(),0.0));
+        newNewDetails.addToPackage(new Part("Memory",nyPc.getRAM(),0.0));
+        newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD1(),0.0));
+        newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD2(),0.0));
+        newNewDetails.addToPackage(new Part("Monitor",nyPc.getMONITOR(),0.0));
+        newNewDetails.addToPackage(new Part("Mouse",nyPc.getMOUSE(),0.0));
+        newNewDetails.addToPackage(new Part("Keyboard",nyPc.getKEYBOARD(),0.0));
+        newNewDetails.addToPackage(new Part("Cabinet",nyPc.getCABINET(),0.0));
+
+        newNewDetails.save(newNewDetails.array,DetailsRegister.path);
+         */
+
         DetailsScene();
     }
 
@@ -561,6 +607,7 @@ public class ControllerMainPage implements Initializable {
         Stage detailsStage = new Stage();
         detailsStage.setTitle("Details");
         detailsStage.setScene(detailScene);
+
         detailsStage.show();
     }
 
