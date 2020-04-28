@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9de360d-3971-4e79-9b02-f9412904d9a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Details.jobj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/Files/CheckPartType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/Files/CheckPartType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/Files/FileOpener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/Files/FileOpener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerMainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerMainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Details" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Details" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/DetailsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/DetailsRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Package.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Package.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +270,13 @@
       <option name="presentableId" value="LOCAL−00029" />
       <updated>1587656409083</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL−00030" summary="Søkefilter og avvikshåndtering">
+      <created>1588081939645</created>
+      <option name="number" value="LOCAL−00030" />
+      <option name="presentableId" value="LOCAL−00030" />
+      <updated>1588081939645</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,30 +310,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587387267476" />
-    <state x="365" y="7" key="CommitChangelistDialog2" timestamp="1588077201301">
+    <state x="365" y="7" key="CommitChangelistDialog2" timestamp="1588081938883">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="365" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588077201301" />
+    <state x="365" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588081938883" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587926934803">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587926934803" />
-    <state width="1493" height="114" key="GridCell.Tab.0.bottom" timestamp="1588081682666">
+    <state width="1493" height="114" key="GridCell.Tab.0.bottom" timestamp="1588082067511">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="114" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588081682666" />
-    <state width="1493" height="114" key="GridCell.Tab.0.center" timestamp="1588081682666">
+    <state width="1493" height="114" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588082067511" />
+    <state width="1493" height="114" key="GridCell.Tab.0.center" timestamp="1588082067511">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="114" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588081682666" />
-    <state width="1493" height="114" key="GridCell.Tab.0.left" timestamp="1588081682666">
+    <state width="1493" height="114" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588082067511" />
+    <state width="1493" height="114" key="GridCell.Tab.0.left" timestamp="1588082067511">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="114" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588081682666" />
-    <state width="1493" height="114" key="GridCell.Tab.0.right" timestamp="1588081682666">
+    <state width="1493" height="114" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588082067511" />
+    <state width="1493" height="114" key="GridCell.Tab.0.right" timestamp="1588082067511">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="114" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588081682666" />
+    <state width="1493" height="114" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588082067511" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588006026692">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -354,10 +354,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="481" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1588077234869" />
-    <state x="329" y="115" key="Vcs.Push.Dialog.v2" timestamp="1588077205456">
+    <state x="329" y="115" key="Vcs.Push.Dialog.v2" timestamp="1588081942138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="329" y="115" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588077205456" />
+    <state x="329" y="115" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588081942138" />
     <state x="627" y="317" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588079630303">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -32,10 +32,11 @@ public class DetailsRegister<T> {
 
         public ObservableList<T> loadData(Path path) throws IOException, ClassNotFoundException {
         try {
-            FileInputStream fis = new FileInputStream(String.valueOf(path));
+            InputStream fis = Files.newInputStream(path);
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             ArrayList<T> d = (ArrayList<T>) ois.readObject();
+
             ObservableList<T> o = FXCollections.observableArrayList(d);
 
             return o;
