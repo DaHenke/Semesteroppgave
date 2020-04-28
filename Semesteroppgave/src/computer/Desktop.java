@@ -20,6 +20,6 @@ public class Desktop extends Computer{
     public String getTastatur() { return keybord.get(); }
     public SimpleStringProperty tastaturProperty(){ return keybord; }
 
-    public String getMonitor() { return monitor.get(); }
+    //public String getMonitor() { return monitor.get(); }
     public SimpleStringProperty monitorProperty(){ return monitor; }
 }

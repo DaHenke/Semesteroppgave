@@ -4,7 +4,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 
-public class PackageRegister {
+import java.io.Serializable;
+
+public class PackageRegister implements Serializable {
+
     public static ObservableList<Package> array = FXCollections.observableArrayList();
 
     public void attachTableView(TableView tv){
