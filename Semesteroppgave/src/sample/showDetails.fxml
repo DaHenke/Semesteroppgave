@@ -2,16 +2,16 @@
 
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerShowDetails">
    <children>
       <Pane layoutX="-86.0" layoutY="-100.0" prefHeight="200.0" prefWidth="200.0" />
       <TableView fx:id="tblParts" prefHeight="400.0" prefWidth="600.0">
         <columns>
-          <TableColumn fx:id="tblDetails" prefWidth="599.2000061273575" text="Parts" >
+          <TableColumn prefWidth="599.2000061273575" text="Parts">
               <cellValueFactory>
                   <PropertyValueFactory property="DelNavn" />
               </cellValueFactory>

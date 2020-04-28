@@ -15,15 +15,10 @@ import java.util.Scanner;
 
 public class FileSaverPC {
     public static void save() throws InvalidFileEndException, IOException {
-        /*FileChooser saveAs = new FileChooser();
-        File saveFile = saveAs.showSaveDialog(null);*/
-
-        PartRegister fromFile = read();
         String formatted = PCFormatter.formatParts(PartRegister.array);
         //System.out.println(fromFile);
         try{
             Path PartPath = Paths.get("Semesteroppgave\\src\\sample\\Package.txt");
-            //Path filePath = Paths.get(saveFile.getAbsolutePath());
             fileEnding.file(PartPath.toString());
             FileStringWriter.writeString(PartPath,formatted);
         } catch (InvalidFileEndException | IOException e) {

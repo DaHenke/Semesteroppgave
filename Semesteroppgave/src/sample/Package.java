@@ -3,9 +3,11 @@ package sample;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public class Package {
-    public PC packageName;
-    public Double packagePrice;
+import java.io.Serializable;
+
+public class Package implements Serializable {
+    transient public PC packageName;
+    transient public Double packagePrice;
 
     public Package(PC packageName, double packagePrice) {
         this.packageName = packageName;

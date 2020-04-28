@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="786.0" prefWidth="1542.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMainPage">
+<AnchorPane prefHeight="786.0" prefWidth="1542.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMainPage">
    <children>
       <Label layoutX="36.0" layoutY="21.0" prefHeight="30.0" prefWidth="184.0" text="Welcome! ">
          <font>

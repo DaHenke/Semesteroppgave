@@ -4,7 +4,7 @@ import exceptions.InvalidSelectedRemoval;
 
 public class removeSelected {
     public static void remove(String type) throws InvalidSelectedRemoval{
-        if(type.matches("CPU")){
+        if(type.equals("CPU")){
             ControllerMainPage.counter_CPU--;
         }else if(type.matches("GPU")){
             ControllerMainPage.counter_GPU--;

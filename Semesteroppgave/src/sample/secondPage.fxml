@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane prefHeight="676.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerSecondPage">
+<AnchorPane prefHeight="676.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerSecondPage">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdfdfd" height="562.0" layoutX="33.0" layoutY="57.0" stroke="BLACK" strokeType="INSIDE" width="478.0" />
       <Button layoutX="213.0" layoutY="422.0" mnemonicParsing="false" onAction="#leggTilDel" prefHeight="26.0" prefWidth="115.0" text="Legg til del" />

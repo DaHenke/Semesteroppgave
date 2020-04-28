@@ -11,39 +11,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerShowDetails implements Initializable {
+public class ControllerShowDetails {
 
-    static DetailsRegister newDetails = new DetailsRegister();
-
-    @FXML
-    public static TableView<Part> tblParts;
+    DetailsRegister newDetails = new DetailsRegister();
 
     @FXML
-    private TableColumn<Part, String> tblDetails;
+    public TableView<Part> tblParts;
 
-    public void initialize(URL url, ResourceBundle resourceBundle){
-
-        System.out.println(newDetails.array);
-        try {
-            newDetails.array = DetailsRegister.loadData();
-            System.out.println(newDetails.array);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        /*tblDetails.setCellFactory(TextFieldTableCell.forTableColumn());
-        try {
-            ObservableList<Part> details = DetailsRegister.loadData();
-            System.out.println(details.toString());
-            newDetails.array = details;
-            //tblParts.setItems(newDetails.getArray());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }*/
+    @FXML
+    public void initialize(){
+        newDetails.runDetails(tblParts);
         newDetails.attachTableView(tblParts);
-
     }
 }

@@ -6,6 +6,7 @@ import convert.fromString;
 import exceptions.InvalidSelectedRemoval;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableListBase;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -31,6 +32,7 @@ public class ControllerMainPage implements Initializable {
 
     PartRegister newPartRegister = new PartRegister();
     PackageRegister newPackageRegister = new PackageRegister();
+    DetailsRegister newNewDetails = new DetailsRegister();
     static int counter_CPU = 0;
     static int counter_GPU = 0;
     static int counter_RAM = 0;
@@ -123,29 +125,27 @@ public class ControllerMainPage implements Initializable {
             double pris = tblPris.getCellObservableValue(price).getValue();
             sum+=pris;
         }
+
         lblSum.setText(String.valueOf(sum));
         checkConfiguration.checkAll();
 
-        //String name = comboCabinett.getValue();
         double price = Double.parseDouble(lblSum.getText());
 
         ArrayList<String> array = new ArrayList<>();
         for(Part p : newPartRegister.getArray()){
+            System.out.println(p.getDelNavn());
             array.add(p.getDelNavn());
         }
+
         PC pc = new PC(array.get(0),array.get(1),array.get(2),array.get(3),array.get(4),array.get(5),array.get(6),array.get(7),array.get(8),array.get(9));
-        //Package pack = new Package(pc,Double.parseDouble(lblSum.getText()));
 
         Package newPackage = new Package(pc,price);
         newPackage.setPackagePrice(price);
 
         FileSaverPC.save();
-        //newPartRegister.save();
 
-
-
+        tblPCdel.setItems(newPartRegister.getArray());
         newPackageRegister.registrerPackage(pc,price);
-        //test();
         tblPackage.setItems(newPackageRegister.getArray());
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -154,20 +154,6 @@ public class ControllerMainPage implements Initializable {
         alert.setContentText("Produktet er kjøpt.");
         alert.showAndWait();
     }
-
-   /* private void test() throws IOException, ClassNotFoundException {
-        ObservableList<Part> parts = newPartRegister.loadData();
-        ArrayList<String> array = new ArrayList<>();
-        for(Part p : parts){
-            array.add(p.getDelNavn());
-        }
-        PC pc = new PC(array.get(0),array.get(1),array.get(2),array.get(3),array.get(4),array.get(5),array.get(6),array.get(7),array.get(8),array.get(9));
-        Package pack = new Package(pc,Double.parseDouble(lblSum.getText()));
-
-        ObservableList<Package> packs = FXCollections.observableArrayList();
-        packs.add(pack);
-        tblPackage.setItems(packs);
-    }*/
 
     @FXML
     void regCPU(ActionEvent event) throws InterruptedException {
@@ -553,24 +539,18 @@ public class ControllerMainPage implements Initializable {
             nyPc=pack.getPackageName();
         }
 
-        ObservableList<Part> deetsparts = FXCollections.observableArrayList();
+        newNewDetails.addToPackage(new Part("CPU",nyPc.getCPU(),0.0));
+        newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU1(),0.0));
+        newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU2(),0.0));
+        newNewDetails.addToPackage(new Part("Memory",nyPc.getRAM(),0.0));
+        newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD1(),0.0));
+        newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD2(),0.0));
+        newNewDetails.addToPackage(new Part("Monitor",nyPc.getMONITOR(),0.0));
+        newNewDetails.addToPackage(new Part("Mouse",nyPc.getMOUSE(),0.0));
+        newNewDetails.addToPackage(new Part("Keyboard",nyPc.getKEYBOARD(),0.0));
+        newNewDetails.addToPackage(new Part("Cabinet",nyPc.getCABINET(),0.0));
 
-        DetailsRegister.array.add(new Part(null,nyPc.getCABINET(),0.0));
-        DetailsRegister.array.add(new Part(null,nyPc.getCPU(),0.0));
-        DetailsRegister.array.add(new Part(null,nyPc.getGPU1(),0.0));
-        DetailsRegister.array.add(new Part(null,nyPc.getGPU2(),0.0));
-        DetailsRegister.array.add(new Part(null,nyPc.getRAM(),0.0));
-        DetailsRegister.array.add(new Part(null,nyPc.getHDD1(),0.0));
-        DetailsRegister.array.add(new Part(null,nyPc.getHDD2(),0.0));
-        DetailsRegister.array.add(new Part(null,nyPc.getMONITOR(),0.0));
-        DetailsRegister.array.add(new Part(null,nyPc.getMOUSE(),0.0));
-        DetailsRegister.array.add(new Part(null,nyPc.getKEYBOARD(),0.0));
-        for(Part part : DetailsRegister.array){
-            System.out.println(part.getDelNavn());
-        }
-
-
-        DetailsRegister.save();
+        newNewDetails.save(newNewDetails.array,DetailsRegister.path);
         DetailsScene();
     }
 
@@ -595,18 +575,13 @@ public class ControllerMainPage implements Initializable {
                 }
                 String smallLetter = newValue.toLowerCase();
 
-                if(comboSearchColumn.getValue().equals("Type")){
-                    if(part.getType().toLowerCase().contains(smallLetter)){
-                        return true;
-                    }
-                }else if(comboSearchColumn.getValue().equals("Part")){
-                    if(part.getDelNavn().toLowerCase().contains(smallLetter)){
-                        return true;
-                    }
-                }else if(comboSearchColumn.getValue().equals("Price")){
-                    if(Double.toString(part.getDelPris()).toLowerCase().contains(smallLetter)){
-                        return true;
-                    }
+                switch (comboSearchColumn.getValue()) {
+                    case "Type":
+                        return part.getType().toLowerCase().contains(smallLetter);
+                    case "Part":
+                        return part.getDelNavn().toLowerCase().contains(smallLetter);
+                    case "Price":
+                        return Double.toString(part.getDelPris()).toLowerCase().contains(smallLetter);
                 }
                 return false;
             });
@@ -616,6 +591,7 @@ public class ControllerMainPage implements Initializable {
             if(txtSearchField.getText().isEmpty()){
                 tblPCdel.setItems(newPartRegister.getArray());
             }
+            
         });
     }
 
@@ -667,5 +643,6 @@ public class ControllerMainPage implements Initializable {
                                     "Chieftec Scorpion II Gaming");
 
         comboSearchColumn.getItems().addAll("Type","Part","Price");
+
     }
 }
