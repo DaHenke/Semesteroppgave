@@ -21,6 +21,10 @@ public class PCRegister implements Serializable {
 
     public void removeAll(){pregister.clear();}
 
+    public ObservableList<Part> getArray(){
+        return this.pregister;
+    }
+
     public void attachTableView(TableView tv){tv.setItems(pregister);}
 
     public Part searchRegisterByName(String name){

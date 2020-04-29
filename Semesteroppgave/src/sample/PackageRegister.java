@@ -18,6 +18,11 @@ public class PackageRegister implements Serializable {
         return this.array;
     }
 
+    public void removeAll(){array.clear();}
+
+    public void addPart(Package p){array.add(p);}
+
+
     public void registrerPackage(PC packageName, double packagePrice){
         Package enPackage = new Package(packageName,packagePrice);
         array.add(enPackage);

@@ -11,19 +11,15 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class DetailsRegister<T> {
-    public ObservableList<Part> array = FXCollections.observableArrayList();
+    public ObservableList<T> array = FXCollections.observableArrayList();
     static Path path = Paths.get("Semesteroppgave\\src\\sample\\Details");
 
-    public void addToPackage(Part pack){
-        array.add(pack);
+    public void addToPackage(T part){
+        array.add(part);
     }
 
     public void attachTableView(TableView tv){
         tv.setItems(array);
-    }
-
-    public void removeAll(){
-        array.clear();
     }
 
     public void save(ObservableList<T> array, Path path) throws IOException {
@@ -40,8 +36,8 @@ public class DetailsRegister<T> {
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             ArrayList<T> d = (ArrayList<T>) ois.readObject();
-
             ObservableList<T> o = FXCollections.observableArrayList(d);
+
 
             return o;
         }catch(IOException | ClassNotFoundException e){
@@ -52,7 +48,7 @@ public class DetailsRegister<T> {
 
         public void runDetails(TableView tv){
             try {
-                array = (ObservableList<Part>) loadData(DetailsRegister.path);
+                array = loadData(path);
                 tv.setItems(array);
             } catch (IOException e) {
                 e.printStackTrace();
