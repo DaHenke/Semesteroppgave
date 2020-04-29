@@ -14,12 +14,16 @@ public class DetailsRegister<T> {
     public ObservableList<Part> array = FXCollections.observableArrayList();
     static Path path = Paths.get("Semesteroppgave\\src\\sample\\Details");
 
-    public void addToPackage(Part part){
-        array.add(part);
+    public void addToPackage(Part pack){
+        array.add(pack);
     }
 
     public void attachTableView(TableView tv){
         tv.setItems(array);
+    }
+
+    public void removeAll(){
+        array.clear();
     }
 
     public void save(ObservableList<T> array, Path path) throws IOException {

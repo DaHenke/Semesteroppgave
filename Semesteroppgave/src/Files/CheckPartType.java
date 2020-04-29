@@ -6,7 +6,7 @@ import sample.ControllerMainPage;
 import javax.swing.table.TableColumn;
 
 public class CheckPartType {
-    public static String checkType(String part){
+    /*public static String checkType(String part){
         if(part.matches("CPU")){
             ControllerMainPage.counter_CPU++;
             return part;
@@ -35,9 +35,8 @@ public class CheckPartType {
             throw new InvalidPartTypeException("Not a valid part");
         }
     }
-}
+}*/
 
 
 
 
- */

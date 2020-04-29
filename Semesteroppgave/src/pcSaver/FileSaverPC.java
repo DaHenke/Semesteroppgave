@@ -16,7 +16,6 @@ import java.util.Scanner;
 public class FileSaverPC {
     public static void save() throws InvalidFileEndException, IOException {
         String formatted = PCFormatter.formatParts(PartRegister.array);
-        //System.out.println(fromFile);
         try{
             Path PartPath = Paths.get("Semesteroppgave\\src\\sample\\Package.txt");
             fileEnding.file(PartPath.toString());

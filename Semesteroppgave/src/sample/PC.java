@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 import java.io.Serializable;
 
 public class PC implements Serializable {
-    transient public String CPU,GPU1,GPU2,RAM,HDD1,HDD2,MONITOR,MOUSE,KEYBOARD,CABINET;
+    public String CPU,GPU1,GPU2,RAM,HDD1,HDD2,MONITOR,MOUSE,KEYBOARD,CABINET;
 
     public PC(String CPU, String GPU1, String GPU2, String RAM,
               String HDD1, String HDD2, String MONITOR, String

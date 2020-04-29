@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 
 public class FileOpener {
-
+/*
 
     static ArrayList<String> load() throws IOException, InvalidFileEndException {
         FileChooser loadFile = new FileChooser();
@@ -52,5 +52,5 @@ public class FileOpener {
             newPartRegister.registrerPCDel(type, delNavn, delPris);
         }
         return newPartRegister;
-    }
+    }*/
 }
