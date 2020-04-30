@@ -17,9 +17,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static java.lang.Integer.parseInt;
+
 public class ControllerSecondPage implements Initializable {
 
     newPartRegister newPart = new newPartRegister();
+
+
 
     @FXML
     private ComboBox<String> comboType;
@@ -61,34 +65,26 @@ public class ControllerSecondPage implements Initializable {
 
     @FXML
     void leggTilDel(ActionEvent event) {
-        String type = comboType.getValue();
-        String CPUnavn = txtNyDelnavn.getText();
-        double CPUpris = Double.parseDouble(txtNyPris.getText());
+        ObservableList<Part> nyListe = tblNyDel.getSelectionModel().getSelectedItems();
 
-        Part nyPart = new Part(type, CPUnavn, CPUpris);
-
-        if(!txtNyDelnavn.getText().isEmpty() && !txtNyPris.getText().isEmpty()) {
-            try {
-                nyPart.setType(type);
-                nyPart.setDelNavn(CPUnavn);
-                nyPart.setDelPris(CPUpris);
-
-                newPart.registrerPCDel(type, CPUnavn, CPUpris);
-                tblNyDel.setItems(newPart.getArray());
-                comboType.setValue("Type");
-                txtNyDelnavn.setText("");
-                txtNyPris.setText("");
-            }catch(InvalidPartTypeException e){
-                System.out.println(e.getMessage());
-            }
-        }else if(txtNyDelnavn.getText() == "" || txtNyDelnavn.getText().isEmpty() ||
-                txtNyPris.getText() == null || txtNyPris.getText().isEmpty()) {
+        if(txtNyDelnavn.getText() == "" || txtNyDelnavn.getText().isEmpty() ||
+                parseInt(txtNyPris.getText()) <=0 || txtNyPris.getText().isEmpty() ||
+                comboType.getValue()==null){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Feil!");
             alert.setContentText("Du har tomme tekstfelt(er)...");
             alert.showAndWait();
             throw new IllegalArgumentException("Empty input fields");
         }
+
+        String navn = txtNyDelnavn.getText();
+        Double pris = Double.parseDouble(txtNyPris.getText());
+        Part nyDel = new Part(comboType.getValue(),navn,pris);
+        newPart.registrerPCDel(nyDel);
+
+        comboType.getSelectionModel().clearSelection();
+        txtNyDelnavn.setText("");
+        txtNyPris.setText("");
     }
 
     @FXML
@@ -100,8 +96,22 @@ public class ControllerSecondPage implements Initializable {
     }
 
     @FXML
-    void saveFile(ActionEvent event) {
-        FileSaver.save();
+    void saveFile(ActionEvent event) throws IOException {
+        if(!newPart.array.isEmpty()) {
+            newPart.saveNewParts(newPart.array, newPartRegister.Path);
+            newPart.removeAll();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Lagring vellykket!");
+            alert.setHeaderText("Vellykket");
+            alert.setContentText("Nye deler ligger inne i valgmenyene på hovedsiden");
+            alert.showAndWait();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lagring feilet!");
+            alert.setHeaderText("Feil");
+            alert.setContentText("Du har ikke lagt til nye deler");
+            alert.showAndWait();
+        }
     }
 
     @FXML
@@ -145,6 +155,6 @@ public class ControllerSecondPage implements Initializable {
         tblNyPris.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         tblNyDel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-        comboType.getItems().addAll("CPU","GPU","Memory","HDD","Monitor","Mouse","Keyboard");
+        comboType.getItems().addAll("CPU","GPU","Memory","HDD","Monitor","Mouse","Keyboard","Cabinet");
     }
 }

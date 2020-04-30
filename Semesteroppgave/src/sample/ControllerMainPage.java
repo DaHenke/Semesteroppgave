@@ -33,6 +33,8 @@ public class ControllerMainPage implements Initializable {
     PartRegister newPartRegister = new PartRegister();
     PackageRegister newPackageRegister = new PackageRegister();
     DetailsRegister newNewDetails = new DetailsRegister();
+    newPartRegister newPart = new newPartRegister();
+
     static int counter_CPU = 0;
     static int counter_GPU = 0;
     static int counter_RAM = 0;
@@ -154,7 +156,6 @@ public class ControllerMainPage implements Initializable {
         alert.setContentText("Produktet er kjøpt.");
         alert.showAndWait();
 
-        saveDetails();
 
         clear();
     }
@@ -172,6 +173,14 @@ public class ControllerMainPage implements Initializable {
         tblPCdel.getItems().clear();
         lblSum.setText("");
 
+        counter_CPU=0;
+        counter_GPU=0;
+        counter_RAM=0;
+        counter_HDD=0;
+        counter_Mou=0;
+        counter_Mon=0;
+        counter_KB=0;
+        counter_Cab=0;
     }
 
     @FXML
@@ -570,6 +579,7 @@ public class ControllerMainPage implements Initializable {
         newNewDetails.addToPackage(new Part("Cabinet",nyPc.getCABINET(),0.0));
 
         newNewDetails.save(newNewDetails.array,DetailsRegister.path);
+        newNewDetails.removeAll();
     }
 
     @FXML
@@ -597,6 +607,7 @@ public class ControllerMainPage implements Initializable {
         newNewDetails.save(newNewDetails.array,DetailsRegister.path);
          */
 
+        saveDetails();
         DetailsScene();
     }
 

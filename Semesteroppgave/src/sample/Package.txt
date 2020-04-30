@@ -1,10 +1,10 @@
-CPU;Intel Core i5-9600;2599.0
-GPU;Gainward GeForce GTX 1650 SUPER Pegasus OC;2399.0
-GPU;Gainward GeForce GTX 1650 SUPER Pegasus OC;2399.0
-Memory;HyperX Fury DDR4 2666MHZ 32GB;929.0
-HDD;Seagate IronWolf 10TB;4486.0
-HDD;Seagate IronWolf 10TB;4486.0
-Monitor;Samsung 28 4K LED FreeSync U28E570D;3290.0
-Mouse;Logitech MX Master3 Adv trådløs;1299.0
-Keyboard;Logitech ERGO K860 Trådløs Tastatur;1399.0
-Cabinet;Chieftec Scorpion II Gaming;999.0
+CPU;AMD Athlon 3000G;599.0
+GPU;ASUS GeForce GT710 1GB;533.0
+GPU;ASUS GeForce GT710 1GB;533.0
+Memory;HyperX Fury DDR3 1600MHz 4GB;333.0
+HDD;Seagate Barracuda 1TB;530.0
+HDD;Seagate Barracuda 1TB;530.0
+Monitor;Acer 24 skjerm KA242Y;1395.0
+Mouse;Logitech M90 Mus;109.0
+Keyboard;Microsoft Wired Keyboard 600;199.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0

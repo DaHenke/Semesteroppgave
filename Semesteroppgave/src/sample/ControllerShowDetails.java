@@ -21,6 +21,6 @@ public class ControllerShowDetails {
     @FXML
     public void initialize(){
         newDetails.runDetails(tblParts);
-        //newDetails.attachTableView(tblParts);
+        newDetails.attachTableView(tblParts);
     }
 }

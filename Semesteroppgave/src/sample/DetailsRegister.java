@@ -18,6 +18,10 @@ public class DetailsRegister<T> {
         array.add(part);
     }
 
+    public void removeAll(){
+        array.clear();
+    }
+
     public void attachTableView(TableView tv){
         tv.setItems(array);
     }
