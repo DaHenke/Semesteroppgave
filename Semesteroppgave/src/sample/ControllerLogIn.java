@@ -8,10 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import javafx.util.converter.DoubleStringConverter;
@@ -26,6 +23,7 @@ import static trådprogrammering.tråder.*;
 
 public class ControllerLogIn {
 
+
     @FXML
     private Button logIn;
 
@@ -38,7 +36,6 @@ public class ControllerLogIn {
     @FXML
     private Label lblStatus;
 
-    private Threads task;
 
 
 
@@ -46,19 +43,18 @@ public class ControllerLogIn {
     private void logIn(ActionEvent event) throws Exception{
         try {
         if(txtUsername.getText().equals("admin") && txtPassword.getText().equals("12345")){
-            lblStatus.setText("Login successful");
+
+
+            Thread tr1 = new Thread(Threads::tr1);
+            Threads tr2 = new Threads();
+
+            tr1.start();
+            tr2.tr2(lblStatus);
+            tr1.join();
+
+
             FXMLLoader loader = new FXMLLoader();
             Parent loginPageParent = loader.load(getClass().getResource("secondPage.fxml"));
-/*
-            task = new Threads(7);
-            task.setOnSucceeded(this::threadDone);
-            task.setOnFailed(this::threadFailed);
-            Thread th = new Thread(task);
-            th.setDaemon(true);
-            logIn.setDisable(true);
-            th.start();
-
- */
 
             Scene loginPageScene = new Scene(loginPageParent);
 
@@ -76,16 +72,6 @@ public class ControllerLogIn {
         }
     }
 
-    private void threadDone(WorkerStateEvent e){
-        Integer result = task.getValue();
-        lblStatus.setText("Login successful");
-        logIn.setDisable(false);
-    }
-
-    private void threadFailed(WorkerStateEvent e){
-        lblStatus.setText("Login failed");
-        logIn.setDisable(false);
-    }
 
     @FXML
     void backToMainPage(ActionEvent event) {

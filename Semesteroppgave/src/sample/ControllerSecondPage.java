@@ -110,6 +110,7 @@ public class ControllerSecondPage implements Initializable {
     void saveFile(ActionEvent event) throws IOException {
         if(!newPart.array.isEmpty()) {
             newPart.saveNewParts(newPart.array, newPartRegister.Path);
+
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Lagring vellykket!");
             alert.setHeaderText("Vellykket");

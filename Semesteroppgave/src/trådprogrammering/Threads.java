@@ -1,21 +1,24 @@
 package trådprogrammering;
 
 import javafx.concurrent.Task;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import sample.ControllerLogIn;
 
-public class Threads extends Task<Integer> {
-    private final int value;
+public class Threads {
 
-    public Threads(int value){
-        this.value=value;
-    }
-
-    @Override
-    protected Integer call(){
+    public static void tr1() {
         try{
             Thread.sleep(3000);
         }catch(InterruptedException e){
-
+            e.printStackTrace();
         }
-        return value*2;
+        System.out.println("da");
     }
+    public static void tr2(Label lbl){
+        lbl.setText("Login successful");
+        System.out.println("kjør");
+    }
+
+
 }
