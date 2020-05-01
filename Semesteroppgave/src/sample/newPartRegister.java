@@ -10,11 +10,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import static java.nio.file.Files.newOutputStream;
-
 public class newPartRegister<T> {
     public ObservableList<T> array = FXCollections.observableArrayList();
-    static Path Path = Paths.get("Semesteroppgave\\src\\sample\\newParts");
+    public static Path Path = Paths.get("Semesteroppgave\\src\\sample\\newParts");
 
     public void attachTableView(TableView tv){
         tv.setItems(array);
@@ -28,12 +26,20 @@ public class newPartRegister<T> {
         array.add(enDel);
     }
 
-    public void saveNewParts(ObservableList<T> array, Path path) throws IOException {
-        OutputStream fis = Files.newOutputStream(path);
-        ObjectOutputStream oos = new ObjectOutputStream(fis);
 
-        ArrayList<T> newarray = new ArrayList<>(array);
-        oos.writeObject(newarray);
+    public void saveNewParts(ObservableList<T> array, Path path) throws IOException {
+       OutputStream fis = Files.newOutputStream(path);
+       FileOutputStream output = new FileOutputStream(String.valueOf(path), true);
+       ObjectOutputStream oos = new ObjectOutputStream(output);
+
+       ArrayList<T> newarray = new ArrayList<>(array);
+       try{
+           oos.writeObject(newarray);
+       }finally {
+           oos.close();
+       }
+
+
     }
 
     public ObservableList loadNewParts(Path path) throws IOException, ClassNotFoundException {

@@ -33,6 +33,8 @@ public class ControllerMainPage implements Initializable {
     PartRegister newPartRegister = new PartRegister();
     PackageRegister newPackageRegister = new PackageRegister();
     DetailsRegister newNewDetails = new DetailsRegister();
+    newPartRegister newPart = new newPartRegister();
+
     static int counter_CPU = 0;
     static int counter_GPU = 0;
     static int counter_RAM = 0;
@@ -67,28 +69,28 @@ public class ControllerMainPage implements Initializable {
     private TableColumn<Package, Double> tblPricePackage;
 
     @FXML
-    private ComboBox<String> comboCPU;
+    public ComboBox<String> comboCPU;
 
     @FXML
-    private ComboBox<String> comboGPU;
+    public ComboBox<String> comboGPU;
 
     @FXML
-    private ComboBox<String> comboRAM;
+    public ComboBox<String> comboRAM;
 
     @FXML
-    private ComboBox<String> comboHDDSSDPC;
+    public ComboBox<String> comboHDDSSDPC;
 
     @FXML
-    private ComboBox<String> comboMonitor;
+    public ComboBox<String> comboMonitor;
 
     @FXML
-    private ComboBox<String> comboKeyboard;
+    public ComboBox<String> comboKeyboard;
 
     @FXML
-    private ComboBox<String> comboMouse;
+    public ComboBox<String> comboMouse;
 
     @FXML
-    private ComboBox<String> comboCabinett;
+    public ComboBox<String> comboCabinett;
 
     @FXML
     private Label lblSum;
@@ -145,9 +147,7 @@ public class ControllerMainPage implements Initializable {
         FileSaverPC.save();
 
         tblPCdel.setItems(newPartRegister.getArray());
-        newPackageRegister.array = newPackageRegister.loadData(newPackageRegister.path);
         newPackageRegister.registrerPackage(pc,price);
-        newPackageRegister.save(newPackageRegister.array, PackageRegister.path);
         tblPackage.setItems(newPackageRegister.getArray());
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -155,10 +155,12 @@ public class ControllerMainPage implements Initializable {
         alert.setHeaderText("Takk for handelen!");
         alert.setContentText("Produktet er kjøpt.");
         alert.showAndWait();
+
+
         clear();
     }
 
-    public void clear() {
+    public void clear(){
         comboCPU.getSelectionModel().clearSelection();
         comboGPU.getSelectionModel().clearSelection();
         comboHDDSSDPC.getSelectionModel().clearSelection();
@@ -171,14 +173,14 @@ public class ControllerMainPage implements Initializable {
         tblPCdel.getItems().clear();
         lblSum.setText("");
 
-        counter_CPU = 0;
-        counter_GPU = 0;
-        counter_RAM = 0;
-        counter_HDD = 0;
-        counter_KB = 0;
-        counter_Mon = 0;
-        counter_Mou = 0;
-        counter_Cab = 0;
+        counter_CPU=0;
+        counter_GPU=0;
+        counter_RAM=0;
+        counter_HDD=0;
+        counter_Mou=0;
+        counter_Mon=0;
+        counter_KB=0;
+        counter_Cab=0;
     }
 
     @FXML
@@ -564,31 +566,6 @@ public class ControllerMainPage implements Initializable {
             nyPc=pack.getPackageName();
         }
 
-        newNewDetails.addToPackage(new Part("CPU",nyPc.getCABINET(),0.0));
-        newNewDetails.addToPackage(new Part("CPU",nyPc.getCPU(),0.0));
-        newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU1(),0.0));
-        newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU2(),0.0));
-        newNewDetails.addToPackage(new Part("Memory",nyPc.getRAM(),0.0));
-        newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD1(),0.0));
-        newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD2(),0.0));
-        newNewDetails.addToPackage(new Part("Monitor",nyPc.getMONITOR(),0.0));
-        newNewDetails.addToPackage(new Part("Mouse",nyPc.getMOUSE(),0.0));
-        newNewDetails.addToPackage(new Part("Keyboard",nyPc.getKEYBOARD(),0.0));
-
-        newNewDetails.save(newNewDetails.array,DetailsRegister.path);
-        newNewDetails.removeAll();
-    }
-
-    @FXML
-    void showDetails(ActionEvent event) throws IOException {
-        saveDetails();
-        /*ObservableList<Package> nylist = tblPackage.getSelectionModel().getSelectedItems();
-
-        PC nyPc = new PC(null,null,null,null,null,null,null,null,null,null);
-
-        for (Package pack: nylist) {
-            nyPc=pack.getPackageName();
-        }
 
         newNewDetails.addToPackage(new Part("CPU",nyPc.getCPU(),0.0));
         newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU1(),0.0));
@@ -601,7 +578,36 @@ public class ControllerMainPage implements Initializable {
         newNewDetails.addToPackage(new Part("Keyboard",nyPc.getKEYBOARD(),0.0));
         newNewDetails.addToPackage(new Part("Cabinet",nyPc.getCABINET(),0.0));
 
-        newNewDetails.save(newNewDetails.array,DetailsRegister.path);*/
+        newNewDetails.save(newNewDetails.array,DetailsRegister.path);
+        newNewDetails.removeAll();
+    }
+
+    @FXML
+    void showDetails(ActionEvent event) throws IOException {
+        /*ObservableList<Package> nylist = tblPackage.getSelectionModel().getSelectedItems();
+
+        PC nyPc = new PC(null,null,null,null,null,null,null,null,null,null);
+
+        for (Package pack: nylist) {
+            nyPc=pack.getPackageName();
+        }
+
+
+        newNewDetails.addToPackage(new Part("CPU",nyPc.getCPU(),0.0));
+        newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU1(),0.0));
+        newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU2(),0.0));
+        newNewDetails.addToPackage(new Part("Memory",nyPc.getRAM(),0.0));
+        newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD1(),0.0));
+        newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD2(),0.0));
+        newNewDetails.addToPackage(new Part("Monitor",nyPc.getMONITOR(),0.0));
+        newNewDetails.addToPackage(new Part("Mouse",nyPc.getMOUSE(),0.0));
+        newNewDetails.addToPackage(new Part("Keyboard",nyPc.getKEYBOARD(),0.0));
+        newNewDetails.addToPackage(new Part("Cabinet",nyPc.getCABINET(),0.0));
+
+        newNewDetails.save(newNewDetails.array,DetailsRegister.path);
+         */
+
+        saveDetails();
         DetailsScene();
     }
 
@@ -612,6 +618,7 @@ public class ControllerMainPage implements Initializable {
         Stage detailsStage = new Stage();
         detailsStage.setTitle("Details");
         detailsStage.setScene(detailScene);
+
         detailsStage.show();
     }
 
@@ -653,14 +660,6 @@ public class ControllerMainPage implements Initializable {
         tblType.setCellFactory(TextFieldTableCell.forTableColumn());
         tblDel.setCellFactory(TextFieldTableCell.forTableColumn());
         tblPris.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
-
-        try {
-            tblPackage.setItems(newPackageRegister.loadData(newPackageRegister.path));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
 
         comboCPU.getItems().addAll("AMD Athlon 3000G",
                                     "Intel Pentium Gold G5600",
