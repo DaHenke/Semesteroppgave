@@ -32,21 +32,4 @@ public class PartRegister {
     public String toString() {
         return String.valueOf(super.toString());
     }
-
-        /*public void save() throws IOException {
-            OutputStream fis = Files.newOutputStream(PartPath);
-            ObjectOutputStream oos = new ObjectOutputStream(fis);
-
-            ArrayList<Part> newarray = new ArrayList<>(array);
-            oos.writeObject(newarray);
-        }
-
-        public ObservableList<Part> loadData() throws IOException, ClassNotFoundException {
-            FileInputStream fis = new FileInputStream(String.valueOf(PartPath));
-            ObjectInputStream ois = new ObjectInputStream(fis);
-
-            ArrayList<Part> d = (ArrayList<Part>) ois.readObject();
-            ObservableList<Part> o = FXCollections.observableArrayList(d);
-            return o;
-        }*/
 }
