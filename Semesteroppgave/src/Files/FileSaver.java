@@ -15,11 +15,12 @@ import java.io.File;
 import java.nio.file.Paths;
 
 public class FileSaver {
+    newPartRegister register = new newPartRegister();
     public static void save() throws InvalidFileEndException {
         FileChooser saveAs = new FileChooser();
         File saveFile = saveAs.showSaveDialog(null);
 
-        String formatted = PCFormatter.formatParts(newPartRegister.array);
+        String formatted = "";//PCFormatter.formatParts();
         try{
             Path filePath = Paths.get(saveFile.getAbsolutePath());
             fileEnding.file(filePath.toString());

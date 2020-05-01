@@ -28,6 +28,10 @@ public class PartRegister {
             array.add(enDel);
         }
 
+        public void removeAll(){
+            array.clear();
+        }
+
     @Override
     public String toString() {
         return String.valueOf(super.toString());
