@@ -33,7 +33,7 @@ public class ControllerMainPage implements Initializable {
     PartRegister newPartRegister = new PartRegister();
     PackageRegister newPackageRegister = new PackageRegister();
     DetailsRegister newNewDetails = new DetailsRegister();
-    newPartRegister newPart = new newPartRegister();
+    newPartRegister newNewPartRegister = new newPartRegister();
 
     static int counter_CPU = 0;
     static int counter_GPU = 0;
@@ -103,7 +103,7 @@ public class ControllerMainPage implements Initializable {
     //end
 
     @FXML
-    void openAdmin(ActionEvent event) throws IOException {
+    void openAdmin(ActionEvent event) throws IOException, ClassNotFoundException {
         try {
             FXMLLoader loader = new FXMLLoader();
             Parent loginPageParent = loader.load(getClass().getResource("logIn.fxml"));
@@ -117,6 +117,7 @@ public class ControllerMainPage implements Initializable {
         }catch(IOException e){
             e.printStackTrace();
         }
+        System.out.println(newNewPartRegister.loadNewParts(sample.newPartRegister.Path));
     }
 
     @FXML
