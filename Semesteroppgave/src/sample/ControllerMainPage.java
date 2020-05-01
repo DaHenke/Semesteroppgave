@@ -147,6 +147,7 @@ public class ControllerMainPage implements Initializable {
         FileSaverPC.save();
 
         tblPCdel.setItems(newPartRegister.getArray());
+        newPackageRegister.array = newPackageRegister.loadData(newPackageRegister.path);
         newPackageRegister.registrerPackage(pc,price);
         tblPackage.setItems(newPackageRegister.getArray());
 
@@ -660,6 +661,13 @@ public class ControllerMainPage implements Initializable {
         tblType.setCellFactory(TextFieldTableCell.forTableColumn());
         tblDel.setCellFactory(TextFieldTableCell.forTableColumn());
         tblPris.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+        try {
+            tblPackage.setItems(newPackageRegister.loadData(newPackageRegister.path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         comboCPU.getItems().addAll("AMD Athlon 3000G",
                                     "Intel Pentium Gold G5600",

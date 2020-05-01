@@ -1,10 +1,10 @@
-CPU;AMD Athlon 3000G;599.0
-GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
-GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
-Memory;HyperX Fury DDR3 1600MHz 4GB;333.0
-HDD;Seagate Barracuda 3TB;1022.0
-HDD;Seagate Barracuda 3TB;1022.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+GPU;PNY Quadro P400 2GB DVI;1889.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
 Monitor;Samsung 24 skjerm S24E450F;1695.0
-Mouse;Microsoft Mobile Mouse 3600;349.0
+Mouse;Surface ARC mus;829.0
 Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
-Cabinet;Fractal Design Focus G Sort Mid Tower;599.0
+Cabinet;Chieftec Scorpion II Gaming;999.0
