@@ -57,4 +57,15 @@ public class PackageRegister implements Serializable {
         }
         return null;
     }
+
+    public void runPackages(TableView tv){
+        try {
+            array = loadData(path);
+            tv.setItems(array);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

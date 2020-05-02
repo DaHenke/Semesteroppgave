@@ -61,6 +61,6 @@ public class Part implements Serializable {
 
     @Override
     public String toString() {
-        return Type+";" + DelNavn+";"+ DelPris;
+        return DelNavn+"\n"+DelPris+" kr\n";
     }
 }

@@ -34,4 +34,25 @@ public class CheckPartType {
             throw new InvalidPartTypeException("Not a valid part");
         }
     }
+    public static String checkTypeCB(String part) {
+        if (part.matches("CPU")) {
+            return part;
+        } else if (part.matches("GPU")) {
+            return part;
+        } else if (part.matches("Memory")) {
+            return part;
+        } else if (part.matches("HDD")) {
+            return part;
+        } else if (part.matches("Monitor")) {
+            return part;
+        } else if (part.matches("Mouse")) {
+            return part;
+        } else if (part.matches("Keyboard")) {
+            return part;
+        } else if (part.matches("Cabinet")) {
+            return part;
+        } else {
+            throw new InvalidPartTypeException("Not a valid part");
+        }
+    }
 }

@@ -10,29 +10,29 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class newPartRegister<T> {
-    public ObservableList<T> array = FXCollections.observableArrayList();
+public class newPartRegister {
+    public ObservableList<Part> array = FXCollections.observableArrayList();
     public static Path Path = Paths.get("Semesteroppgave\\src\\sample\\newParts");
 
     public void attachTableView(TableView tv){
         tv.setItems(array);
     }
 
-    public ObservableList<T> getArray(){
+    public ObservableList<Part> getArray(){
         return this.array;
     }
 
-    public void registrerPCDel(T enDel){
+    public void registrerPCDel(Part enDel){
         array.add(enDel);
     }
 
 
-    public void saveNewParts(ObservableList<T> array, Path path) throws IOException {
+    public void saveNewParts(ObservableList<Part> array, Path path) throws IOException {
        OutputStream fis = Files.newOutputStream(path);
        FileOutputStream output = new FileOutputStream(String.valueOf(path), true);
        ObjectOutputStream oos = new ObjectOutputStream(output);
 
-       ArrayList<T> newarray = new ArrayList<>(array);
+       ArrayList<Part> newarray = new ArrayList<>(array);
        try{
            oos.writeObject(newarray);
        }finally {
@@ -59,5 +59,16 @@ public class newPartRegister<T> {
     }
     public void removeAll(){
         array.clear();
+    }
+
+    public void runDetails(TableView tv){
+        try {
+            array = loadNewParts(Path);
+            tv.setItems(array);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

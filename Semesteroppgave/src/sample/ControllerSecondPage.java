@@ -21,7 +21,7 @@ import static java.lang.Integer.parseInt;
 
 public class ControllerSecondPage implements Initializable {
 
-    newPartRegister newPart = new newPartRegister();
+    static newPartRegister newPart = new newPartRegister();
 
 
 
@@ -87,9 +87,9 @@ public class ControllerSecondPage implements Initializable {
         }else{
             Part nyDel = new Part(comboType.getValue(),txtNyDelnavn.getText(),Double.parseDouble(txtNyPris.getText()));
             newPart.array=newPart.loadNewParts(newPart.Path);
-            newPart.registrerPCDel(nyDel);
             newPart.attachTableView(tblNyDel);
-            System.out.println(newPart.array);
+            newPart.registrerPCDel(nyDel);
+            saveFileny();
         }
 
 
@@ -104,6 +104,23 @@ public class ControllerSecondPage implements Initializable {
         allNewPartsChosen = tblNyDel.getItems();
         newPartChosen =tblNyDel.getSelectionModel().getSelectedItems();
         allNewPartsChosen.removeAll(newPartChosen);
+    }
+
+    void saveFileny() throws IOException {
+        if(!newPart.array.isEmpty()) {
+            newPart.saveNewParts(newPart.array, newPartRegister.Path);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Lagring vellykket!");
+            alert.setHeaderText("Vellykket");
+            alert.setContentText("Nye deler ligger inne i valgmenyene på hovedsiden");
+            alert.showAndWait();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lagring feilet!");
+            alert.setHeaderText("Feil");
+            alert.setContentText("Du har ikke lagt til nye deler");
+            alert.showAndWait();
+        }
     }
 
     @FXML
@@ -164,16 +181,7 @@ public class ControllerSecondPage implements Initializable {
         tblNyDelnavn.setCellFactory(TextFieldTableCell.forTableColumn());
         tblNyPris.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         tblNyDel.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-
-        try {
-            tblNyDel.setItems(newPart.loadNewParts(newPartRegister.Path));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        newPart.runDetails(tblNyDel);
         comboType.getItems().addAll("CPU","GPU","Memory","HDD","Monitor","Mouse","Keyboard","Cabinet");
-
-
     }
 }

@@ -1,28 +1,16 @@
 package sample;
 
-import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
-import javafx.util.converter.DoubleStringConverter;
-import trådprogrammering.Threads;
-
-import javax.swing.*;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import static trådprogrammering.tråder.*;
 
 public class ControllerLogIn {
 
@@ -38,8 +26,6 @@ public class ControllerLogIn {
     @FXML
     private Label lblStatus;
 
-    private Threads task;
-
 
 
     @FXML
@@ -49,16 +35,6 @@ public class ControllerLogIn {
             lblStatus.setText("Login successful");
             FXMLLoader loader = new FXMLLoader();
             Parent loginPageParent = loader.load(getClass().getResource("secondPage.fxml"));
-/*
-            task = new Threads(7);
-            task.setOnSucceeded(this::threadDone);
-            task.setOnFailed(this::threadFailed);
-            Thread th = new Thread(task);
-            th.setDaemon(true);
-            logIn.setDisable(true);
-            th.start();
-
- */
 
             Scene loginPageScene = new Scene(loginPageParent);
 
@@ -76,17 +52,6 @@ public class ControllerLogIn {
         }
     }
 
-    private void threadDone(WorkerStateEvent e){
-        Integer result = task.getValue();
-        lblStatus.setText("Login successful");
-        logIn.setDisable(false);
-    }
-
-    private void threadFailed(WorkerStateEvent e){
-        lblStatus.setText("Login failed");
-        logIn.setDisable(false);
-    }
-
     @FXML
     void backToMainPage(ActionEvent event) {
         try{
@@ -102,13 +67,5 @@ public class ControllerLogIn {
         }catch(IOException e){
             e.printStackTrace();
         }
-
     }
-
-    @FXML
-    void register(ActionEvent event) {
-
-    }
-
-
 }
