@@ -10,9 +10,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 public class ControllerLogIn {
+
 
     @FXML
     private Button logIn;
@@ -32,7 +34,10 @@ public class ControllerLogIn {
     private void logIn(ActionEvent event) throws Exception{
         try {
         if(txtUsername.getText().equals("admin") && txtPassword.getText().equals("12345")){
-            lblStatus.setText("Login successful");
+
+            lblStatus.setText("");
+            Thread.sleep(4000);
+
             FXMLLoader loader = new FXMLLoader();
             Parent loginPageParent = loader.load(getClass().getResource("secondPage.fxml"));
 

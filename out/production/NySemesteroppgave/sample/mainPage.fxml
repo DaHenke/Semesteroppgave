@@ -119,11 +119,6 @@
       <ComboBox fx:id="comboMonitor" layoutX="330.0" layoutY="109.0" prefHeight="26.0" prefWidth="198.0" promptText="Monitor" />
       <ComboBox fx:id="comboKeyboard" layoutX="327.0" layoutY="380.0" prefHeight="26.0" prefWidth="198.0" promptText="Keyboard" />
       <ComboBox fx:id="comboMouse" layoutX="327.0" layoutY="243.0" prefHeight="26.0" prefWidth="198.0" promptText="Mouse" />
-      <Label layoutX="330.0" layoutY="75.0" prefHeight="30.0" prefWidth="184.0" text="Optional parts...">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
       <Button layoutX="128.0" layoutY="153.0" mnemonicParsing="false" onAction="#regCPU" prefHeight="26.0" prefWidth="120.0" text="Add to cart" />
       <Button layoutX="128.0" layoutY="287.0" mnemonicParsing="false" onAction="#regGPU" prefHeight="26.0" prefWidth="120.0" text="Add to cart" />
       <Button layoutX="128.0" layoutY="427.0" mnemonicParsing="false" onAction="#regRAM" prefHeight="26.0" prefWidth="120.0" text="Add to cart" />
