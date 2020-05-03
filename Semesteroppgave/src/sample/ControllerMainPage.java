@@ -25,16 +25,6 @@ public class ControllerMainPage implements Initializable {
     PackageRegister newPackageRegister = new PackageRegister();
     DetailsRegister newNewDetails = new DetailsRegister();
 
-    static int counter_CPU = 0;
-    static int counter_GPU = 0;
-    static int counter_RAM = 0;
-    static int counter_HDD = 0;
-    static int counter_KB = 0;
-    static int counter_Mon = 0;
-    static int counter_Mou = 0;
-    static int counter_Cab = 0;
-    double sum = 0;
-
     //mainPage.fxml
     @FXML
     public TableView<Part> tblPCdel;
@@ -129,7 +119,7 @@ public class ControllerMainPage implements Initializable {
         nyPart.setDelNavn(CPUnavn);
         nyPart.setDelPris(CPUpris);
 
-        checkConfiguration.checkCPU(counter_CPU);
+        checkConfiguration.checkCPU();
         checkConfiguration.countMaxComponents();
 
         newPartRegister.registrerPCDel(type, CPUnavn, CPUpris);
@@ -139,7 +129,6 @@ public class ControllerMainPage implements Initializable {
 
     @FXML
     void regGPU(ActionEvent event) throws InterruptedException {
-        sum = 0;
         String type = "GPU";
         String GPUnavn = comboGPU.getValue().DelNavn;
         double GPUpris = comboGPU.getValue().DelPris;
@@ -149,22 +138,17 @@ public class ControllerMainPage implements Initializable {
         nyPart.setDelNavn(GPUnavn);
         nyPart.setDelPris(GPUpris);
 
-        checkConfiguration.checkGPU(counter_GPU);
+        checkConfiguration.checkGPU();
         //counter_GPU++;
         checkConfiguration.countMaxComponents();
         newPartRegister.registrerPCDel(type, GPUnavn, GPUpris);
         tblPCdel.setItems(newPartRegister.getArray());
 
-        for(Part price : tblPCdel.getItems()){
-            double pris = tblPris.getCellObservableValue(price).getValue();
-            sum+=pris;
-        }
-        lblSum.setText(String.valueOf(sum));
+        ButtonMethods.calculatePrice(tblPCdel,tblPris,lblSum);
     }
 
     @FXML
     void regRAM(ActionEvent event) throws InterruptedException {
-        sum = 0;
         String type = "Memory";
         String RAMnavn = comboRAM.getValue().DelNavn;
         double RAMpris = comboRAM.getValue().DelPris;
@@ -174,22 +158,17 @@ public class ControllerMainPage implements Initializable {
         nyPart.setDelNavn(RAMnavn);
         nyPart.setDelPris(RAMpris);
 
-        checkConfiguration.checkRAM(counter_RAM);
+        checkConfiguration.checkRAM();
         //counter_RAM++;
         checkConfiguration.countMaxComponents();
         newPartRegister.registrerPCDel(type, RAMnavn, RAMpris);
         tblPCdel.setItems(newPartRegister.getArray());
 
-        for(Part price : tblPCdel.getItems()){
-            double pris = tblPris.getCellObservableValue(price).getValue();
-            sum+=pris;
-        }
-        lblSum.setText(String.valueOf(sum));
+        ButtonMethods.calculatePrice(tblPCdel,tblPris,lblSum);
     }
 
     @FXML
     void regHDD(ActionEvent event) throws InterruptedException {
-        sum = 0;
         String type = "HDD";
         String HDDnavn = comboHDDSSDPC.getValue().DelNavn;
         double HDDpris = comboHDDSSDPC.getValue().DelPris;
@@ -199,23 +178,18 @@ public class ControllerMainPage implements Initializable {
         nyPart.setDelNavn(HDDnavn);
         nyPart.setDelPris(HDDpris);
 
-        checkConfiguration.checkHDD(counter_HDD);
+        checkConfiguration.checkHDD();
         //counter_HDD++;
         checkConfiguration.countMaxComponents();
         newPartRegister.registrerPCDel(type, HDDnavn, HDDpris);
         tblPCdel.setItems(newPartRegister.getArray());
 
-        for(Part price : tblPCdel.getItems()){
-            double pris = tblPris.getCellObservableValue(price).getValue();
-            sum+=pris;
-        }
-        lblSum.setText(String.valueOf(sum));
+        ButtonMethods.calculatePrice(tblPCdel,tblPris,lblSum);
 
     }
 
     @FXML
     void regKeyboard(ActionEvent event) throws InterruptedException {
-        sum = 0;
         String type = "Keyboard";
         String keyboardNavn = comboKeyboard.getValue().DelNavn;
         double keyboardPris = comboKeyboard.getValue().DelPris;
@@ -225,22 +199,17 @@ public class ControllerMainPage implements Initializable {
         nyPart.setDelNavn(keyboardNavn);
         nyPart.setDelPris(keyboardPris);
 
-        checkConfiguration.checkKeyboard(counter_KB);
+        checkConfiguration.checkKeyboard();
         //counter_KB++;
         checkConfiguration.countMaxComponents();
         newPartRegister.registrerPCDel(type, keyboardNavn, keyboardPris);
         tblPCdel.setItems(newPartRegister.getArray());
 
-        for(Part price : tblPCdel.getItems()){
-            double pris = tblPris.getCellObservableValue(price).getValue();
-            sum+=pris;
-        }
-        lblSum.setText(String.valueOf(sum));
+        ButtonMethods.calculatePrice(tblPCdel,tblPris,lblSum);
     }
 
     @FXML
     void regMonitor(ActionEvent event) throws InterruptedException {
-        sum = 0;
         String type = "Monitor";
         String monitorNavn = comboMonitor.getValue().DelNavn;
         double monitorPris = comboMonitor.getValue().DelPris;
@@ -250,22 +219,17 @@ public class ControllerMainPage implements Initializable {
         nyPart.setDelNavn(monitorNavn);
         nyPart.setDelPris(monitorPris);
 
-        checkConfiguration.checkMonitor(counter_Mon);
+        checkConfiguration.checkMonitor();
         //counter_Mon++;
         checkConfiguration.countMaxComponents();
         newPartRegister.registrerPCDel(type, monitorNavn, monitorPris);
         tblPCdel.setItems(newPartRegister.getArray());
 
-        for(Part price : tblPCdel.getItems()){
-            double pris = tblPris.getCellObservableValue(price).getValue();
-            sum+=pris;
-        }
-        lblSum.setText(String.valueOf(sum));
+        ButtonMethods.calculatePrice(tblPCdel,tblPris,lblSum);
     }
 
     @FXML
     void regMouse(ActionEvent event) throws InterruptedException {
-        sum = 0;
         String type = "Mouse";
         String mouseNavn = comboMouse.getValue().DelNavn;
         double mousePris = comboMouse.getValue().DelPris;
@@ -275,22 +239,17 @@ public class ControllerMainPage implements Initializable {
         nyPart.setDelNavn(mouseNavn);
         nyPart.setDelPris(mousePris);
 
-        checkConfiguration.checkMouse(counter_Mou);
+        checkConfiguration.checkMouse();
         //counter_Mou++;
         checkConfiguration.countMaxComponents();
         newPartRegister.registrerPCDel(type, mouseNavn, mousePris);
         tblPCdel.setItems(newPartRegister.getArray());
 
-        for(Part price : tblPCdel.getItems()){
-            double pris = tblPris.getCellObservableValue(price).getValue();
-            sum+=pris;
-        }
-        lblSum.setText(String.valueOf(sum));
+        ButtonMethods.calculatePrice(tblPCdel,tblPris,lblSum);
     }
 
     @FXML
     void regCabinett(ActionEvent event) {
-        sum = 0;
         String type = "Cabinet";
         String cabinetName = comboCabinett.getValue().DelNavn;
         double cabinetPrice = comboCabinett.getValue().DelPris;
@@ -300,17 +259,13 @@ public class ControllerMainPage implements Initializable {
         nyPart.setDelNavn(cabinetName);
         nyPart.setDelPris(cabinetPrice);
 
-        checkConfiguration.checkCabinet(counter_Cab);
+        checkConfiguration.checkCabinet();
         //counter_Cab++;
         checkConfiguration.countMaxComponents();
         newPartRegister.registrerPCDel(type, cabinetName, cabinetPrice);
         tblPCdel.setItems(newPartRegister.getArray());
 
-        for(Part price : tblPCdel.getItems()){
-            double pris = tblPris.getCellObservableValue(price).getValue();
-            sum+=pris;
-        }
-        lblSum.setText(String.valueOf(sum));
+        ButtonMethods.calculatePrice(tblPCdel,tblPris,lblSum);
     }
 
 
@@ -327,16 +282,9 @@ public class ControllerMainPage implements Initializable {
 
     @FXML
     void loadFile(ActionEvent event) throws IOException { //TRENGER NOK IKKE DENNE
-        sum = 0;
-
         newPartRegister = FileOpener.read();
         newPartRegister.attachTableView(tblPCdel);
-
-        for(Part price : tblPCdel.getItems()){
-            double pris = tblPris.getCellObservableValue(price).getValue();
-            sum+=pris;
-        }
-        lblSum.setText(String.valueOf(sum));
+        ButtonMethods.calculatePrice(tblPCdel,tblPris,lblSum);
     }
 
     @FXML
