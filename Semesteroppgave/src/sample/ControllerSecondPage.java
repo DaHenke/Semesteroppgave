@@ -17,13 +17,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static java.lang.Integer.parseInt;
 
 public class ControllerSecondPage implements Initializable {
 
     static newPartRegister newPart = new newPartRegister();
-
-
 
     @FXML
     private ComboBox<String> comboType;
@@ -99,11 +96,18 @@ public class ControllerSecondPage implements Initializable {
     }
 
     @FXML
-    void removeNewPart(ActionEvent event) {
+    void removeNewPart(ActionEvent event) throws IOException, ClassNotFoundException {
         ObservableList<Part> newPartChosen, allNewPartsChosen;
         allNewPartsChosen = tblNyDel.getItems();
-        newPartChosen =tblNyDel.getSelectionModel().getSelectedItems();
+        newPartChosen = tblNyDel.getSelectionModel().getSelectedItems();
         allNewPartsChosen.removeAll(newPartChosen);
+        String type = tblNyDel.getSelectionModel().getSelectedItem().getType();
+        String delnavn = tblNyDel.getSelectionModel().getSelectedItem().getDelNavn();
+        double delpris = tblNyDel.getSelectionModel().getSelectedItem().getDelPris();
+        Part removePart = new Part(type,delnavn,delpris);
+        newPart.array.remove(removePart);
+        saveFileny();
+        newPart.array=newPart.loadNewParts(newPart.Path);
     }
 
     void saveFileny() throws IOException {

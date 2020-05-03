@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9de360d-3971-4e79-9b02-f9412904d9a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/AddElementComboBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/DefaultParts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/ButtonMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/CartButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/SearchFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/CheckPartType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/CheckPartType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerLogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerLogIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerMainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerMainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerSecondPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerSecondPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerShowDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerShowDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Details" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Details" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Package.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Package.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/PackageRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/PackageRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Part.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/newPartRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/newPartRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Packages" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/checkConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/checkConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/mainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/mainPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/newParts" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/newParts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NySemesteroppgave/sample/mainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NySemesteroppgave/sample/mainPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +108,8 @@
       <workItem from="1587998837866" duration="7182000" />
       <workItem from="1588010510841" duration="8211000" />
       <workItem from="1588140045744" duration="672000" />
-      <workItem from="1588441898012" duration="9513000" />
+      <workItem from="1588441898012" duration="9624000" />
+      <workItem from="1588488104280" duration="6717000" />
     </task>
     <task id="LOCAL−00001" summary="En test">
       <created>1585585521585</created>
@@ -296,7 +297,19 @@
       <option name="presentableId" value="LOCAL−00031" />
       <updated>1588343538708</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL−00032" summary="Søkefilter og avvikshåndtering">
+      <created>1588451442026</created>
+      <option name="number" value="LOCAL−00032" />
+      <option name="presentableId" value="LOCAL−00032" />
+      <updated>1588451442026</updated>
+    </task>
+    <task id="LOCAL−00033" summary="Søkefilter og avvikshåndtering">
+      <created>1588451491951</created>
+      <option name="number" value="LOCAL−00033" />
+      <option name="presentableId" value="LOCAL−00033" />
+      <updated>1588451491951</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,30 +343,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587387267476" />
-    <state x="365" y="7" key="CommitChangelistDialog2" timestamp="1588451484044">
+    <state x="365" y="7" key="CommitChangelistDialog2" timestamp="1588451491435">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="365" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588451484044" />
+    <state x="365" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588451491435" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587926934803">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587926934803" />
-    <state width="1493" height="239" key="GridCell.Tab.0.bottom" timestamp="1588451474520">
+    <state width="1493" height="239" key="GridCell.Tab.0.bottom" timestamp="1588499151357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588451474520" />
-    <state width="1493" height="239" key="GridCell.Tab.0.center" timestamp="1588451474520">
+    <state width="1493" height="239" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588499151357" />
+    <state width="1493" height="239" key="GridCell.Tab.0.center" timestamp="1588499151357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588451474520" />
-    <state width="1493" height="239" key="GridCell.Tab.0.left" timestamp="1588451474520">
+    <state width="1493" height="239" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588499151357" />
+    <state width="1493" height="239" key="GridCell.Tab.0.left" timestamp="1588499151357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588451474520" />
-    <state width="1493" height="239" key="GridCell.Tab.0.right" timestamp="1588451474520">
+    <state width="1493" height="239" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588499151357" />
+    <state width="1493" height="239" key="GridCell.Tab.0.right" timestamp="1588499151357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588451474520" />
+    <state width="1493" height="239" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588499151357" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588006026692">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -378,26 +391,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1588442208528" />
-    <state x="329" y="115" key="Vcs.Push.Dialog.v2" timestamp="1588451443534">
+    <state x="329" y="115" key="Vcs.Push.Dialog.v2" timestamp="1588451494540">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="329" y="115" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588451443534" />
+    <state x="329" y="115" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588451494540" />
     <state x="627" y="317" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588079630303">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="627" y="317" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588079630303" />
-    <state x="499" y="192" key="extract.method.dialog" timestamp="1588082536440">
+    <state x="499" y="192" key="extract.method.dialog" timestamp="1588496765000">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="192" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1588082536440" />
+    <state x="499" y="192" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1588496765000" />
     <state x="475" y="41" key="refactoring.ChangeSignatureDialog" timestamp="1587572927414">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="475" y="41" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1587572927414" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1588078834417">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1588495212674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588078834417" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588495212674" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1588449607610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -1,10 +1,10 @@
-CPU;CPUtest;123.0
-GPU;GPUtest;123.0
-Memory;RAMtest;123.0
-HDD;HDDtest;123.0
-Monitor;MonTest;123.0
-Mouse;MouTest;123.0
-Keyboard;KBtest;123.0
-Cabinet;CabTest;123.0
-GPU;GPUtest;123.0
-HDD;HDDtest;123.0
+CPU;Intel Pentium Gold G5600;979.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+Memory;Crucial DDR4 2400MHz 8GB;564.0
+HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate SkyHawk 6TB;2310.0
+Monitor;Samsung 24 skjerm S24E450F;1695.0
+Mouse;Microsoft Mobile Mouse 3600;349.0
+Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Cabinet;Phanteks Eclipse P400A RGB Black;1099.0

@@ -2,13 +2,20 @@ package sample;
 
 import exceptions.InvalidPCConfigurationException;
         import exceptions.InvalidPartTypeException;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 
 public class checkConfiguration {
     static int MAX_NO_OF_COMPONENTS = 0;
 
+    public static void countMaxComponents(){
+        MAX_NO_OF_COMPONENTS++;
+    }
+
     public static int checkCPU(int no_CPU)throws InvalidPCConfigurationException {
         if(no_CPU == 0){
-            no_CPU++;
+            ControllerMainPage.counter_CPU++;
         }else{
             throw new InvalidPCConfigurationException("Du kan bare velge en CPU");
         }
@@ -16,7 +23,7 @@ public class checkConfiguration {
     }
     public static int checkGPU(int no_GPU)throws InvalidPCConfigurationException{
         if(no_GPU == 0 || no_GPU == 1){
-            no_GPU++;
+            ControllerMainPage.counter_GPU++;
         }else if(no_GPU == 2){
             throw new InvalidPCConfigurationException("Du kan kun velge opp til to GPUer");
         }
@@ -24,7 +31,7 @@ public class checkConfiguration {
     }
     public static int checkRAM(int no_RAM)throws InvalidPCConfigurationException{
         if(no_RAM == 0){
-            no_RAM++;
+            ControllerMainPage.counter_RAM++;
         }else{
             throw new InvalidPCConfigurationException("Du kan bare velge en RAM");
         }
@@ -33,7 +40,7 @@ public class checkConfiguration {
     }
     public static int checkHDD(int no_HDD)throws InvalidPCConfigurationException{
         if(no_HDD == 0 || no_HDD == 1){
-            no_HDD++;
+            ControllerMainPage.counter_HDD++;
         }else if(no_HDD == 2){
             throw new InvalidPCConfigurationException("Du kan kun velge opp til to HDDer/SSDer");
         }
@@ -42,7 +49,7 @@ public class checkConfiguration {
     }
     public static int checkKeyboard(int no_Keyboards)throws InvalidPCConfigurationException{
         if(no_Keyboards == 0){
-            no_Keyboards++;
+            ControllerMainPage.counter_KB++;
         }else{
             throw new InvalidPCConfigurationException("Du kan bare velge ett keyboard");
         }
@@ -51,7 +58,7 @@ public class checkConfiguration {
     }
     public static int checkMonitor(int no_Monitor)throws InvalidPCConfigurationException{
         if(no_Monitor == 0){
-            no_Monitor++;
+            ControllerMainPage.counter_Mon++;
         }else{
             throw new InvalidPCConfigurationException("Du kan bare velge en skjerm");
         }
@@ -59,7 +66,7 @@ public class checkConfiguration {
     }
     public static int checkMouse(int no_Mouse)throws InvalidPCConfigurationException{
         if(no_Mouse == 0){
-            no_Mouse++;
+            ControllerMainPage.counter_Mou++;
         }else{
             throw new InvalidPCConfigurationException("Du kan bare velge en PC-mus");
         }
@@ -67,7 +74,7 @@ public class checkConfiguration {
     }
     public static int checkCabinet(int no_Cabinet)throws InvalidPCConfigurationException{
         if(no_Cabinet == 0){
-            no_Cabinet++;
+            ControllerMainPage.counter_Cab++;
         }else{
             throw new InvalidPCConfigurationException("Du kan bare velge ett kabinett");
         }
@@ -147,6 +154,30 @@ public class checkConfiguration {
             throw new InvalidPCConfigurationException("Too many parts");
         }
     }*/
+
+    public static void clear(ComboBox comboCPU, ComboBox comboGPU, ComboBox comboRAM, ComboBox comboHDDSSDPC, ComboBox comboMonitor,
+                             ComboBox comboMouse, ComboBox comboKeyboard, ComboBox comboCabinett, TableView tblPCdel, Label lblSum){
+        comboCPU.getSelectionModel().clearSelection();
+        comboGPU.getSelectionModel().clearSelection();
+        comboHDDSSDPC.getSelectionModel().clearSelection();
+        comboRAM.getSelectionModel().clearSelection();
+        comboMonitor.getSelectionModel().clearSelection();
+        comboMouse.getSelectionModel().clearSelection();
+        comboKeyboard.getSelectionModel().clearSelection();
+        comboCabinett.getSelectionModel().clearSelection();
+
+        tblPCdel.getItems().clear();
+        lblSum.setText("");
+
+        ControllerMainPage.counter_CPU=0;
+        ControllerMainPage.counter_GPU=0;
+        ControllerMainPage.counter_RAM=0;
+        ControllerMainPage.counter_HDD=0;
+        ControllerMainPage.counter_Mou=0;
+        ControllerMainPage.counter_Mon=0;
+        ControllerMainPage.counter_KB=0;
+        ControllerMainPage.counter_Cab=0;
+    }
 
     public static void checkAll() throws InvalidPCConfigurationException{
         checkPurchase();
