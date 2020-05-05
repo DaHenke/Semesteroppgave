@@ -2,22 +2,22 @@ package pcSaver;
 
 import exceptions.InvalidFileEndException;
 import exceptions.InvalidPCConfigurationException;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
-import javafx.stage.FileChooser;
 import sample.*;
+import sample.Package;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileSaverPC {
-    /*public static void save() throws InvalidFileEndException, IOException {
-        String formatted = PCFormatter.formatParts(PartRegister.array);
+public class CsvFiles {
+    public static void save(ObservableList<Package> packList) throws InvalidFileEndException, IOException {
+        String formatted = PCFormatter.formatParts(packList);
         try{
-            Path PartPath = Paths.get("Semesteroppgave\\src\\sample\\Package.txt");
+            Path PartPath = Paths.get("Semesteroppgave\\src\\sample\\Package.csv");
             fileEnding.file(PartPath.toString());
             FileStringWriter.writeString(PartPath,formatted);
         } catch (InvalidFileEndException | IOException e) {
@@ -27,11 +27,11 @@ public class FileSaverPC {
             alert.showAndWait();
             System.out.println("Noe gikk galt: "+e.getMessage());
         }
-    }*/
+    }
 
     static ArrayList<String> load() throws IOException, InvalidFileEndException {
 
-        Path PartPath = Paths.get("Semesteroppgave\\src\\sample\\Package.txt");
+        Path PartPath = Paths.get("Semesteroppgave\\src\\sample\\Package.csv");
         fileEnding.file(PartPath.toString());
         String fileToString = FilePartReader.loadFile(PartPath);
         Scanner reader = new Scanner(fileToString);
@@ -42,7 +42,6 @@ public class FileSaverPC {
         reader.close();
         return lines;
     }
-
     public static PartRegister read() throws InvalidFileEndException, IOException, InvalidPCConfigurationException {
         ArrayList<String> lines = load();
         PartRegister newPartRegister = new PartRegister();

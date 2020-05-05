@@ -12,7 +12,7 @@ import java.io.File;
 import java.nio.file.Paths;
 
 public class FileSaver {
-    public static void save(ObservableList<Part> array,Path path) throws InvalidFileEndException {
+/*    public static void save(ObservableList<Part> array,Path path) throws InvalidFileEndException {
         FileChooser saveAs = new FileChooser();
         File saveFile = saveAs.showSaveDialog(null);
 
@@ -28,5 +28,5 @@ public class FileSaver {
             alert.showAndWait();
             System.out.println("Noe gikk galt: "+e.getMessage());
         }
-    }
+    }*/
 }

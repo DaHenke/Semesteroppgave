@@ -1,5 +1,6 @@
 package sample;
 
+import Files.loadJobj;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
 
@@ -54,7 +55,7 @@ public class AddElementComboBox {
 
     public static void addNewParts(ComboBox cbCPU, ComboBox cbGPU, ComboBox cbRAM, ComboBox cbHDD, ComboBox cbMon, ComboBox cbMou, ComboBox cbKB, ComboBox cbCab) {
         try {
-            ObservableList<Part> nyParts = newPart.loadNewParts(newPart.Path);
+            ObservableList<Part> nyParts = loadJobj.loadJobj(newPart.Path);
             ArrayList<Part> arrayParts = new ArrayList<>(nyParts);
             for (Part p : arrayParts) {
                 if (CheckPartType.checkTypeCB(p.Type).matches("CPU")) {

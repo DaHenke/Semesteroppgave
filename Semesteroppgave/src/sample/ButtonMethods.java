@@ -18,7 +18,8 @@ public class ButtonMethods {
         lblSum.setText(String.valueOf(sum));
     }
 
-    public static void createPackage(Label lblSum,PartRegister newPartRegister,TableView tblPCdel,PackageRegister newPackageRegister,TableView tblPackage) throws IOException, ClassNotFoundException {
+    public static void createPackage(Label lblSum,PartRegister newPartRegister,TableView tblPCdel,
+                                     PackageRegister newPackageRegister,TableView tblPackage) throws IOException, ClassNotFoundException {
         double price = Double.parseDouble(lblSum.getText());
 
         ArrayList<String> array = new ArrayList<>();
@@ -26,9 +27,14 @@ public class ButtonMethods {
             System.out.println(p.getDelNavn());
             array.add(p.getDelNavn());
         }
-
-        PC pc = new PC(array.get(0),array.get(1),array.get(2),array.get(3),array.get(4),array.get(5),array.get(6),array.get(7),array.get(8),array.get(9));
-
+        PC pc = new PC(null,null,null,null,null,null,null,null,null,null);
+        if(array.size()==8){
+            pc = new PC(array.get(0), array.get(1), array.get(2), array.get(3), array.get(4), array.get(5), array.get(6), array.get(7), "-","-");
+        }else if(array.size()==9){
+            pc = new PC(array.get(0), array.get(1), array.get(2), array.get(3), array.get(4), array.get(5), array.get(6), array.get(7), array.get(8), "-");
+        }else if(array.size()==10) {
+            pc = new PC(array.get(0), array.get(1), array.get(2), array.get(3), array.get(4), array.get(5), array.get(6), array.get(7), array.get(8), array.get(9));
+        }
         Package newPackage = new Package(pc,price);
         newPackage.setPackagePrice(price);
 
@@ -54,16 +60,16 @@ public class ButtonMethods {
             nyPc=pack.getPackageName();
         }
 
+        newNewDetails.addToPackage(new Part("Cabinet",nyPc.getCABINET(),0.0));
         newNewDetails.addToPackage(new Part("CPU",nyPc.getCPU(),0.0));
         newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU1(),0.0));
-        newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU2(),0.0));
         newNewDetails.addToPackage(new Part("Memory",nyPc.getRAM(),0.0));
         newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD1(),0.0));
-        newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD2(),0.0));
         newNewDetails.addToPackage(new Part("Monitor",nyPc.getMONITOR(),0.0));
         newNewDetails.addToPackage(new Part("Mouse",nyPc.getMOUSE(),0.0));
         newNewDetails.addToPackage(new Part("Keyboard",nyPc.getKEYBOARD(),0.0));
-        newNewDetails.addToPackage(new Part("Cabinet",nyPc.getCABINET(),0.0));
+        newNewDetails.addToPackage(new Part("GPU",nyPc.getGPU2(),0.0));
+        newNewDetails.addToPackage(new Part("HDD",nyPc.getHDD2(),0.0));
 
         newNewDetails.save(newNewDetails.array,DetailsRegister.path);
         newNewDetails.removeAll();

@@ -8,8 +8,8 @@ import java.io.Serializable;
 
 
 public class Part implements Serializable {
-    public String Type,DelNavn;
-    public double DelPris;
+        public String Type,DelNavn;
+        public double DelPris;
 
     public Part(String Type, String DelNavn, double DelPris){
         this.Type = Type;

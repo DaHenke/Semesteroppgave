@@ -37,6 +37,6 @@
       </TableView>
       <Button layoutX="214.0" layoutY="478.0" mnemonicParsing="false" onAction="#backToMainPage" prefHeight="26.0" prefWidth="115.0" text="Go back" />
       <Button layoutX="534.0" layoutY="530.0" mnemonicParsing="false" onAction="#removeNewPart" prefHeight="26.0" prefWidth="100.0" text="Fjern del" />
-      <Button layoutX="835.0" layoutY="530.0" mnemonicParsing="false" onAction="#saveFile" prefHeight="26.0" prefWidth="100.0" text="Lagre fil" />
+     <!-- <Button layoutX="835.0" layoutY="530.0" mnemonicParsing="false" onAction="#saveFile" prefHeight="26.0" prefWidth="100.0" text="Lagre fil" />-->
    </children>
 </AnchorPane>

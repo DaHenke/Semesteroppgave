@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="195ad90b-80bf-4ae9-b0b2-d3f44edbb142" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/Files/loadJobj.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/Files/loadTxt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/Files/saveJobj.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/Files/saveTxt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/pcSaver/CsvFiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Package.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/kotlin-reflect-sources.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/kotlin-reflect.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-sources.jar" afterDir="false" />
@@ -14,21 +18,23 @@
       <change afterPath="$PROJECT_DIR$/lib/kotlin-test-sources.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/kotlin-test.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NySemesteroppgave.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NySemesteroppgave.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/Files/CheckPartType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/Files/ErrorBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/Files/FileHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/Files/FileOpener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/Files/FilePartReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/Files/FileSaver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/Files/PartRegister.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/Files/fileEnding.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerLogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerLogIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/pcSaver/FileSaverPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/pcSaver/FileSaverPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/AddElementComboBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/AddElementComboBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/ButtonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/ButtonMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerMainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerMainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerSecondPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/ControllerSecondPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Details" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Details" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/FileSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/FileSaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/PC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/PC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/PCFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/PCFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Package.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Package.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Packages" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/Part.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/checkConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/checkConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/fileEnding.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/fileEnding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/newPartRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/newPartRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/newParts" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/newParts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/trådprogrammering/Threads.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/trådprogrammering/tråder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NySemesteroppgave/sample/mainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NySemesteroppgave/sample/mainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semesteroppgave/src/sample/secondPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Semesteroppgave/src/sample/secondPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +108,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c9de360d-3971-4e79-9b02-f9412904d9a3" name="Default Changelist" comment="" />
+      <changelist id="195ad90b-80bf-4ae9-b0b2-d3f44edbb142" name="Default Changelist" comment="" />
       <created>1585585475531</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -125,6 +131,7 @@
       <workItem from="1587926628697" duration="6718000" />
       <workItem from="1587998837866" duration="7182000" />
       <workItem from="1588010510841" duration="8211000" />
+      <workItem from="1588535194935" duration="20857000" />
     </task>
     <task id="LOCAL−00001" summary="En test">
       <created>1585585521585</created>
@@ -318,7 +325,13 @@
       <option name="presentableId" value="LOCAL−00032" />
       <updated>1588269787155</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL−00033" summary="Søkefilter og avvikshåndtering">
+      <created>1588517117225</created>
+      <option name="number" value="LOCAL−00033" />
+      <option name="presentableId" value="LOCAL−00033" />
+      <updated>1588517117225</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,14 +358,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588005701366" />
-    <state x="522" y="206" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588263908147">
+    <state x="522" y="206" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588697364330">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="522" y="206" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1588263908147" />
+    <state x="522" y="206" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1588697364330" />
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1588347311477">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588347311477" />
+    <state x="566" y="297" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588696899214">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="566" y="297" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1588696899214" />
     <state x="378" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587394338588">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -361,73 +378,73 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588515858767" />
-    <state x="365" y="7" key="CommitChangelistDialog2" timestamp="1588269786292">
+    <state x="365" y="7" key="CommitChangelistDialog2" timestamp="1588517115922">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="365" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588269786292" />
+    <state x="365" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588517115922" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587926934803">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587926934803" />
-    <state width="1493" height="167" key="GridCell.Tab.0.bottom" timestamp="1588515832605">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1588698331933">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588515832605" />
-    <state width="1493" height="167" key="GridCell.Tab.0.center" timestamp="1588515832604">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588698331933" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1588698331933">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588515832604" />
-    <state width="1493" height="167" key="GridCell.Tab.0.left" timestamp="1588515832604">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588698331933" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1588698331932">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588515832604" />
-    <state width="1493" height="167" key="GridCell.Tab.0.right" timestamp="1588515832605">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588698331932" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1588698331933">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588515832605" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588006026692">
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588698331933" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588694477352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588006026692" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1588006026692">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588694477352" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1588694477351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588006026692" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1588006026692">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588694477351" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1588694477351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588006026692" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1588006026692">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588694477351" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1588694477351">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588006026692" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588694477351" />
     <state x="481" y="128" key="MultipleFileMergeDialog" timestamp="1588077234869">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="481" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1588077234869" />
-    <state x="329" y="115" key="Vcs.Push.Dialog.v2" timestamp="1588269789814">
+    <state x="329" y="115" key="Vcs.Push.Dialog.v2" timestamp="1588517119779">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="329" y="115" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588269789814" />
-    <state x="627" y="317" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588336098739">
+    <state x="329" y="115" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588517119779" />
+    <state x="627" y="317" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588618952488">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="627" y="317" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588336098739" />
-    <state x="499" y="192" key="extract.method.dialog" timestamp="1588017599828">
+    <state x="627" y="317" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588618952488" />
+    <state x="499" y="192" key="extract.method.dialog" timestamp="1588534646320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="192" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1588017599828" />
-    <state x="475" y="41" key="refactoring.ChangeSignatureDialog" timestamp="1587572927414">
+    <state x="499" y="192" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1588534646320" />
+    <state x="475" y="41" key="refactoring.ChangeSignatureDialog" timestamp="1588696218585">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="475" y="41" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1587572927414" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1588513938940">
+    <state x="475" y="41" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1588696218585" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1588609533395">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588513938940" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1588341817339">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588609533395" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1588593604458">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588341817339" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588593604458" />
   </component>
 </project>

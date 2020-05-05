@@ -91,7 +91,7 @@ public class checkConfiguration {
 
     public static void checkPurchase()throws  InvalidPCConfigurationException{
         if(counter_CPU == 0 || counter_GPU == 0 || counter_RAM == 0 ||
-                counter_HDD == 0 || counter_Cab == 0){
+                counter_HDD == 0 || counter_Cab == 0|| counter_Mon==0||counter_Mou==0||counter_KB==0){
             throw new InvalidPCConfigurationException("Missing necessary parts");
         }
     }

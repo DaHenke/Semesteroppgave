@@ -46,6 +46,7 @@ public class ControllerSecondPage implements Initializable {
     @FXML
     void backToMainPage(ActionEvent event) {
         try {
+            Thread.sleep(4000);
             FXMLLoader loader = new FXMLLoader();
             Parent loginPageParent = loader.load(getClass().getResource("mainPage.fxml"));
             Scene loginPageScene = new Scene(loginPageParent);
@@ -56,6 +57,8 @@ public class ControllerSecondPage implements Initializable {
             loginWindow.setScene(loginPageScene);
             loginWindow.show();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -86,7 +89,7 @@ public class ControllerSecondPage implements Initializable {
             newPart.array=newPart.loadNewParts(newPart.Path);
             newPart.attachTableView(tblNyDel);
             newPart.registrerPCDel(nyDel);
-            saveFileny();
+            newPart.saveFileny();
         }
 
 
@@ -106,28 +109,12 @@ public class ControllerSecondPage implements Initializable {
         double delpris = tblNyDel.getSelectionModel().getSelectedItem().getDelPris();
         Part removePart = new Part(type,delnavn,delpris);
         newPart.array.remove(removePart);
-        saveFileny();
+        newPart.saveFileny();
         newPart.array=newPart.loadNewParts(newPart.Path);
     }
 
-    void saveFileny() throws IOException {
-        if(!newPart.array.isEmpty()) {
-            newPart.saveNewParts(newPart.array, newPartRegister.Path);
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Lagring vellykket!");
-            alert.setHeaderText("Vellykket");
-            alert.setContentText("Nye deler ligger inne i valgmenyene på hovedsiden");
-            alert.showAndWait();
-        }else{
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Lagring feilet!");
-            alert.setHeaderText("Feil");
-            alert.setContentText("Du har ikke lagt til nye deler");
-            alert.showAndWait();
-        }
-    }
 
-    @FXML
+    /*@FXML
     void saveFile(ActionEvent event) throws IOException {
         if(!newPart.array.isEmpty()) {
             newPart.saveNewParts(newPart.array, newPartRegister.Path);
@@ -144,7 +131,7 @@ public class ControllerSecondPage implements Initializable {
             alert.setContentText("Du har ikke lagt til nye deler");
             alert.showAndWait();
         }
-    }
+    }*/
 
     @FXML
     void txtDataEditedDelPris(TableColumn.CellEditEvent<Part, Double> event) {

@@ -2,6 +2,7 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
 
 import java.io.*;
@@ -28,16 +29,16 @@ public class newPartRegister {
 
 
     public void saveNewParts(ObservableList<Part> array, Path path) throws IOException {
-       OutputStream fis = Files.newOutputStream(path);
-       FileOutputStream output = new FileOutputStream(String.valueOf(path), true);
-       ObjectOutputStream oos = new ObjectOutputStream(output);
+        OutputStream fis = Files.newOutputStream(path);
+        FileOutputStream output = new FileOutputStream(String.valueOf(path), true);
+        ObjectOutputStream oos = new ObjectOutputStream(output);
 
-       ArrayList<Part> newarray = new ArrayList<>(array);
-       try{
-           oos.writeObject(newarray);
-       }finally {
-           oos.close();
-       }
+        ArrayList<Part> newarray = new ArrayList<>(array);
+        try{
+            oos.writeObject(newarray);
+        }finally {
+            oos.close();
+        }
 
 
     }
@@ -69,6 +70,23 @@ public class newPartRegister {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    void saveFileny() throws IOException {
+        if(!array.isEmpty()) {
+            saveNewParts(array, newPartRegister.Path);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Lagring vellykket!");
+            alert.setHeaderText("Vellykket");
+            alert.setContentText("Nye deler ligger inne i valgmenyene på hovedsiden");
+            alert.showAndWait();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lagring feilet!");
+            alert.setHeaderText("Feil");
+            alert.setContentText("Du har ikke lagt til nye deler");
+            alert.showAndWait();
         }
     }
 }

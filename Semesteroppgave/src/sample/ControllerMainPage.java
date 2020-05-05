@@ -14,6 +14,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.util.converter.DoubleStringConverter;
+import pcSaver.CsvFiles;
 import pcSaver.FileSaverPC;
 import java.io.IOException;
 import java.net.URL;
@@ -103,7 +104,7 @@ public class ControllerMainPage implements Initializable {
         ButtonMethods.calculatePrice(tblPCdel,tblPris,lblSum);
         checkConfiguration.checkAll();
         ButtonMethods.createPackage(lblSum,newPartRegister,tblPCdel,newPackageRegister,tblPackage);
-        FileSaverPC.save();
+        CsvFiles.save(newPackageRegister.array);
         checkConfiguration.clear(comboCPU,comboGPU,comboRAM,comboHDDSSDPC,comboMonitor,comboMouse,comboKeyboard,comboCabinett,
                             tblPCdel,lblSum);
     }

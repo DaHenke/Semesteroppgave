@@ -1,10 +1,8 @@
-CPU;Intel Pentium Gold G5600;979.0
-GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
-GPU;Gigabyte GeForce GT 1030 2GB Low Profile;1099.0
+CPU;AMD Ryzen 3 3200G;1349.0
+GPU;Gainward GeForce GTX 1650 SUPER Pegasus OC;2399.0
 Memory;Crucial DDR4 2400MHz 8GB;564.0
-HDD;Seagate SkyHawk 6TB;2310.0
-HDD;Seagate SkyHawk 6TB;2310.0
+HDD;Seagate Barracuda 3TB;1022.0
 Monitor;Samsung 24 skjerm S24E450F;1695.0
 Mouse;Microsoft Mobile Mouse 3600;349.0
-Keyboard;Logitech K400 Plus Trådløs Tastatur;549.0
+Keyboard;Kanex MultiSync Premium Slim Keyboard;949.0
 Cabinet;Phanteks Eclipse P400A RGB Black;1099.0
